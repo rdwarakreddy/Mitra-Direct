@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Mitra Direct | Customer Portal - Pure Local Commerce</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#064e3b",    
+              "accent": "#10b981",     
+              "accent-light": "#ecfdf5", 
+              "surface-bg": "#fafbfa", 
+              "card-bg": "#fafafa",    
+              "text-main": "#0f172a",
+              "text-muted": "#475569",
+              "danger": "#ef4444"
+            },
+            fontFamily: {
+              sans: ["'Plus Jakarta Sans'", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-nav {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="bg-surface-bg text-text-main antialiased selection:bg-accent/10 selection:text-primary">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-zinc-200/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center relative">
+            <a href="Home.html" class="flex items-center gap-2.5 group cursor-pointer">
+                <div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center shadow-md shadow-primary/20 transition-transform group-hover:scale-105">
+                    <span class="material-symbols-outlined text-white text-lg font-light">layers</span>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-text-main">Mitra<span class="text-accent font-medium">Direct</span></span>
+            </a>
+            
+            <div id="nav-menu" class="hidden absolute top-20 left-0 w-full bg-white border-b border-zinc-200 p-6 flex flex-col space-y-4 font-semibold text-[13px] tracking-tight shadow-xl z-50 lg:shadow-none lg:p-0 lg:border-none lg:bg-transparent lg:static lg:w-auto lg:flex lg:flex-row lg:space-y-0 lg:space-x-10">
+                <a class="text-text-muted hover:text-primary transition-colors" href="Home.html">Home</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="Vendors.html">Vendors</a>
+                <a class="text-primary font-bold transition-colors" href="Customers.html">Customers</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="Testcases.html">Test Cases</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="About.html">About Us</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="Contact.html">Contact Us</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="Contact.html" class="bg-primary hover:bg-emerald-800 text-white text-xs font-bold tracking-wider uppercase px-5 py-3 rounded-lg shadow-sm transition-all duration-200">
+                    Get Started
+                </a>
+                <button id="menu-toggle" class="lg:hidden p-2 text-text-main hover:text-primary transition-colors focus:outline-none" aria-label="Toggle Menu">
+                    <span id="menu-icon" class="material-symbols-outlined text-2xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+
+        <section class="relative min-h-[calc(100vh-5rem)] flex items-center bg-white py-16 lg:py-0 overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+            <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-8 text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-light border border-accent/10 text-primary text-[11px] font-bold uppercase tracking-wider shadow-2xs">
+                            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span> Consumer Layer Utility
+                        </div>
+                        <h1 class="text-4xl sm:text-6xl font-extrabold text-text-main tracking-tight leading-[1.05]">
+                            Frictionless Commerce. <br />
+                            <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic font-serif font-normal block mt-2">Pure Neighborhood Utility.</span>
+                        </h1>
+                        <p class="text-base sm:text-lg text-text-muted font-light max-w-xl leading-relaxed">
+                            Bypass manipulative discovery algorithms, commercial delivery markups, and artificial processing boundaries. Mitra Direct links your device directly onto authentic local producers.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#journey" class="bg-primary hover:bg-emerald-800 text-white text-center text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-xl transition-all shadow-md shadow-emerald-950/10">
+                                Trace Journey Pattern
+                            </a>
+                            <a href="#app-mockup" class="bg-white hover:bg-zinc-50 border border-zinc-200 text-text-main text-center text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-xl transition-all">
+                                Launch App Framework
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 w-full">
+                        <div class="bg-gradient-to-b from-zinc-50 to-white border border-zinc-200 rounded-3xl p-6 md:p-8 shadow-xl space-y-6 max-w-md mx-auto relative">
+                            <div class="flex items-center justify-between border-b border-zinc-100 pb-4">
+                                <span class="text-xs uppercase tracking-wider font-bold text-text-main">Direct-to-Counter Savings Index</span>
+                                <span class="text-[10px] font-mono text-emerald-700 bg-emerald-50 border border-emerald-100 px-2.5 py-0.5 rounded font-bold">100% Pure Price</span>
+                            </div>
+                            <div class="space-y-4 text-xs font-medium text-text-muted">
+                                <div class="flex justify-between items-center p-3.5 rounded-xl bg-white border border-zinc-200 shadow-2xs">
+                                    <span>Aggregator Delivery Markups</span>
+                                    <span class="text-danger font-bold bg-red-50 px-2 py-0.5 rounded">Included (+25%)</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3.5 rounded-xl bg-accent-light border border-accent/20 text-primary shadow-2xs">
+                                    <span>Mitra Point-to-Point Processing</span>
+                                    <span class="font-extrabold bg-white px-2 py-0.5 rounded">₹0 Surcharges Natively</span>
+                                </div>
+                            </div>
+                            <p class="text-[11px] text-text-muted/80 leading-relaxed font-light">
+                                By clearing transaction paths cleanly, your menu prices remain completely un-inflated, passing absolute raw savings back to your basket.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-white border-t border-zinc-200/60">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-xl mx-auto mb-20 space-y-3">
+                    <span class="text-accent font-bold text-xs tracking-widest uppercase block">Interface Interaction Elements</span>
+                    <h2 class="text-3xl font-extrabold text-text-main tracking-tight">The Customer Experience Framework</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="group border border-zinc-200 bg-white hover:border-zinc-300 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-2xs">
+                        <div class="h-52 w-full overflow-hidden bg-zinc-100 relative">
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80" alt="Local store map discovery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-3 flex-grow flex flex-col justify-start">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-2xs">
+                                    <span class="material-symbols-outlined font-light text-lg block">near_me</span>
+                                </div>
+                                <h3 class="font-bold text-base text-text-main tracking-tight">Local Discovery</h3>
+                            </div>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
+                                Access localized brand storefront parameters organically compiled via geographical mapping coordinates.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="group border border-zinc-200 bg-white hover:border-zinc-300 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-2xs">
+                        <div class="h-52 w-full overflow-hidden bg-zinc-100 relative">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Seamless menu selector" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-3 flex-grow flex flex-col justify-start">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-2xs">
+                                    <span class="material-symbols-outlined font-light text-lg block">touch_app</span>
+                                </div>
+                                <h3 class="font-bold text-base text-text-main tracking-tight">Easy Ordering</h3>
+                            </div>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
+                                Interact with sparse, un-interrupted single-screen layouts built to submit customized product modifiers directly.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="group border border-zinc-200 bg-white hover:border-zinc-300 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-2xs">
+                        <div class="h-52 w-full overflow-hidden bg-zinc-100 relative">
+                            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80" alt="Secure bank settlement processing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-3 flex-grow flex flex-col justify-start">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-2xs">
+                                    <span class="material-symbols-outlined font-light text-lg block">credit_score</span>
+                                </div>
+                                <h3 class="font-bold text-base text-text-main tracking-tight">Safe Payments</h3>
+                            </div>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
+                                Authorize direct peer transactions cleanly through institutional networks safely with zero escrow exposure gates.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="group border border-zinc-200 bg-white hover:border-zinc-300 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-2xs">
+                        <div class="h-52 w-full overflow-hidden bg-zinc-100 relative">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Fulfillment bays package collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-6 space-y-3 flex-grow flex flex-col justify-start">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-2xs">
+                                    <span class="material-symbols-outlined font-light text-lg block">shopping_bag</span>
+                                </div>
+                                <h3 class="font-bold text-base text-text-main tracking-tight">Quick Pickup</h3>
+                            </div>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
+                                Receive instant alert telemetry parameters when product packages successfully clear merchant production floor cells.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" class="py-24 bg-zinc-50 border-t border-zinc-200/60">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-xl mx-auto mb-20 space-y-3">
+                    <span class="text-primary font-bold text-xs tracking-widest uppercase block">Fulfillment Routine</span>
+                    <h2 class="text-3xl font-bold text-text-main tracking-tight">The Customer Journey Flow</h2>
+                </div>
+
+                <div class="space-y-8 max-w-5xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white border border-zinc-200/80 p-5 rounded-2xl flex flex-col justify-between space-y-4 shadow-3xs group hover:border-accent/40 transition-colors">
+                            <div class="h-36 w-full overflow-hidden rounded-xl bg-zinc-100">
+                                <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=400&q=80" alt="Scan QR link extension" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            </div>
+                            <div class="space-y-2">
+                                <div class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-md bg-primary text-white text-[10px] flex items-center justify-center shrink-0">01</span> Open Platform
+                                </div>
+                                <p class="text-xs text-text-muted font-light leading-relaxed">Scan real-world physical QR codes or launch direct digital web extensions.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-zinc-200/80 p-5 rounded-2xl flex flex-col justify-between space-y-4 shadow-3xs group hover:border-accent/40 transition-colors">
+                            <div class="h-36 w-full overflow-hidden rounded-xl bg-zinc-100">
+                                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=400&q=80" alt="Browse menu parameters" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            </div>
+                            <div class="space-y-2">
+                                <div class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-md bg-primary text-white text-[10px] flex items-center justify-center shrink-0">02</span> Browse Vendors
+                                </div>
+                                <p class="text-xs text-text-muted font-light leading-relaxed">Examine native localized item menus unmodified by platform discovery algorithms.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-zinc-200/80 p-5 rounded-2xl flex flex-col justify-between space-y-4 shadow-3xs group hover:border-accent/40 transition-colors">
+                            <div class="h-36 w-full overflow-hidden rounded-xl bg-zinc-100">
+                                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=400&q=80" alt="Cart item configuration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            </div>
+                            <div class="space-y-2">
+                                <div class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-md bg-primary text-white text-[10px] flex items-center justify-center shrink-0">03</span> Order Products
+                                </div>
+                                <p class="text-xs text-text-muted font-light leading-relaxed">Assemble distinct product variables and configure modifier arrays instantly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:max-w-3xl mx-auto">
+                        <div class="bg-white border border-zinc-200/80 p-5 rounded-2xl flex flex-col justify-between space-y-4 shadow-3xs group hover:border-accent/40 transition-colors">
+                            <div class="h-36 w-full overflow-hidden rounded-xl bg-zinc-100">
+                                <img src="https://images.unsplash.com/photo-1563013544-824ae1d704d3?auto=format&fit=crop&w=400&q=80" alt="Direct bank auth route" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            </div>
+                            <div class="space-y-2">
+                                <div class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-md bg-primary text-white text-[10px] flex items-center justify-center shrink-0">04</span> Pay Online
+                                </div>
+                                <p class="text-xs text-text-muted font-light leading-relaxed">Execute peer bank interactions directly to vendor endpoints instantaneously.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-zinc-200/80 p-5 rounded-2xl flex flex-col justify-between space-y-4 shadow-3xs group hover:border-accent/40 transition-colors">
+                            <div class="h-36 w-full overflow-hidden rounded-xl bg-zinc-100">
+                                <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&q=80" alt="On-site array verification" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            </div>
+                            <div class="space-y-2">
+                                <div class="text-xs font-bold text-accent uppercase tracking-wider flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-md bg-accent text-white text-[10px] flex items-center justify-center shrink-0 animate-pulse">05</span> Pickup Directly
+                                </div>
+                                <p class="text-xs text-text-muted font-light leading-relaxed">Verify collection clearances directly at merchant point-to-counter lanes cleanly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-white border-t border-zinc-200/60">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    
+                    <div class="lg:col-span-4 space-y-4">
+                        <span class="text-primary font-bold text-xs tracking-widest uppercase block">Consumer Optimization Parameters</span>
+                        <h2 class="text-3xl font-bold text-text-main tracking-tight leading-tight">Tangible Utility Benefits Matrix</h2>
+                        <p class="text-sm text-text-muted font-light leading-relaxed">
+                            Decoupling active transactional routes from aggregate delivery infrastructure passes real structural flexibility straight to your localized patterns.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="border border-zinc-200/60 p-6 rounded-2xl bg-zinc-50/40 space-y-2 hover:border-accent/30 transition-colors">
+                            <h4 class="font-bold text-base text-text-main flex items-center gap-2 tracking-tight">
+                                <span class="material-symbols-outlined text-accent text-lg block">check_circle</span> Save Time
+                            </h4>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Pre-order operational sets remotely before physical arrival so merchant batches fully align in advance.</p>
+                        </div>
+
+                        <div class="border border-zinc-200/60 p-6 rounded-2xl bg-zinc-50/40 space-y-2 hover:border-accent/30 transition-colors">
+                            <h4 class="font-bold text-base text-text-main flex items-center gap-2 tracking-tight">
+                                <span class="material-symbols-outlined text-accent text-lg block">check_circle</span> Support Local Businesses
+                            </h4>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Ensure 100% of your transactional ticket remains intact inside internal company store cells.</p>
+                        </div>
+
+                        <div class="border border-zinc-200/60 p-6 rounded-2xl bg-zinc-50/40 space-y-2 hover:border-accent/30 transition-colors">
+                            <h4 class="font-bold text-base text-text-main flex items-center gap-2 tracking-tight">
+                                <span class="material-symbols-outlined text-accent text-lg block">check_circle</span> No Waiting
+                            </h4>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Bypass on-site physical point queue lines smoothly by clearing packages through active staging ports.</p>
+                        </div>
+
+                        <div class="border border-zinc-200/60 p-6 rounded-2xl bg-zinc-50/40 space-y-2 hover:border-accent/30 transition-colors">
+                            <h4 class="font-bold text-base text-text-main flex items-center gap-2 tracking-tight">
+                                <span class="material-symbols-outlined text-accent text-lg block">check_circle</span> No Delivery Charges
+                            </h4>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Permanently shield private transactions from forced delivery markup taxes, platform fees, or service scales.</p>
+                        </div>
+
+                        <div class="border border-zinc-200/60 p-6 rounded-2xl bg-zinc-50/40 space-y-2 sm:col-span-2 pt-4 border-t border-zinc-200">
+                            <h4 class="font-bold text-base text-text-main flex items-center gap-2 tracking-tight">
+                                <span class="material-symbols-outlined text-accent text-lg block">check_circle</span> Better Local Product Discovery
+                            </h4>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Encounter bespoke regional bakeries, independent kitchens, and specialized creators historically hidden beneath corporate advertising search blocks.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="app-mockup" class="py-24 bg-zinc-50 border-t border-zinc-200/60 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-xl mx-auto mb-20 space-y-3">
+                    <span class="text-accent font-bold text-xs tracking-widest uppercase block">Interface Workspace</span>
+                    <h2 class="text-3xl font-extrabold text-text-main tracking-tight">The Customer Mobile Experience</h2>
+                    <p class="text-sm text-text-muted font-light">Clean software application interface framework optimized for low-latency browser rendering execution.</p>
+                </div>
+
+                <div class="bg-zinc-950 rounded-3xl shadow-2xl border border-zinc-800 p-6 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-zinc-300 max-w-5xl mx-auto relative">
+                    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-20"></div>
+                    
+                    <div class="lg:col-span-5 space-y-6 relative z-10">
+                        <div class="flex items-center gap-2.5 text-white font-bold text-sm tracking-tight">
+                            <div class="w-6 h-6 rounded-md bg-primary flex items-center justify-center text-white"><span class="material-symbols-outlined text-xs block">phone_iphone</span></div>
+                            <span>Native Viewport Console</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white tracking-tight">Granular Mobile Interface Framework Mockups</h3>
+                        <p class="text-xs sm:text-sm leading-relaxed text-zinc-400 font-light">
+                            Our network infrastructure translates distributed digital web links smoothly onto dedicated responsive device layers. Monitor active transaction processing queues natively from any target container viewport.
+                        </p>
+                        <div class="space-y-3 pt-2 font-light text-xs text-zinc-400">
+                            <div class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-accent"></span> High-resolution layout grid components</div>
+                            <div class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-accent"></span> Zero tracker cookies or external validation nodes</div>
+                            <div class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-accent"></span> Unified direct routing architecture</div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 flex justify-center lg:justify-end w-full relative z-10">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-md">
+                            
+                            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 space-y-4 shadow-xl flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
+                                        <span class="text-[9px] uppercase font-bold text-zinc-500 tracking-wider">Discovery Layer</span>
+                                        <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="text-[11px] font-bold text-white tracking-tight">Nearby Store Coordinates</div>
+                                        <div class="h-28 rounded-lg overflow-hidden bg-zinc-950 border border-zinc-800 relative">
+                                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=300&q=80" alt="Bakery storefront option" class="w-full h-full object-cover opacity-80" />
+                                            <div class="absolute bottom-2 left-2 bg-zinc-950/95 text-[9px] px-2 py-0.5 rounded text-accent font-mono border border-zinc-800">0.4 km away</div>
+                                        </div>
+                                        <div class="space-y-0.5 pt-1">
+                                            <div class="text-[11px] font-bold text-white">Bespoke Artisan Bakery</div>
+                                            <div class="text-[9px] text-zinc-500 font-light">Premium Confectioneries & Special Grains</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-primary text-white text-center text-[10px] font-bold py-2.5 rounded-lg uppercase tracking-wider cursor-pointer shadow-sm mt-2">
+                                    Explore Menu Matrix
+                                </div>
+                            </div>
+
+                            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 space-y-4 shadow-xl flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
+                                        <span class="text-[9px] uppercase font-bold text-zinc-500 tracking-wider">Fulfillment Cell</span>
+                                        <span class="text-[9px] font-mono bg-zinc-950 px-2 py-0.5 text-zinc-400 rounded border border-zinc-800">#MD-9831</span>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div class="p-3 rounded-lg bg-zinc-950 border border-zinc-800 space-y-1">
+                                            <div class="text-[9px] uppercase font-bold text-zinc-500">Staging Area</div>
+                                            <div class="text-[11px] font-bold text-accent">Package Clearing Active</div>
+                                        </div>
+                                        <div class="space-y-2.5 relative pl-4 border-l border-zinc-800 text-[10px] text-zinc-400 font-light">
+                                            <div class="relative"><span class="w-1.5 h-1.5 bg-accent rounded-full absolute -left-[19px] top-1"></span> Transaction Settled</div>
+                                            <div class="relative"><span class="w-1.5 h-1.5 bg-accent rounded-full absolute -left-[19px] top-1"></span> Batch Staged</div>
+                                            <div class="text-white font-bold relative"><span class="w-1.5 h-1.5 bg-accent rounded-full absolute -left-[19px] top-1 animate-ping"></span> Ready at Pickup Counter</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-accent text-zinc-950 text-center text-[10px] font-extrabold py-2.5 rounded-lg uppercase tracking-wider cursor-pointer shadow-sm mt-2">
+                                    Clear Verification Token
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 bg-white border-t border-zinc-200/60">
+            <div class="max-w-5xl mx-auto bg-gradient-to-tr from-zinc-900 to-zinc-800 text-white rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-xl">
+                <div class="absolute -top-32 -left-32 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+                <div class="max-w-2xl mx-auto space-y-6 relative z-10">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Access Your True Local Commerce Layer.</h2>
+                    <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light max-w-xl mx-auto">
+                        Ready to support independent merchants cleanly without aggregator markup extractions? Connect into your direct neighborhood pipeline registry today.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                        <a href="Contact.html" class="bg-primary hover:bg-emerald-800 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all shadow-md">
+                            Explore Active Stores
+                        </a>
+                        <a href="mailto:support@mitradirect.com" class="bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all">
+                            Inquire Utility Rules
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white text-text-muted border-t border-zinc-200/60">
+        <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-5 space-y-4">
+                <div class="flex items-center gap-2.5 text-text-main">
+                    <div class="w-7 h-7 rounded-md bg-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-base font-light">layers</span>
+                    </div>
+                    <span class="text-base font-bold tracking-tight">Mitra<span class="text-accent font-medium">Direct</span></span>
+                </div>
+                <p class="text-xs leading-relaxed text-text-muted font-light max-w-sm">
+                    A streamlined local business digital framework. Engineered to build absolute transactional independence, entirely free of market platform friction.
+                </p>
+            </div>
+            
+            <div class="md:col-span-2 space-y-4">
+                <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Ecosystem</h5>
+                <ul class="space-y-2.5 text-xs font-light">
+                    <li><a class="hover:text-accent transition-colors" href="Vendors.html">Vendor Terminal</a></li>
+                    <li><a class="hover:text-accent transition-colors" href="Customers.html">Customer Portal</a></li>
+                    <li><a class="hover:text-accent transition-colors" href="About.html">Operational Matrix</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3 space-y-4">
+                <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Inquiries</h5>
+                <ul class="space-y-2.5 text-xs font-light">
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">mail</span> support@mitradirect.com</li>
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">phone</span> +91 98765 43210</li>
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">location_on</span> Bangalore, India</li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-2 space-y-4">
+                <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Channels</h5>
+                <div class="flex gap-4 text-zinc-400">
+                    <a class="hover:text-accent transition-colors" href="#"><span class="material-symbols-outlined text-lg font-light block">language</span></a>
+                    <a class="hover:text-accent transition-colors" href="#"><span class="material-symbols-outlined text-lg font-light block">campaign</span></a>
+                    <a class="hover:text-accent transition-colors" href="#"><span class="material-symbols-outlined text-lg font-light block">hub</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 py-8 border-t border-zinc-100 text-left text-[11px] font-light text-text-muted/60 flex flex-col sm:flex-row justify-between gap-4">
+            <div>&copy; 2026 Mitra Direct. Open infrastructure guidelines apply.</div>
+            <div class="space-x-4"><a href="#" class="hover:text-text-main transition-colors">Terms</a><a href="#" class="hover:text-text-main transition-colors">Privacy</a></div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+            if (navMenu.classList.contains('hidden')) {
+                menuIcon.textContent = 'menu';
+            } else {
+                menuIcon.textContent = 'close';
+            }
+        });
+    </script>
+</body>
+</html>

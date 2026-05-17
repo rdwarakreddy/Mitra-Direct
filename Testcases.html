@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Mitra Direct | Operational Test Cases & Scenarios</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#064e3b",    
+              "accent": "#10b981",     
+              "accent-light": "#ecfdf5", 
+              "surface-bg": "#ffffff", 
+              "card-bg": "#fafafa",    
+              "text-main": "#0f172a",
+              "text-muted": "#475569",
+              "danger": "#ef4444"
+            },
+            fontFamily: {
+              sans: ["'Plus Jakarta Sans'", "sans-serif"],
+              serif: ["'Playfair Display'", "serif"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-glacier { font-family: 'Playfair Display', serif; font-weight: 700; tracking: -0.02em; }
+        .glass-nav {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="bg-surface-bg text-text-main antialiased selection:bg-accent/10 selection:text-primary">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-zinc-200/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center relative">
+            <a href="Home.html" class="flex items-center gap-2.5 group cursor-pointer">
+                <div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center shadow-md shadow-primary/20 transition-transform group-hover:scale-105">
+                    <span class="material-symbols-outlined text-white text-lg font-light">layers</span>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-text-main">Mitra<span class="text-accent font-medium">Direct</span></span>
+            </a>
+            
+            <div id="nav-menu" class="hidden absolute top-20 left-0 w-full bg-white border-b border-zinc-200 p-6 flex flex-col space-y-4 font-bold text-[13px] tracking-tight shadow-xl z-50 lg:shadow-none lg:p-0 lg:border-none lg:bg-transparent lg:static lg:w-auto lg:flex lg:flex-row lg:space-y-0 lg:space-x-10">
+                <a class="text-text-muted hover:text-primary transition-colors" href="Home.html">Home</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="Vendors.html">Vendors</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="Customers.html">Customers</a>
+                <a class="text-primary font-bold transition-colors" href="Testcases.html">Test Cases</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="About.html">About Us</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="Contact.html">Contact Us</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="Contact.html" class="bg-primary hover:bg-emerald-800 text-white text-xs font-bold tracking-wider uppercase px-5 py-3 rounded-lg shadow-sm transition-all duration-200">
+                    Get Started
+                </a>
+                <button id="menu-toggle" class="lg:hidden p-2 text-text-main hover:text-primary transition-colors focus:outline-none" aria-label="Toggle Menu">
+                    <span id="menu-icon" class="material-symbols-outlined text-2xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+
+        <section class="relative min-h-[60vh] flex items-center bg-zinc-50 py-20 overflow-hidden border-b border-zinc-200/50">
+            <div class="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+            <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+                <div class="max-w-3xl space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-light border border-accent/10 text-primary text-[11px] font-bold uppercase tracking-wider shadow-2xs">
+                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span> Simulation Arena
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold text-text-main tracking-tight leading-[1.05]">
+                        Architecture Validation. <br />
+                        <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-glacier italic block mt-2">Operational Test Cases.</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-text-muted font-light max-w-2xl leading-relaxed">
+                        Explore exactly how the Mitra Direct utility layer compiles data inputs and routes peer transaction states across our core targeted regional business verticals.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="space-y-32">
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                        <div class="lg:col-span-5 space-y-6">
+                            <div class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center text-primary border border-accent/10 shadow-3xs">
+                                <span class="material-symbols-outlined font-light text-2xl">restaurant</span>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-accent text-xs font-bold uppercase tracking-widest block">Vertical Module 01</span>
+                                <h2 class="text-3xl font-extrabold tracking-tight text-text-main font-glacier">Boutique Kitchens & Restaurants</h2>
+                            </div>
+                            <p class="text-sm text-text-muted font-light leading-relaxed">
+                                Testing data processing pipelines during high-volume counter collection hours to clear bay congestion bottlenecks safely.
+                            </p>
+                            
+                            <div class="pt-4">
+                                <svg class="w-full h-auto bg-zinc-50 border border-zinc-200 rounded-2xl p-4 shadow-3xs" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="60" cy="80" r="24" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+                                    <path d="M52 88C52 82 55.5 80 60 80C64.5 80 168 82 168 88" stroke="#064e3b" stroke-width="1.5" stroke-linecap="round"/>
+                                    <circle cx="60" cy="74" r="7" stroke="#064e3b" stroke-width="1.5"/>
+                                    <text x="60" y="124" fill="#475569" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="600">Patron Device</text>
+                                    
+                                    <path d="M96 80H160" stroke="#064e3b" stroke-width="2" stroke-dasharray="4 4"/>
+                                    <polygon points="168,80 158,75 158,85" fill="#064e3b"/>
+                                    <text x="132" y="70" fill="#10b981" font-size="9" font-family="monospace" font-weight="bold" text-anchor="middle">UPI TOKEN</text>
+                                    
+                                    <rect x="180" y="50" width="70" height="60" rx="12" fill="#064e3b" stroke="#042f22" stroke-width="1.5"/>
+                                    <rect x="195" y="65" width="40" height="30" rx="4" fill="#ffffff" opacity="0.15"/>
+                                    <circle cx="215" cy="80" r="5" fill="#10b981"/>
+                                    <text x="215" y="134" fill="#475569" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="600">Merchant Cell</text>
+                                    
+                                    <path d="M262 80H314" stroke="#10b981" stroke-width="2"/>
+                                    <polygon points="322,80 312,75 312,85" fill="#10b981"/>
+                                    
+                                    <circle cx="346" cy="80" r="16" fill="#10b981" opacity="0.1"/>
+                                    <circle cx="346" cy="80" r="6" fill="#10b981"/>
+                                    <text x="346" y="114" fill="#0f172a" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="bold">Counter Lane</text>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="lg:col-span-7 bg-zinc-50 border border-zinc-200 rounded-3xl p-6 sm:p-8 space-y-6 lg:mt-2">
+                            <div class="flex items-center justify-between border-b border-zinc-200 pb-4">
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-text-main">Simulation Trace: Quick-Pickup Clearances</h3>
+                                <span class="text-[10px] font-mono text-primary bg-accent-light px-2.5 py-0.5 rounded font-bold border border-accent/10">Pipeline Suite 01</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-white border border-zinc-200 p-5 rounded-2xl flex items-start gap-4 shadow-3xs group hover:border-accent/30 transition-all duration-300">
+                                    <span class="font-mono text-xs font-bold text-primary bg-accent-light border border-accent/10 px-2.5 py-1 rounded-lg shrink-0">TC-K01</span>
+                                    <div class="space-y-1.5">
+                                        <h4 class="text-sm font-bold text-text-main tracking-tight">Remote Screen Pre-Ordering</h4>
+                                        <p class="text-xs text-text-muted font-light leading-relaxed">Patron scans table or perimeter QR code vector, loads configuration menu modifier parameters, compiles transaction token, and pushes it directly to the dashboard.</p>
+                                    </div>
+                                </div>
+                                <div class="bg-white border border-zinc-200 p-5 rounded-2xl flex items-start gap-4 shadow-3xs group hover:border-accent/30 transition-all duration-300">
+                                    <span class="font-mono text-xs font-bold text-primary bg-accent-light border border-accent/10 px-2.5 py-1 rounded-lg shrink-0">TC-K02</span>
+                                    <div class="space-y-1.5">
+                                        <h4 class="text-sm font-bold text-text-main tracking-tight">Point-to-Counter Lane Clearance</h4>
+                                        <p class="text-xs text-text-muted font-light leading-relaxed">Kitchen confirms preparation state, updates execution parameters, dispatches secure alert telemetry to the patron viewport, clearing the physical floor bay loop instantly.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start border-t border-zinc-100 pt-24">
+                        <div class="lg:col-span-5 space-y-6 lg:order-last">
+                            <div class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center text-primary border border-accent/10 shadow-3xs">
+                                <span class="material-symbols-outlined font-light text-2xl">published_with_changes</span>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-accent text-xs font-bold uppercase tracking-widest block">Vertical Module 02</span>
+                                <h2 class="text-3xl font-extrabold tracking-tight text-text-main font-glacier">Localized Subscription Networks</h2>
+                            </div>
+                            <p class="text-sm text-text-muted font-light leading-relaxed">
+                                Validating dynamic recurring batch allocations and systemic order routing structures across continuous neighborhood lines.
+                            </p>
+                            
+                            <div class="pt-4">
+                                <svg class="w-full h-auto bg-zinc-50 border border-zinc-200 rounded-2xl p-4 shadow-3xs" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="160" y="45" width="80" height="50" rx="10" fill="#ffffff" stroke="#064e3b" stroke-width="1.5"/>
+                                    <path d="M185 70L200 55L215 70M185 70H215" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <text x="200" y="115" fill="#0f172a" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="bold">Cohort Engine</text>
+                                    
+                                    <circle cx="50" cy="40" r="14" fill="#064e3b"/>
+                                    <circle cx="50" cy="100" r="14" fill="#064e3b"/>
+                                    <text x="50" y="43" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">A</text>
+                                    <text x="50" y="103" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">B</text>
+                                    <text x="50" y="132" fill="#475569" font-size="9" font-family="sans-serif" text-anchor="middle">Subscribers</text>
+                                    
+                                    <path d="M74 45L146 62" stroke="#475569" stroke-width="1" stroke-dasharray="2 2"/>
+                                    <path d="M74 95L146 78" stroke="#475569" stroke-width="1" stroke-dasharray="2 2"/>
+                                    
+                                    <path d="M254 70H316" stroke="#10b981" stroke-width="1.5"/>
+                                    <polygon points="324,70 314,66 314,74" fill="#10b981"/>
+                                    
+                                    <rect x="330" y="45" width="40" height="50" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+                                    <line x1="338" y1="58" x2="362" y2="58" stroke="#064e3b" stroke-width="2"/>
+                                    <line x1="338" y1="70" x2="356" y2="70" stroke="#064e3b" stroke-width="2"/>
+                                    <text x="350" y="115" fill="#475569" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="600">Batch Matrix</text>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="lg:col-span-7 bg-zinc-50 border border-zinc-200 rounded-3xl p-6 sm:p-8 space-y-6 lg:mt-2">
+                            <div class="flex items-center justify-between border-b border-zinc-200 pb-4">
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-text-main">Simulation Trace: Automated Cycle Dispatches</h3>
+                                <span class="text-[10px] font-mono text-primary bg-accent-light px-2.5 py-0.5 rounded font-bold border border-accent/10">Pipeline Suite 02</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-white border border-zinc-200 p-5 rounded-2xl flex items-start gap-4 shadow-3xs group hover:border-accent/30 transition-all duration-300">
+                                    <span class="font-mono text-xs font-bold text-primary bg-accent-light border border-accent/10 px-2.5 py-1 rounded-lg shrink-0">TC-S01</span>
+                                    <div class="space-y-1.5">
+                                        <h4 class="text-sm font-bold text-text-main tracking-tight">Dynamic Batch Allocation</h4>
+                                        <p class="text-xs text-text-muted font-light leading-relaxed">System isolates active neighborhood cohort addresses, groups subscription items inside structured data batches, and prepares localized delivery matrix files.</p>
+                                    </div>
+                                </div>
+                                <div class="bg-white border border-zinc-200 p-5 rounded-2xl flex items-start gap-4 shadow-3xs group hover:border-accent/30 transition-all duration-300">
+                                    <span class="font-mono text-xs font-bold text-primary bg-accent-light border border-accent/10 px-2.5 py-1 rounded-lg shrink-0">TC-S02</span>
+                                    <div class="space-y-1.5">
+                                        <h4 class="text-sm font-bold text-text-main tracking-tight">Automated Settlement Routing</h4>
+                                        <p class="text-xs text-text-muted font-light leading-relaxed">Triggers calendar renewal loops point-to-point via UPI peer token grids, securing immediate merchant liquidity before dispatch runs initialize.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start border-t border-zinc-100 pt-24">
+                        <div class="lg:col-span-5 space-y-6">
+                            <div class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center text-primary border border-accent/10 shadow-3xs">
+                                <span class="material-symbols-outlined font-light text-2xl">bakery_dining</span>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-accent text-xs font-bold uppercase tracking-widest block">Vertical Module 03</span>
+                                <h2 class="text-3xl font-extrabold tracking-tight text-text-main font-glacier">Bakeries & Specialty Confectioneries</h2>
+                            </div>
+                            <p class="text-sm text-text-muted font-light leading-relaxed">
+                                Evaluating item metadata parameter configurations for custom pre-orders requiring material procurement retainers.
+                            </p>
+                            
+                            <div class="pt-4">
+                                <svg class="w-full h-auto bg-zinc-50 border border-zinc-200 rounded-2xl p-4 shadow-3xs" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="30" y="35" width="100" height="80" rx="8" fill="#ffffff" stroke="#475569" stroke-width="1.2"/>
+                                    <rect x="42" y="48" width="76" height="14" rx="3" fill="#064e3b" opacity="0.08"/>
+                                    <circle cx="50" cy="55" r="3" fill="#064e3b"/>
+                                    <line x1="62" y1="55" x2="104" y2="55" stroke="#064e3b" stroke-width="1.5"/>
+                                    
+                                    <rect x="42" y="68" width="76" height="14" rx="3" fill="#064e3b" opacity="0.08"/>
+                                    <circle cx="50" cy="75" r="3" fill="#064e3b"/>
+                                    <line x1="62" y1="75" x2="94" y2="75" stroke="#064e3b" stroke-width="1.5"/>
+                                    
+                                    <rect x="42" y="88" width="76" height="14" rx="3" fill="#10b981" opacity="0.15"/>
+                                    <circle cx="50" cy="95" r="3" fill="#10b981"/>
+                                    <line x1="62" y1="95" x2="108" y2="95" stroke="#10b981" stroke-width="1.5"/>
+                                    
+                                    <text x="80" y="132" fill="#475569" font-size="9" font-family="sans-serif" text-anchor="middle" font-weight="600">Nested Parameters</text>
+                                    
+                                    <path d="M150" y1="75" d="M152 75H220" stroke="#064e3b" stroke-width="2" stroke-dasharray="4 4"/>
+                                    <polygon points="228,75 218,70 218,80" fill="#064e3b"/>
+                                    
+                                    <rect x="246" y="45" width="114" height="60" rx="12" fill="#064e3b" stroke="#042f22" stroke-width="1.5"/>
+                                    <text x="303" y="70" fill="#ffffff" font-size="11" font-family="monospace" font-weight="bold" text-anchor="middle">BANK SETTLED</text>
+                                    <text x="303" y="86" fill="#10b981" font-size="9" font-family="sans-serif" text-anchor="middle" font-weight="bold">100% Upfront Retainer</text>
+                                    <text x="303" y="124" fill="#475569" font-size="10" font-family="sans-serif" text-anchor="middle" font-weight="600">Production Release</text>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="lg:col-span-7 bg-zinc-50 border border-zinc-200 rounded-3xl p-6 sm:p-8 space-y-6 lg:mt-2">
+                            <div class="flex items-center justify-between border-b border-zinc-200 pb-4">
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-text-main">Simulation Trace: Custom Variant Verification</h3>
+                                <span class="text-[10px] font-mono text-primary bg-accent-light px-2.5 py-0.5 rounded font-bold border border-accent/10">Pipeline Suite 03</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-white border border-zinc-200 p-5 rounded-2xl flex items-start gap-4 shadow-3xs group hover:border-accent/30 transition-all duration-300">
+                                    <span class="font-mono text-xs font-bold text-primary bg-accent-light border border-accent/10 px-2.5 py-1 rounded-lg shrink-0">TC-B01</span>
+                                    <div class="space-y-1.5">
+                                        <h4 class="text-sm font-bold text-text-main tracking-tight">Nested Variant Modifier Validation</h4>
+                                        <p class="text-xs text-text-muted font-light leading-relaxed">Client configures precise product parameters (e.g., custom flavor tiers or composition options). System locks specific modifier weights safely into the active invoice field.</p>
+                                    </div>
+                                </div>
+                                <div class="bg-white border border-zinc-200 p-5 rounded-2xl flex items-start gap-4 shadow-3xs group hover:border-accent/30 transition-all duration-300">
+                                    <span class="font-mono text-xs font-bold text-primary bg-accent-light border border-accent/10 px-2.5 py-1 rounded-lg shrink-0">TC-B02</span>
+                                    <div class="space-y-1.5">
+                                        <h4 class="text-sm font-bold text-text-main tracking-tight">Upfront Digital Retainer Settlement</h4>
+                                        <p class="text-xs text-text-muted font-light leading-relaxed">Processes security token routing direct-to-bank to confirm cash paths prior to starting physical bakery production runs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 bg-white border-t border-zinc-200/60">
+            <div class="max-w-5xl mx-auto bg-gradient-to-tr from-zinc-900 to-zinc-800 text-white rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-xl">
+                <div class="absolute -top-32 -left-32 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+                <div class="max-w-2xl mx-auto space-y-6 relative z-10">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-glacier">Run Live Sandbox Verification.</h2>
+                    <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light max-w-xl mx-auto">
+                        Connect with Mitra Direct system infrastructure groups to deploy test scripts or integrate your custom vertical parameters cleanly today.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                        <a href="Contact.html" class="bg-primary hover:bg-emerald-800 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all shadow-md">
+                            Submit Test Execution Logs
+                        </a>
+                        <a href="mailto:support@mitradirect.com" class="bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all">
+                            Review System Specs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white text-text-muted border-t border-zinc-200/60">
+        <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-5 space-y-4">
+                <div class="flex items-center gap-2.5 text-text-main">
+                    <div class="w-7 h-7 rounded-md bg-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-base font-light">layers</span>
+                    </div>
+                    <span class="text-base font-bold tracking-tight">Mitra<span class="text-accent font-medium">Direct</span></span>
+                </div>
+                <p class="text-xs leading-relaxed text-text-muted font-light max-w-sm">
+                    A streamlined local business digital framework. Engineered to build absolute transactional independence, entirely free of market platform friction.
+                </p>
+            </div>
+            
+            <div class="md:col-span-2 space-y-4">
+                <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Ecosystem</h5>
+                <ul class="space-y-2.5 text-xs font-light">
+                    <li><a class="hover:text-accent transition-colors" href="Vendors.html">Vendor Terminal</a></li>
+                    <li><a class="hover:text-accent transition-colors" href="Customers.html">Customer Portal</a></li>
+                    <li><a class="hover:text-accent transition-colors" href="About.html">Operational Matrix</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3 space-y-4">
+                <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Inquiries</h5>
+                <ul class="space-y-2.5 text-xs font-light">
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">mail</span> support@mitradirect.com</li>
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">phone</span> +91 98765 43210</li>
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">location_on</span> Bangalore, India</li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-2 space-y-4">
+                <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Channels</h5>
+                <div class="flex gap-4 text-zinc-400">
+                    <a class="hover:text-accent transition-colors" href="#"><span class="material-symbols-outlined text-lg font-light block">language</span></a>
+                    <a class="hover:text-accent transition-colors" href="#"><span class="material-symbols-outlined text-lg font-light block">campaign</span></a>
+                    <a class="hover:text-accent transition-colors" href="#"><span class="material-symbols-outlined text-lg font-light block">hub</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 py-8 border-t border-zinc-100 text-left text-[11px] font-light text-text-muted/60 flex flex-col sm:flex-row justify-between gap-4">
+            <div>&copy; 2026 Mitra Direct. Open infrastructure guidelines apply.</div>
+            <div class="space-x-4"><a href="#" class="hover:text-text-main transition-colors">Terms</a><a href="#" class="hover:text-text-main transition-colors">Privacy</a></div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+            if (navMenu.classList.contains('hidden')) {
+                menuIcon.textContent = 'menu';
+            } else {
+                menuIcon.textContent = 'close';
+            }
+        });
+    </script>
+</body>
+</html>

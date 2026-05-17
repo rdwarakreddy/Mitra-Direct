@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Mitra Direct | Connect Instantly - System Liaison Node</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#064e3b",    // Deep Emerald Green
+              "accent": "#10b981",     // Vibrant Mint/Emerald Accent
+              "accent-light": "#ecfdf5", // Soft Green Tint Canvas
+              "surface-bg": "#ffffff", // Pure Minimal White
+              "card-bg": "#fafafa",    // Ultra-light clean gray surface
+              "text-main": "#0f172a",
+              "text-muted": "#475569",
+              "danger": "#ef4444"
+            },
+            fontFamily: {
+              sans: ["'Plus Jakarta Sans'", "sans-serif"]
+            },
+            animation: {
+              'infinite-scroll': 'infinite-scroll 35s linear infinite',
+            },
+            keyframes: {
+              'infinite-scroll': {
+                from: { transform: 'translateX(0)' },
+                to: { transform: 'translateX(-50%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-glacier { font-family: 'Playfair Display', serif; font-weight: 700; tracking: -0.02em; }
+        .glass-nav {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="bg-surface-bg text-text-main antialiased selection:bg-accent/10 selection:text-primary">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-zinc-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center relative">
+            <a href="Home.html" class="flex items-center gap-2.5 group cursor-pointer">
+                <div class="w-7 h-7 rounded-md bg-primary flex items-center justify-center transition-transform group-hover:scale-105">
+                    <span class="material-symbols-outlined text-white text-base font-light">layers</span>
+                </div>
+                <span class="text-base font-bold tracking-tight text-text-main">Mitra<span class="text-accent font-medium">Direct</span></span>
+            </a>
+            
+            <div id="nav-menu" class="hidden absolute top-20 left-0 w-full bg-white border-b border-zinc-200 p-6 flex flex-col space-y-4 font-medium text-[13px] tracking-tight shadow-xl z-50 lg:shadow-none lg:p-0 lg:border-none lg:bg-transparent lg:static lg:w-auto lg:flex lg:flex-row lg:space-y-0 lg:space-x-10">
+                <a class="text-text-muted hover:text-primary transition-colors" href="Home.html">Home</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="Vendors.html">Vendors</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="Customers.html">Customers</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="Testcases.html">Test Cases</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="About.html">About Us</a>
+                <a class="text-primary font-semibold transition-colors" href="Contact.html">Contact Us</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="Contact.html" class="bg-primary hover:bg-accent text-white text-xs font-semibold tracking-wide px-5 py-3 rounded-lg shadow-sm transition-all duration-200">
+                    Get Started
+                </a>
+                
+                <button id="menu-toggle" class="lg:hidden p-2 text-text-main hover:text-primary transition-colors focus:outline-none" aria-label="Toggle Menu">
+                    <span id="menu-icon" class="material-symbols-outlined text-2xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+
+        <section class="min-h-[85vh] bg-white relative overflow-hidden flex items-center py-16">
+            <div class="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:32px_32px] opacity-30"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-10">
+                        <div class="space-y-5">
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-light border border-accent/10 text-primary text-[11px] font-bold uppercase tracking-wider font-sans shadow-2xs">
+                                <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span> Zero Friction Pipeline
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-text-main leading-[1.08] font-sans">
+                                Instantaneous <br />
+                                <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-glacier italic font-normal block mt-1">Direct Routing.</span>
+                            </h1>
+                            <p class="text-sm sm:text-base text-text-muted font-light max-w-md leading-relaxed font-sans">
+                                We eliminated intermediate form collection wrappers entirely. Choose your preferred digital protocol below to synchronize with our network infrastructure specialists securely.
+                            </p>
+                        </div>
+
+                        <div class="pt-2 hidden sm:block">
+                            <svg class="w-full max-w-sm h-auto bg-zinc-50 border border-zinc-200 rounded-3xl p-6 shadow-3xs" viewBox="0 0 340 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="170" cy="90" r="70" stroke="#f1f5f9" stroke-width="1.5" stroke-dasharray="4 4"/>
+                                <circle cx="170" cy="90" r="40" stroke="#f1f5f9" stroke-width="1"/>
+                                
+                                <rect x="145" y="65" width="50" height="50" rx="12" fill="#064e3b"/>
+                                <path d="M164 85L170 91L180 81" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <text x="170" y="132" fill="#475569" font-size="9" font-family="sans-serif" font-weight="700" text-anchor="middle">Central Ledger</text>
+                                
+                                <circle cx="50" cy="45" r="18" fill="#ffffff" stroke="#064e3b" stroke-width="1.5"/>
+                                <circle cx="50" cy="45" r="4" fill="#064e3b"/>
+                                <path d="M50 45L145 90" stroke="#475569" stroke-width="1" stroke-opacity="0.25"/>
+                                <text x="50" y="76" fill="#64748b" font-size="8" font-family="monospace" text-anchor="middle">SIP</text>
+
+                                <circle cx="290" cy="45" r="18" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+                                <circle cx="290" cy="45" r="4" fill="#10b981"/>
+                                <path d="M290 45L195 90" stroke="#10b981" stroke-width="1" stroke-opacity="0.3"/>
+                                <text x="290" y="76" fill="#64748b" font-size="8" font-family="monospace" text-anchor="middle">API</text>
+
+                                <circle cx="170" cy="150" r="14" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2"/>
+                                <path d="M170 150L170 115" stroke="#475569" stroke-width="1" stroke-dasharray="2 2"/>
+                                <text x="200" y="153" fill="#64748b" font-size="8" font-family="monospace">SMTP</text>
+                            </svg>
+                        </div>
+
+                        <div class="pt-4 border-t border-zinc-100 text-left">
+                            <span class="text-[10px] uppercase font-bold text-zinc-400 tracking-wider block font-sans mb-1">System Base Station</span>
+                            <div class="text-xs sm:text-sm text-text-main font-medium flex items-center gap-2 font-sans">
+                                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Bangalore, India — Operations Grid Alpha
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 w-full max-w-2xl mx-auto lg:ml-auto space-y-6">
+                        
+                        <div class="bg-white border border-zinc-200/80 rounded-2xl p-6 sm:p-8 shadow-3xs flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:border-zinc-300 transition-all group relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-accent-light border border-accent/10 flex items-center justify-center text-primary shrink-0 transition-transform group-hover:scale-105 shadow-2xs">
+                                    <span class="material-symbols-outlined font-light text-2xl">call</span>
+                                </div>
+                                <div class="space-y-1 font-sans">
+                                    <h3 class="font-bold text-base text-text-main tracking-tight font-glacier">Voice Gateway Protocol</h3>
+                                    <p class="text-xs text-text-muted font-light leading-relaxed max-w-sm">Connect with local structural framework specialist groups via open voice frequency circuits immediately.</p>
+                                    <span class="inline-block text-[11px] font-mono text-primary font-bold bg-zinc-50 px-2 py-0.5 rounded border border-zinc-200/60 mt-1">+91 98765 43210</span>
+                                </div>
+                            </div>
+                            <a href="tel:+919876543210" class="font-sans bg-primary hover:bg-emerald-800 text-white font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all shadow-2xs shrink-0 flex items-center justify-center gap-2">
+                                Initiate Call <span class="material-symbols-outlined font-light text-base">call_made</span>
+                            </a>
+                        </div>
+
+                        <div class="bg-white border border-zinc-200/80 rounded-2xl p-6 sm:p-8 shadow-3xs flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:border-zinc-300 transition-all group relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-accent"></div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-accent-light border border-accent/10 flex items-center justify-center text-accent shrink-0 transition-transform group-hover:scale-105 shadow-2xs">
+                                    <span class="material-symbols-outlined font-light text-2xl">chat</span>
+                                </div>
+                                <div class="space-y-1 font-sans">
+                                    <h3 class="font-bold text-base text-text-main tracking-tight font-glacier">WhatsApp Realtime Link</h3>
+                                    <p class="text-xs text-text-muted font-light leading-relaxed max-w-sm">Transmit diagnostic text packets, layout queries, or registry metadata logs directly onto live support terminals.</p>
+                                    <span class="inline-block text-[11px] font-mono text-accent font-bold bg-accent-light px-2 py-0.5 rounded border border-accent/10 mt-1">Instant Delivery</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="font-sans bg-accent hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all shadow-2xs shrink-0 flex items-center justify-center gap-2">
+                                Launch Chat <span class="material-symbols-outlined font-light text-base">forum</span>
+                            </a>
+                        </div>
+
+                        <div class="bg-white border border-zinc-200/80 rounded-2xl p-6 sm:p-8 shadow-3xs flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:border-zinc-300 transition-all group relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-slate-400"></div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-text-muted shrink-0 transition-transform group-hover:scale-105 shadow-2xs">
+                                    <span class="material-symbols-outlined font-light text-2xl">mail</span>
+                                </div>
+                                <div class="space-y-1 font-sans">
+                                    <h3 class="font-bold text-base text-text-main tracking-tight font-glacier">Secure SMTP Mail Endpoint</h3>
+                                    <p class="text-xs text-text-muted font-light leading-relaxed max-w-sm">Dispatch formal architecture requests, partnership documentation sets, or systemic ledger records securely.</p>
+                                    <span class="inline-block text-[11px] font-mono text-text-muted font-medium bg-zinc-50 px-2 py-0.5 rounded border border-zinc-200/60 mt-1">support@mitradirect.com</span>
+                                </div>
+                            </div>
+                            <a href="mailto:support@mitradirect.com" class="font-sans bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all shadow-2xs shrink-0 flex items-center justify-center gap-2">
+                                Route Email <span class="material-symbols-outlined font-light text-base">alternate_email</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white text-text-muted border-t border-zinc-200/60 font-sans">
+        <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-5 space-y-4">
+                <div class="flex items-center gap-2.5 text-text-main">
+                    <div class="w-7 h-7 rounded-md bg-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-base font-light">layers</span>
+                    </div>
+                    <span class="text-base font-bold tracking-tight">Mitra<span class="text-accent font-medium">Direct</span></span>
+                </div>
+                <p class="text-xs leading-relaxed text-text-muted font-light max-w-sm">
+                    A streamlined local business digital framework. Engineered to build absolute transactional independence, entirely free of market platform friction.
+                </p>
+            </div>
+            
+            <div class="md:col-span-2 space-y-4">
+                <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Ecosystem</h5>
+                <ul class="space-y-2.5 text-xs font-light">
+                    <li><a class="hover:text-accent transition-colors" href="Vendors.html">Vendor Terminal</a></li>
+                    <li><a class="hover:text-accent transition-colors" href="Customers.html">Customer Portal</a></li>
+                    <li><a class="hover:text-accent transition-colors" href="About.html">Operational Matrix</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3 space-y-4">
+                <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Inquiries</h5>
+                <ul class="space-y-2.5 text-xs font-light">
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">mail</span> support@mitradirect.com</li>
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">phone</span> +91 98765 43210</li>
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">location_on</span> Bangalore, India</li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-2 space-y-4">
+                <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Channels</h5>
+                <div class="flex gap-4 text-zinc-400">
+                    <a class="hover:text-accent transition-colors" href="#"><span class="material-symbols-outlined text-lg font-light block">language</span></a>
+                    <a class="hover:text-accent transition-colors" href="#"><span class="material-symbols-outlined text-lg font-light block">campaign</span></a>
+                    <a class="hover:text-accent transition-colors" href="#"><span class="material-symbols-outlined text-lg font-light block">hub</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 py-8 border-t border-zinc-100 text-left text-[11px] font-light text-text-muted/60 flex flex-col sm:flex-row justify-between gap-4">
+            <div>&copy; 2026 Mitra Direct. Open infrastructure guidelines apply.</div>
+            <div class="space-x-4"><a href="#" class="hover:text-text-main transition-colors">Terms</a><a href="#" class="hover:text-text-main transition-colors">Privacy</a></div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+            if (navMenu.classList.contains('hidden')) {
+                menuIcon.textContent = 'menu';
+            } else {
+                menuIcon.textContent = 'close';
+            }
+        });
+    </script>
+</body>
+</html>
