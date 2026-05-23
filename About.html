@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Mitra Direct | About Us - Infrastructure for Local Sovereignty</title>
+    <title>Mitra Direct | About Us</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script id="tailwind-config">
       tailwind.config = {
@@ -32,37 +32,36 @@
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .glass-nav {
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
         }
     </style>
 </head>
 <body class="bg-surface-bg text-text-main antialiased selection:bg-accent/10 selection:text-primary">
 
-    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-zinc-100 transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-zinc-200/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center relative">
             <a href="index.html" class="flex items-center gap-2.5 group cursor-pointer">
-                <div class="w-7 h-7 rounded-md bg-primary flex items-center justify-center transition-transform group-hover:scale-105">
-                    <span class="material-symbols-outlined text-white text-base font-light">layers</span>
+                <div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center shadow-md shadow-primary/20 transition-transform group-hover:scale-105">
+                    <span class="material-symbols-outlined text-white text-lg font-light">layers</span>
                 </div>
-                <span class="text-base font-bold tracking-tight text-text-main">Mitra<span class="text-accent font-medium">Direct</span></span>
+                <span class="text-xl font-bold tracking-tight text-text-main">Mitra<span class="text-accent font-medium">Direct</span></span>
             </a>
             
-            <div id="nav-menu" class="hidden absolute top-20 left-0 w-full bg-white border-b border-zinc-200 p-6 flex flex-col space-y-4 font-medium text-[13px] tracking-tight shadow-xl z-50 lg:shadow-none lg:p-0 lg:border-none lg:bg-transparent lg:static lg:w-auto lg:flex lg:flex-row lg:space-y-0 lg:space-x-10">
+            <div id="nav-menu" class="hidden absolute top-20 left-0 w-full bg-white border-b border-zinc-200 p-6 flex flex-col space-y-4 font-bold text-[13px] tracking-tight shadow-xl z-50 lg:shadow-none lg:p-0 lg:border-none lg:bg-transparent lg:static lg:w-auto lg:flex lg:flex-row lg:space-y-0 lg:space-x-10">
                 <a class="text-text-muted hover:text-primary transition-colors" href="index.html">Home</a>
-                <a class="text-text-muted hover:text-primary transition-colors" href="Vendors.html">Vendors</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="vendors.html">Vendors</a>
                 <a class="text-text-muted hover:text-primary transition-colors" href="Customers.html">Customers</a>
                 <a class="text-text-muted hover:text-primary transition-colors" href="Testcases.html">Test Cases</a>
-                <a class="text-primary font-semibold transition-colors" href="About.html">About Us</a>
+                <a class="text-primary font-bold transition-colors" href="About.html">About Us</a>
                 <a class="text-text-muted hover:text-primary transition-colors" href="Contact.html">Contact Us</a>
             </div>
 
             <div class="flex items-center gap-4">
-                <a href="Contact.html" class="bg-primary hover:bg-accent text-white text-xs font-semibold tracking-wide px-5 py-3 rounded-lg shadow-sm transition-all duration-200">
+                <a href="Contact.html" class="bg-primary hover:bg-emerald-800 text-white text-xs font-bold tracking-wider uppercase px-5 py-3 rounded-lg shadow-sm transition-all duration-200">
                     Get Started
                 </a>
-                
                 <button id="menu-toggle" class="lg:hidden p-2 text-text-main hover:text-primary transition-colors focus:outline-none" aria-label="Toggle Menu">
                     <span id="menu-icon" class="material-symbols-outlined text-2xl">menu</span>
                 </button>
@@ -72,213 +71,101 @@
 
     <main class="pt-20">
 
-        <section class="relative bg-gradient-to-b from-zinc-50 to-white py-20 lg:py-32 overflow-hidden">
-            <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] opacity-60"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <div class="lg:col-span-7 space-y-6 text-left">
-                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-zinc-200 text-primary text-[11px] font-bold uppercase tracking-wider shadow-2xs">
-                            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span> Infrastructure Sovereignty
-                        </span>
-                        <h1 class="text-4xl sm:text-6xl font-extrabold text-text-main tracking-tight leading-[1.05]">
-                            Why Mitra Direct <br />
-                            <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic font-serif font-normal">Was Created Natively.</span>
-                        </h1>
-                        <p class="text-base sm:text-lg text-text-muted font-light max-w-xl leading-relaxed">
-                            We observed corporate aggregator platforms extract up to 30% out of local neighborhood transactions while obscuring verified buyer records. We built Mitra Direct to function as a pure, commission-free utility layer that hands operational control completely back to local merchants.
-                        </p>
+        <section class="relative min-h-[40vh] flex items-center bg-zinc-50 py-20 overflow-hidden border-b border-zinc-200/50">
+            <div class="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+            <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+                <div class="max-w-3xl space-y-5">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-light border border-accent/10 text-primary text-[11px] font-bold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-accent"></span> Our Mission
                     </div>
-
-                    <div class="lg:col-span-5 grid grid-cols-2 gap-4">
-                        <div class="p-6 bg-white border border-zinc-200 rounded-2xl shadow-2xs space-y-2">
-                            <span class="material-symbols-outlined text-primary text-2xl font-light">Econ</span>
-                            <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">Empowering Local Economy</h3>
-                            <p class="text-[11px] text-text-muted font-light leading-relaxed">Re-anchoring liquidity directly back inside regional boundaries cleanly.</p>
-                        </div>
-                        <div class="p-6 bg-white border border-zinc-200 rounded-2xl shadow-2xs space-y-2 transform translate-y-6">
-                            <span class="material-symbols-outlined text-accent text-2xl font-light">cell_tower</span>
-                            <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">Digital Transformation</h3>
-                            <p class="text-[11px] text-text-muted font-light leading-relaxed">Equipping small business operators with professional data utility rails.</p>
-                        </div>
-                    </div>
-
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-text-main tracking-tight leading-[1.1]">
+                        We Build Better Tools For <br />
+                        <span class="text-primary block mt-1">Direct Local Business.</span>
+                    </h1>
+                    <p class="text-sm sm:text-base text-text-muted font-light max-w-xl leading-relaxed">
+                        Mitra Direct is a free software system. We help local stores and buyers connect directly without third-party marketplace fees or platform rules.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section class="py-24 bg-white border-t border-zinc-100">
+        <section class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                    
-                    <div class="space-y-4 border-l-2 border-primary pl-6 sm:pl-8">
-                        <span class="text-primary font-bold text-xs tracking-widest uppercase block">The Objective</span>
-                        <h2 class="text-2xl sm:text-3xl font-bold text-text-main tracking-tight">Our Core Mission</h2>
+                <div class="max-w-xl mb-16">
+                    <span class="text-accent font-bold text-xs tracking-widest uppercase block mb-2">Core Framework</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-text-main">How The Platform Works</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 border border-zinc-200 rounded-2xl bg-zinc-50/50 space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-xl">payments</span>
+                        </div>
+                        <h3 class="text-base font-bold text-text-main">Zero Commission Fees</h3>
                         <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                            To build clean, absolute technical infrastructure interfaces that eliminate platform middlemen completely. We scale transactional efficiency directly for micro-bakeries, boutique kitchens, regional cooperatives, and neighborhood players without extracting commission structures.
+                            We do not take a cut from any store orders. Every bit of profit goes directly into your bank account.
                         </p>
                     </div>
 
-                    <div class="space-y-4 border-l-2 border-accent pl-6 sm:pl-8">
-                        <span class="text-accent font-bold text-xs tracking-widest uppercase block">The Future State</span>
-                        <h2 class="text-2xl sm:text-3xl font-bold text-text-main tracking-tight">Our System Vision</h2>
+                    <div class="p-8 border border-zinc-200 rounded-2xl bg-zinc-50/50 space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-xl">database</span>
+                        </div>
+                        <h3 class="text-base font-bold text-text-main">Direct Data Control</h3>
                         <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                            To manifest an open commercial landscape built entirely on sovereign point-to-point data pipelines. We look forward to a global neighborhood network model where organic community interaction blocks settle instantly, direct-to-bank, keeping 100% of generated capital intact.
+                            Keep track of your client histories safely. You manage all user records and database logs yourself.
                         </p>
                     </div>
 
+                    <div class="p-8 border border-zinc-200 rounded-2xl bg-zinc-50/50 space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-xl">storefront</span>
+                        </div>
+                        <h3 class="text-base font-bold text-text-main">Clean Digital Stores</h3>
+                        <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
+                            No external advertisements show up on your pages. Your private shop layout stays completely clean.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-24 bg-zinc-50 border-t border-zinc-100">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-6">
-                    <div class="space-y-3 max-w-xl">
-                        <span class="text-primary font-bold text-xs tracking-widest uppercase block">Foundational Alignment</span>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-text-main tracking-tight">System Core Values</h2>
-                    </div>
-                    <p class="text-sm text-text-muted font-light max-w-md leading-relaxed">
-                        Our code base handles local transactional velocity parameters securely by adhering directly onto absolute architecture pillars.
+        <section class="py-20 bg-zinc-50 border-t border-zinc-200/60">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-5">
+                    <span class="text-danger font-bold text-xs tracking-wider uppercase block">The Problem We Solve</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight">Avoid high marketplace costs.</h2>
+                    <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
+                        Standard delivery apps take large percentage cuts from every sale. They often hide local store listings behind paid advertisements, which makes organic business growth very difficult.
+                    </p>
+                    <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
+                        Mitra Direct serves as a simple toolkit alternative. We connect local creators directly with nearby buyers so neighbor networks can run free of extra delivery fees.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    
-                    <div class="bg-white border border-zinc-200 p-6 rounded-2xl space-y-4 shadow-2xs">
-                        <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-primary"><span class="material-symbols-outlined font-light text-xl">diversity_3</span></div>
-                        <h3 class="font-bold text-base text-text-main">Community First</h3>
-                        <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Every engineering decision balances direct merchant liquidity optimization metrics first before any alternative parameter.</p>
-                    </div>
+                <div class="lg:col-span-6">
+                    <div class="bg-white border border-zinc-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-3xs">
+                        <h4 class="text-xs font-bold text-text-main uppercase tracking-wider border-b border-zinc-100 pb-3">Ecosystem Comparisons</h4>
+                        
+                        <div class="flex items-start gap-4 p-4 bg-zinc-50 rounded-xl border border-zinc-200">
+                            <span class="material-symbols-outlined text-emerald-600 font-bold text-lg">check_circle</span>
+                            <div>
+                                <h5 class="text-xs font-bold text-text-main uppercase">Mitra Direct Model</h5>
+                                <p class="text-xs text-text-muted font-light mt-0.5">Direct client routes, zero middleman cuts, full system transparency.</p>
+                            </div>
+                        </div>
 
-                    <div class="bg-white border border-zinc-200 p-6 rounded-2xl space-y-4 shadow-2xs">
-                        <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-primary"><span class="material-symbols-outlined font-light text-xl">gavel</span></div>
-                        <h3 class="font-bold text-base text-text-main">Data Sovereignty</h3>
-                        <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Vendors retain raw, unrestricted visibility records over consumer customer metrics without gatekeeper filtering layers.</p>
-                    </div>
-
-                    <div class="bg-white border border-zinc-200 p-6 rounded-2xl space-y-4 shadow-2xs">
-                        <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-primary"><span class="material-symbols-outlined font-light text-xl">percent</span></div>
-                        <h3 class="font-bold text-base text-text-main">Absolute 0% Fees</h3>
-                        <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Zero transactional slice, listing extraction parameters, or promotional ad billing loops natively built inside the matrix.</p>
-                    </div>
-
-                    <div class="bg-white border border-zinc-200 p-6 rounded-2xl space-y-4 shadow-2xs">
-                        <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-primary"><span class="material-symbols-outlined font-light text-xl">terminal</span></div>
-                        <h3 class="font-bold text-base text-text-main">Open Architecture</h3>
-                        <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Clean, sparse browser rendering frameworks purposefully engineered to compile smoothly across multi-channel client layers.</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 bg-white border-t border-zinc-100">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-xl mx-auto mb-20 space-y-3">
-                    <span class="text-accent font-bold text-xs tracking-widest uppercase block">Evolutionary Tracking</span>
-                    <h2 class="text-3xl font-bold text-text-main tracking-tight">Our System Timeline</h2>
-                </div>
-
-                <div class="relative border-l border-zinc-200 ml-4 md:ml-32 space-y-12">
-                    
-                    <div class="relative pl-8 sm:pl-12 group">
-                        <div class="absolute -left-4 top-0 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-md ring-4 ring-white">24</div>
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6">
-                            <div class="md:col-span-3 font-bold text-sm text-text-main pt-0.5">Q1 2024 - Core Genesis</div>
-                            <div class="md:col-span-9 text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Assembled original sandbox layout environments to challenge predatory marketplace escrow structures, initiating direct peer bank transaction routes.
+                        <div class="flex items-start gap-4 p-4 bg-zinc-50 rounded-xl border border-zinc-200 opacity-60">
+                            <span class="material-symbols-outlined text-red-500 font-bold text-lg">cancel</span>
+                            <div>
+                                <h5 class="text-xs font-bold text-text-main uppercase">Standard Market Apps</h5>
+                                <p class="text-xs text-text-muted font-light mt-0.5">High entry fee costs, hidden listings, restricted client data access.</p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="relative pl-8 sm:pl-12 group">
-                        <div class="absolute -left-4 top-0 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-md ring-4 ring-white">25</div>
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6">
-                            <div class="md:col-span-3 font-bold text-sm text-text-main pt-0.5">Q3 2025 - Alpha Vector</div>
-                            <div class="md:col-span-9 text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Launched initial localized counter pickup pilot tracks in core Bangalore test cells, verifying 100% net margin preservation parameters for early food creators.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-8 sm:pl-12 group">
-                        <div class="absolute -left-4 top-0 w-8 h-8 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center shadow-md ring-4 ring-white animate-pulse">26</div>
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6">
-                            <div class="md:col-span-3 font-bold text-sm text-accent font-bold pt-0.5">2026 - Scale Expansion</div>
-                            <div class="md:col-span-9 text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Provisioning multi-channel administrative terminals and deep checkout modifier matrices across broad regional verticals natively.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 bg-zinc-50 border-t border-zinc-100">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-xl mx-auto mb-20 space-y-2">
-                    <span class="text-primary font-bold text-xs tracking-widest uppercase block">Network Guardians</span>
-                    <h2 class="text-3xl font-bold text-text-main tracking-tight">Our Core Engineering Team</h2>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <div class="bg-white border border-zinc-200 rounded-2xl overflow-hidden shadow-2xs group hover:border-zinc-300 transition-all">
-                        <div class="aspect-video w-full bg-zinc-100 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Infrastructure Architecture Lead Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-base text-text-main">Meera Iyer</h4>
-                            <p class="text-[10px] uppercase tracking-wider text-accent font-bold mt-0.5">Principal Infrastructure Architect</p>
-                            <p class="text-xs text-text-muted font-light leading-relaxed mt-3">Specializes in secure peer bank-endpoint configuration routing vectors and non-escrow system loops.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white border border-zinc-200 rounded-2xl overflow-hidden shadow-2xs group hover:border-zinc-300 transition-all">
-                        <div class="aspect-video w-full bg-zinc-100 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Core Platform Systems Developer Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-base text-text-main">Aditya Varma</h4>
-                            <p class="text-[10px] uppercase tracking-wider text-accent font-bold mt-0.5">Core Systems Developer</p>
-                            <p class="text-xs text-text-muted font-light leading-relaxed mt-3">Coordinates product metadata optimization grids and responsive viewport application interface frameworks.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white border border-zinc-200 rounded-2xl overflow-hidden shadow-2xs group hover:border-zinc-300 transition-all sm:col-span-2 lg:col-span-1">
-                        <div class="aspect-video w-full bg-zinc-100 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Ecosystem Alignment Director Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-base text-text-main">Rohan Deshmukh</h4>
-                            <p class="text-[10px] uppercase tracking-wider text-accent font-bold mt-0.5">Ecosystem Alignment Director</p>
-                            <p class="text-xs text-text-muted font-light leading-relaxed mt-3">Manages merchant registry onboarding pipelines and localized community coordinates validation passes.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 px-6 bg-white border-t border-zinc-100">
-            <div class="max-w-5xl mx-auto bg-gradient-to-tr from-zinc-900 to-zinc-800 text-white rounded-3xl p-10 md:p-16 text-center relative overflow-hidden shadow-xl">
-                <div class="absolute -top-32 -left-32 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
-                <div class="max-w-2xl mx-auto space-y-6 relative z-10">
-                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Support Open Local Infrastructure.</h2>
-                    <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light max-w-xl mx-auto">
-                        Ready to integrate your independent business operation coordinates or trace automated layout performance paths cleanly?
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                        <a href="Contact.html" class="bg-primary hover:bg-emerald-800 text-white font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all shadow-md">
-                            Connect With Our Specialists
-                        </a>
-                        <a href="mailto:support@mitradirect.com" class="bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all">
-                            Review System Ledger
-                        </a>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -301,7 +188,7 @@
             <div class="md:col-span-2 space-y-4">
                 <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Ecosystem</h5>
                 <ul class="space-y-2.5 text-xs font-light">
-                    <li><a class="hover:text-accent transition-colors" href="Vendors.html">Vendor Terminal</a></li>
+                    <li><a class="hover:text-accent transition-colors" href="vendors.html">Vendor Terminal</a></li>
                     <li><a class="hover:text-accent transition-colors" href="Customers.html">Customer Portal</a></li>
                     <li><a class="hover:text-accent transition-colors" href="About.html">Operational Matrix</a></li>
                 </ul>
@@ -312,7 +199,7 @@
                 <ul class="space-y-2.5 text-xs font-light">
                     <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">mail</span> support@mitradirect.com</li>
                     <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">phone</span> +91 98765 43210</li>
-                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">location_on</span> Bangalore, India</li>
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">location_on</span> Hyderabad, India</li>
                 </ul>
             </div>
 
@@ -347,6 +234,5 @@
             }
         });
     </script>
-
 </body>
 </html>

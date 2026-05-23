@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Mitra Direct | Vendor Hub - Direct Control, Maximized Margins</title>
+    <title>MithraDirect | Vendor Hub - Grow Your Business Directly</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -14,13 +14,15 @@
           extend: {
             colors: {
               "primary": "#064e3b",    // Deep Emerald Green
-              "accent": "#10b981",     // Vibrant Mint/Emerald Accent
-              "accent-light": "#ecfdf5", // Soft Green Tint Canvas
-              "surface-bg": "#ffffff", // Pure Minimal White
-              "card-bg": "#fafafa",    // Ultra-light clean gray surface
+              "accent": "#10b981",     // Vibrant Mint Accent
+              "accent-light": "#ecfdf5", // Soft Green Tint
+              "surface-bg": "#ffffff", // Pure White
+              "card-bg": "#fafafa",    // Light Gray Surface
               "text-main": "#0f172a",
               "text-muted": "#475569",
-              "danger": "#ef4444"
+              "danger": "#ef4444",
+              "warning-light": "#fffbeb",
+              "warning-text": "#b45309"
             },
             fontFamily: {
               sans: ["'Plus Jakarta Sans'", "sans-serif"]
@@ -42,15 +44,15 @@
 
     <nav class="fixed top-0 w-full z-50 glass-nav border-b border-zinc-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center relative">
-            <a href="index.html" class="flex items-center gap-2.5 group cursor-pointer">
-                <div class="w-7 h-7 rounded-md bg-primary flex items-center justify-center transition-transform group-hover:scale-105">
-                    <span class="material-symbols-outlined text-white text-base font-light">layers</span>
+            <a href="Home.html" class="flex items-center gap-2.5 group cursor-pointer">
+                <div class="w-8 h-8 rounded-md bg-primary flex items-center justify-center transition-transform group-hover:scale-105">
+                    <span class="material-symbols-outlined text-white text-lg font-light">storefront</span>
                 </div>
-                <span class="text-base font-bold tracking-tight text-text-main">Mitra<span class="text-accent font-medium">Direct</span></span>
+                <span class="text-lg font-bold tracking-tight text-text-main">Mithra<span class="text-accent font-medium">Direct</span></span>
             </a>
             
             <div id="nav-menu" class="hidden absolute top-20 left-0 w-full bg-white border-b border-zinc-200 p-6 flex flex-col space-y-4 font-medium text-[13px] tracking-tight shadow-xl z-50 lg:shadow-none lg:p-0 lg:border-none lg:bg-transparent lg:static lg:w-auto lg:flex lg:flex-row lg:space-y-0 lg:space-x-10">
-                <a class="text-text-muted hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="text-text-muted hover:text-primary transition-colors" href="Home.html">Home</a>
                 <a class="text-primary font-semibold transition-colors" href="Vendors.html">Vendors</a>
                 <a class="text-text-muted hover:text-primary transition-colors" href="Customers.html">Customers</a>
                 <a class="text-text-muted hover:text-primary transition-colors" href="Testcases.html">Test Cases</a>
@@ -60,9 +62,8 @@
 
             <div class="flex items-center gap-4">
                 <a href="Contact.html" class="bg-primary hover:bg-accent text-white text-xs font-semibold tracking-wide px-5 py-3 rounded-lg shadow-sm transition-all duration-200">
-                    Get Started
+                    Get Started Today
                 </a>
-                
                 <button id="menu-toggle" class="lg:hidden p-2 text-text-main hover:text-primary transition-colors focus:outline-none" aria-label="Toggle Menu">
                     <span id="menu-icon" class="material-symbols-outlined text-2xl">menu</span>
                 </button>
@@ -72,348 +73,305 @@
 
     <main class="pt-20">
 
-        <section class="relative bg-gradient-to-b from-zinc-50 to-white py-20 lg:py-32 overflow-hidden">
-            <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] opacity-60"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <div class="lg:col-span-6 space-y-8 text-left">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-zinc-200 text-primary text-[11px] font-bold uppercase tracking-wider shadow-2xs">
-                            <span class="w-2 h-2 rounded-full bg-accent"></span> Architectural Framework
+        <section class="py-16 lg:py-24 relative overflow-hidden bg-gradient-to-b from-accent-light/30 to-white">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-light border border-accent/20 text-primary text-[11px] font-semibold uppercase tracking-wider">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span> For Local Business Owners
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-main tracking-tight leading-[1.1]">
+                        Keep All Your Profits. <br />
+                        <span class="text-primary">Connect with Customers.</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-text-muted max-w-2xl leading-relaxed font-light">
+                        Big delivery apps charge huge commissions, hide your customer details from you, and favor their own preferred brands. MithraDirect changes that. We give you your own online store so you can sell directly to your buyers.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#onboarding" class="bg-primary hover:bg-emerald-800 text-white text-xs font-semibold uppercase tracking-wider px-7 py-4 rounded-lg transition-all shadow-sm">
+                            Start Store Setup
+                        </a>
+                        <a href="#console" class="bg-white hover:bg-zinc-50 text-text-main border border-zinc-200 text-xs font-semibold uppercase tracking-wider px-7 py-4 rounded-lg transition-all">
+                            View Live Demo Dashboard
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="bg-white rounded-2xl p-6 border border-zinc-200 shadow-xl space-y-6">
+                        <div class="flex items-center justify-between border-b border-zinc-100 pb-3">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-sm">payments</span> Where Does Your Money Go?
+                            </span>
+                            <span class="text-[10px] bg-accent-light text-primary px-2 py-0.5 rounded font-medium">Profit Map</span>
                         </div>
-                        <h1 class="text-4xl sm:text-6xl font-extrabold text-text-main tracking-tight leading-[1.05]">
-                            Reclaim Your Margins. <br />
-                            <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic font-serif font-normal">Command Your Data.</span>
-                        </h1>
-                        <p class="text-base sm:text-lg text-text-muted font-light max-w-xl leading-relaxed">
-                            Relying on massive marketplace aggregators forces your firm to accept predatory commissions, masked customer records, and algorithmic filters that systematically dilute your brand presence.
-                        </p>
                         
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="#onboarding" class="bg-primary hover:bg-emerald-800 text-white text-center text-xs font-semibold uppercase tracking-wider px-8 py-4 rounded-xl transition-all shadow-md shadow-emerald-950/10">
-                                Initiate Launch Sequence
-                            </a>
-                            <a href="#console" class="bg-white hover:bg-zinc-50 border border-zinc-200 text-text-main text-center text-xs font-semibold uppercase tracking-wider px-8 py-4 rounded-xl transition-all">
-                                View System Viewport
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-6">
-                        <div class="bg-white rounded-3xl border border-zinc-200 p-8 shadow-xl relative max-w-xl mx-auto">
-                            <div class="absolute top-0 right-0 transform translate-x-4 -translate-y-4 bg-accent text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-md shadow-sm">
-                                Core Matrix
-                            </div>
-                            <h3 class="text-sm font-bold uppercase tracking-wider text-text-main mb-6 flex items-center gap-2">
-                                <span class="material-symbols-outlined text-primary text-lg">balance</span> Platform Resource Allocation
-                            </h3>
-                            
-                            <div class="space-y-6">
-                                <div class="bg-zinc-50 border border-zinc-100 p-4 rounded-2xl space-y-3">
-                                    <div class="flex justify-between text-xs font-bold text-text-muted">
-                                        <span>Traditional Aggregator Pipeline</span>
-                                        <span class="text-danger">30% Revenue Leakage</span>
-                                    </div>
-                                    <div class="w-full bg-zinc-200 h-3 rounded-md overflow-hidden">
-                                        <div class="bg-danger h-full w-[30%] rounded-md"></div>
-                                    </div>
+                        <div class="space-y-4">
+                            <div class="bg-zinc-50 border border-zinc-100 p-4 rounded-xl space-y-2">
+                                <div class="flex justify-between text-[11px] font-bold text-text-muted uppercase tracking-wider">
+                                    <span>Other Delivery Apps</span>
+                                    <span class="text-danger">Lose up to 30% on Fees</span>
                                 </div>
-
-                                <div class="bg-accent-light/40 border border-accent/10 p-4 rounded-2xl space-y-3">
-                                    <div class="flex justify-between text-xs font-bold text-primary">
-                                        <span>Mitra Direct Network Hub</span>
-                                        <span>100% Retained Liquidity</span>
-                                    </div>
-                                    <div class="w-full bg-zinc-100 h-3 rounded-md overflow-hidden">
-                                        <div class="bg-gradient-to-r from-primary to-accent h-full w-full rounded-md"></div>
-                                    </div>
+                                <div class="w-full bg-zinc-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-danger h-full w-[30%]"></div>
                                 </div>
                             </div>
-                            
-                            <p class="text-xs text-text-muted font-light leading-relaxed mt-6 pt-4 border-t border-zinc-100">
-                                <strong>Mitra Direct shifts the paradigm completely.</strong> We provision clean, non-escrow infrastructure allowing you to deploy isolated digital storefront interfaces direct-to-bank.
-                            </p>
+
+                            <div class="bg-accent-light/50 border border-accent/20 p-4 rounded-xl space-y-2">
+                                <div class="flex justify-between text-[11px] font-bold text-primary uppercase tracking-wider">
+                                    <span>MithraDirect Store</span>
+                                    <span>Keep 100% of Your Sales</span>
+                                </div>
+                                <div class="w-full bg-emerald-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-primary h-full w-full"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-card-bg border border-zinc-200 text-xs text-text-muted font-light leading-relaxed">
+                            <strong>MithraDirect gives you full control.</strong> We set up a clean, simple website for your shop so customers can order directly. All payments go straight into your own bank account instantly.
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <section class="py-24 bg-white border-t border-zinc-100">
+        <section class="py-20 bg-white border-t border-zinc-100">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-6">
-                    <div class="space-y-3 max-w-xl">
-                        <span class="text-accent font-bold text-xs tracking-widest uppercase block">Operational Matrix</span>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-text-main tracking-tight">Comprehensive Infrastructure Utility Core</h2>
-                    </div>
-                    <p class="text-sm text-text-muted font-light max-w-md leading-relaxed">
-                        Granular native interface structures designed strictly to drive sovereign commercial operations without third-party intervention fields.
-                    </p>
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                    <span class="text-accent font-semibold text-xs tracking-widest uppercase block">Features Built For You</span>
+                    <h2 class="text-3xl font-bold text-text-main tracking-tight">Everything You Need To Run Your Store</h2>
+                    <p class="text-sm text-text-muted font-light">Simple tools designed to help you handle your orders, daily items, and customer relationships smoothly.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <div class="group border border-zinc-200 hover:border-zinc-300 bg-zinc-50/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xs">
-                        <div class="aspect-video w-full overflow-hidden bg-zinc-100 relative">
-                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80" alt="Digital Food and Grocery Menu Catalog Representation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="group bg-card-bg border border-zinc-200/60 rounded-xl overflow-hidden shadow-sm hover:border-accent/40 transition-all duration-300 flex flex-col justify-between">
+                        <div class="aspect-video w-full p-6 flex items-center justify-center bg-emerald-50/50 border-b border-zinc-100">
+                            <svg class="w-24 h-24 text-primary group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="15" y="15" width="70" height="70" rx="8" stroke="currentColor" stroke-width="4" fill="#fafafa"/>
+                                <line x1="30" y1="35" x2="70" y2="35" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                <line x1="30" y1="50" x2="60" y2="50" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                <line x1="30" y1="65" x2="50" y2="65" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                <circle cx="68" cy="62" r="6" fill="#10b981"/>
+                            </svg>
                         </div>
-                        <div class="p-6 space-y-4">
+                        <div class="p-6 space-y-3">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                                    <span class="material-symbols-outlined font-light text-xl">menu_book</span>
-                                </div>
-                                <h3 class="font-bold text-lg text-text-main">Dynamic Digital Catalog</h3>
+                                <span class="material-symbols-outlined text-primary text-2xl">menu_book</span>
+                                <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">Digital Item Menu</h3>
                             </div>
-                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Publish listings complete with multi-tier modifier rules, specific category variant parameters, and variable structural fields.
-                            </p>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Create and show your clean item list online. Easily add options, sizes, extra toppings, and custom prices for your regular products.</p>
                         </div>
                     </div>
 
-                    <div class="group border border-zinc-200 hover:border-zinc-300 bg-zinc-50/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xs">
-                        <div class="aspect-video w-full overflow-hidden bg-zinc-100 relative">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Inventory and Counter Management Operations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="group bg-card-bg border border-zinc-200/60 rounded-xl overflow-hidden shadow-sm hover:border-accent/40 transition-all duration-300 flex flex-col justify-between">
+                        <div class="aspect-video w-full p-6 flex items-center justify-center bg-emerald-50/50 border-b border-zinc-100">
+                            <svg class="w-24 h-24 text-primary group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="20" y="20" width="26" height="26" rx="4" stroke="currentColor" stroke-width="4"/>
+                                <rect x="54" y="20" width="26" height="26" rx="4" stroke="currentColor" stroke-width="4"/>
+                                <rect x="20" y="54" width="26" height="26" rx="4" stroke="currentColor" stroke-width="4"/>
+                                <circle cx="67" cy="67" r="10" stroke="#10b981" stroke-width="4"/>
+                                <path d="M67 63V71M63 67H71" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
                         </div>
-                        <div class="p-6 space-y-4">
+                        <div class="p-6 space-y-3">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                                    <span class="material-symbols-outlined font-light text-xl">inventory_2</span>
-                                </div>
-                                <h3 class="font-bold text-lg text-text-main">Granular Matrix Controls</h3>
+                                <span class="material-symbols-outlined text-primary text-2xl">inventory_2</span>
+                                <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">Easy Stock Controls</h3>
                             </div>
-                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Alter price variables instantly from the physical floor, override batch visibility settings, and modify inventory metrics parameters on demand.
-                            </p>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Change your prices instantly from your phone. Turn an item off if you run out of stock, and update your shop details in one click.</p>
                         </div>
                     </div>
 
-                    <div class="group border border-zinc-200 hover:border-zinc-300 bg-zinc-50/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xs">
-                        <div class="aspect-video w-full overflow-hidden bg-zinc-100 relative">
-                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Logistics Tracking and Processing Staging Cell" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="group bg-card-bg border border-zinc-200/60 rounded-xl overflow-hidden shadow-sm hover:border-accent/40 transition-all duration-300 flex flex-col justify-between">
+                        <div class="aspect-video w-full p-6 flex items-center justify-center bg-emerald-50/50 border-b border-zinc-100">
+                            <svg class="w-24 h-24 text-primary group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 50C20 33.4315 33.4315 20 50 20C66.5685 20 80 33.4315 80 50C80 66.5685 66.5685 80 50 80" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M50 35V53L62 58" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                <circle cx="20" cy="50" r="6" fill="#10b981"/>
+                                <circle cx="80" cy="50" r="6" fill="#10b981"/>
+                            </svg>
                         </div>
-                        <div class="p-6 space-y-4">
+                        <div class="p-6 space-y-3">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                                    <span class="material-symbols-outlined font-light text-xl">distance</span>
-                                </div>
-                                <h3 class="font-bold text-lg text-text-main">Real-time Order Tracking</h3>
+                                <span class="material-symbols-outlined text-primary text-2xl">distance</span>
+                                <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">Live Order Status</h3>
                             </div>
-                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Monitor transactional progression tracks clearly. Sequence processing queues, organize staging cells, and clear collection arrays.
-                            </p>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Track new incoming orders clearly. Know exactly what is being prepared, what is ready for pickup, and what has been delivered.</p>
                         </div>
                     </div>
 
-                    <div class="group border border-zinc-200 hover:border-zinc-300 bg-zinc-50/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xs">
-                        <div class="aspect-video w-full overflow-hidden bg-zinc-100 relative">
-                            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80" alt="Direct Digital Asset Payments Processing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="group bg-card-bg border border-zinc-200/60 rounded-xl overflow-hidden shadow-sm hover:border-accent/40 transition-all duration-300 flex flex-col justify-between">
+                        <div class="aspect-video w-full p-6 flex items-center justify-center bg-emerald-50/50 border-b border-zinc-100">
+                            <svg class="w-24 h-24 text-primary group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 30L50 15L85 30V38H15V30Z" stroke="currentColor" stroke-width="4" fill="#fafafa"/>
+                                <rect x="22" y="46" width="10" height="26" stroke="currentColor" stroke-width="4"/>
+                                <rect x="45" y="46" width="10" height="26" stroke="currentColor" stroke-width="4"/>
+                                <rect x="68" y="46" width="10" height="26" stroke="currentColor" stroke-width="4"/>
+                                <line x1="10" x2="90" y1="78" y2="78" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                <circle cx="50" cy="24" r="3" fill="#10b981"/>
+                            </svg>
                         </div>
-                        <div class="p-6 space-y-4">
+                        <div class="p-6 space-y-3">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                                    <span class="material-symbols-outlined font-light text-xl">account_balance_wallet</span>
-                                </div>
-                                <h3 class="font-bold text-lg text-text-main">Sovereign Asset Routing</h3>
+                                <span class="material-symbols-outlined text-primary text-2xl">account_balance_wallet</span>
+                                <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">Direct Bank Payments</h3>
                             </div>
-                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Absolute freedom from centralized escrow delay gates. Financial interaction fields resolve instantly to verified vault tokens.
-                            </p>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">No waiting days or weeks for your money. Customers pay you directly via UPI or QR code, and money goes right to your business bank account.</p>
                         </div>
                     </div>
 
-                    <div class="group border border-zinc-200 hover:border-zinc-300 bg-zinc-50/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xs">
-                        <div class="aspect-video w-full overflow-hidden bg-zinc-100 relative">
-                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Unmediated Messaging Channel Interaction Flow" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="group bg-card-bg border border-zinc-200/60 rounded-xl overflow-hidden shadow-sm hover:border-accent/40 transition-all duration-300 flex flex-col justify-between">
+                        <div class="aspect-video w-full p-6 flex items-center justify-center bg-emerald-50/50 border-b border-zinc-100">
+                            <svg class="w-24 h-24 text-primary group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25 70V78L36 71C40 73 45 74 50 74C70 74 85 61 85 45C85 29 70 16 50 16C30 16 15 29 15 45C15 54 20 62 27 67" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                <circle cx="38" cy="45" r="3" fill="#10b981"/>
+                                <circle cx="50" cy="45" r="3" fill="#10b981"/>
+                                <circle cx="62" cy="45" r="3" fill="#10b981"/>
+                            </svg>
                         </div>
-                        <div class="p-6 space-y-4">
+                        <div class="p-6 space-y-3">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                                    <span class="material-symbols-outlined font-light text-xl">forum</span>
-                                </div>
-                                <h3 class="font-bold text-lg text-text-main">Omnichannel Interfaces</h3>
+                                <span class="material-symbols-outlined text-primary text-2xl">forum</span>
+                                <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">Direct Chat Connection</h3>
                             </div>
-                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Establish unmediated messaging lines directly onto customer application context envelopes without platform processing filters.
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Talk directly with your buyers on WhatsApp. Build personal relationships with your neighborhood customers without any hidden filters.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-primary text-white border border-primary rounded-xl flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <h3 class="font-bold text-base uppercase tracking-wider flex items-center gap-2">
+                                <span class="material-symbols-outlined text-accent">analytics</span> See Your Real Sales
+                            </h3>
+                            <p class="text-xs text-emerald-100 font-light leading-relaxed">
+                                See which items are selling the best, spot your busiest delivery hours, and keep track of your regular repeat buyers easily. You own all of your business numbers and records completely.
                             </p>
                         </div>
+                        <span class="text-xs font-bold tracking-widest text-accent uppercase pt-4 block">MithraDirect Insights &rarr;</span>
                     </div>
-
-                    <div class="group border border-zinc-200 hover:border-zinc-300 bg-zinc-50/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xs">
-                        <div class="aspect-video w-full overflow-hidden bg-zinc-100 relative">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Data Analytics Flow Metrics Optimization Overview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        </div>
-                        <div class="p-6 space-y-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                                    <span class="material-symbols-outlined font-light text-xl">analytics</span>
-                                </div>
-                                <h3 class="font-bold text-lg text-text-main">Deep Flow Analytics</h3>
-                            </div>
-                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Trace baseline localized volume movements, isolate peak transaction hours, and parse raw recurring client interaction logs.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="mt-12 bg-zinc-900 text-white rounded-3xl p-8 lg:p-12 relative overflow-hidden">
-                    <div class="absolute -right-32 -bottom-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
-                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-8 space-y-4">
-                            <span class="text-accent text-xs font-bold uppercase tracking-widest block">Hyper-Local Distribution Tools</span>
-                            <h3 class="text-2xl font-bold tracking-tight">Integrated Structural Architecture</h3>
-                            <p class="text-zinc-400 font-light text-xs sm:text-sm leading-relaxed max-w-2xl">
-                                Instantly compile distinct product checkout links, high-fidelity physical QR codes, and integrated consumer loyalty frames designed specifically to scale neighborhood validation parameters organically.
-                            </p>
-                        </div>
-                        <div class="lg:col-span-4 lg:text-right">
-                            <span class="inline-block bg-white text-zinc-900 text-xs font-bold uppercase tracking-wider px-6 py-4 rounded-xl shadow-md">
-                                Native Provisioning Engine
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="onboarding" class="py-24 bg-zinc-50 border-t border-zinc-100">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-xl mx-auto mb-20 space-y-3">
-                    <span class="text-primary font-bold text-xs tracking-widest uppercase">Deployment Pipeline</span>
-                    <h2 class="text-3xl font-bold text-text-main tracking-tight">Structured Launch Sequence</h2>
-                </div>
-
-                <div class="relative border-l border-zinc-200 ml-4 md:ml-32 space-y-16">
-                    
-                    <div class="relative pl-8 sm:pl-12 group">
-                        <div class="absolute -left-4 top-0 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-md ring-4 ring-zinc-50">01</div>
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                            <div class="md:col-span-4 font-bold text-sm uppercase tracking-wider text-text-main pt-1">Contact Matrix Setup</div>
-                            <div class="md:col-span-8 text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Transmit initial operational parameters through our secure client ingestion infrastructure framework to alert assigned network layout engineers.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-8 sm:pl-12 group">
-                        <div class="absolute -left-4 top-0 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-md ring-4 ring-zinc-50">02</div>
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                            <div class="md:col-span-4 font-bold text-sm uppercase tracking-wider text-text-main pt-1">Merchant Validation</div>
-                            <div class="md:col-span-8 text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Accelerate localized system validation processes across location coordinates, asset structures, and organizational standing parameters.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-8 sm:pl-12 group">
-                        <div class="absolute -left-4 top-0 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-md ring-4 ring-zinc-50">03</div>
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                            <div class="md:col-span-4 font-bold text-sm uppercase tracking-wider text-text-main pt-1">Endpoint Configuration</div>
-                            <div class="md:col-span-8 text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Map standard transaction endpoints natively onto your institutional accounts to allow settlement automation loops to process directly.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-8 sm:pl-12 group">
-                        <div class="absolute -left-4 top-0 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-md ring-4 ring-zinc-50">04</div>
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                            <div class="md:col-span-4 font-bold text-sm uppercase tracking-wider text-text-main pt-1">Inventory Initialization</div>
-                            <div class="md:col-span-8 text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Batch-import active item configurations, local modifier categories, variant option fields, and baseline product catalog metadata vectors.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-8 sm:pl-12 group">
-                        <div class="absolute -left-4 top-0 w-8 h-8 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center shadow-md ring-4 ring-zinc-50 animate-pulse">05</div>
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                            <div class="md:col-span-4 font-bold text-sm uppercase tracking-widest text-accent font-bold pt-1">Sovereign Commercial Release</div>
-                            <div class="md:col-span-8 text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                                Open active transactional lines instantly. Command hyper-local ecosystem distribution patterns without middleman visibility suppression.
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
 
-        <section class="py-24 bg-white border-t border-zinc-100">
+        <section id="onboarding" class="py-20 bg-card-bg border-y border-zinc-100">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                    
-                    <div class="lg:col-span-5 space-y-6">
-                        <span class="text-primary font-bold text-xs tracking-widest uppercase block">Economic Metrics</span>
-                        <h2 class="text-3xl font-bold text-text-main tracking-tight leading-tight">Tangible Fiscal Performance Advantages</h2>
-                        <p class="text-sm text-text-muted font-light leading-relaxed">
-                            Decoupling active transactional streams from third-party marketplace extraction directly elevates core business liquidity profiles.
-                        </p>
-                        <div class="p-8 bg-zinc-50 rounded-2xl border border-zinc-200/60 space-y-2">
-                            <p class="text-4xl font-extrabold text-primary tracking-tight">+25% to 35%</p>
-                            <p class="text-xs uppercase font-bold text-text-main tracking-wider">Net Operating Ticket Optimization</p>
+                <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
+                    <span class="text-primary font-semibold text-xs tracking-widest uppercase block">Easy Setup Plan</span>
+                    <h2 class="text-3xl font-bold text-text-main tracking-tight">5 Simple Steps To Start Selling</h2>
+                    <p class="text-sm text-text-muted font-light">Here is exactly how we help you get your store live online and ready to receive orders.</p>
+                </div>
+
+                <div class="relative border-l-2 border-zinc-200 max-w-4xl mx-auto pl-6 sm:pl-10 space-y-12">
+                    <div class="relative group">
+                        <div class="absolute -left-[35px] sm:-left-[51px] top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white text-[11px] font-bold flex items-center justify-center shadow-md">01</div>
+                        <div class="bg-white border border-zinc-200 p-5 rounded-xl shadow-2xs space-y-1">
+                            <h4 class="font-bold text-xs uppercase tracking-wider text-text-main">Step 1: Fill Out Your Details</h4>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Send us your basic business information through our simple contact form. Our local support team will get in touch with you immediately.</p>
                         </div>
                     </div>
 
-                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                        <div class="border border-zinc-100 p-6 rounded-2xl bg-zinc-50/30 space-y-2">
-                            <h4 class="font-bold text-base text-text-main flex items-center gap-2">
-                                <span class="material-symbols-outlined text-accent text-lg">verified</span> Retained Yield
-                            </h4>
-                            <p class="text-xs text-text-muted font-light leading-relaxed">Convert previously lost aggregate processing fee margins directly back into standard enterprise operating assets.</p>
-                        </div>
-
-                        <div class="border border-zinc-100 p-6 rounded-2xl bg-zinc-50/30 space-y-2">
-                            <h4 class="font-bold text-base text-text-main flex items-center gap-2">
-                                <span class="material-symbols-outlined text-accent text-lg">verified</span> Geo-Targeting Control
-                            </h4>
-                            <p class="text-xs text-text-muted font-light leading-relaxed">Focus customer interface pipelines contextually inside exact regional neighborhood operation corridors.</p>
-                        </div>
-
-                        <div class="border border-zinc-100 p-6 rounded-2xl bg-zinc-50/30 space-y-2">
-                            <h4 class="font-bold text-base text-text-main flex items-center gap-2">
-                                <span class="material-symbols-outlined text-accent text-lg">verified</span> Strategic Sovereignty
-                            </h4>
-                            <p class="text-xs text-text-muted font-light leading-relaxed">Insulate operational infrastructure parameters completely from external algorithm revisions or promotional listings rules.</p>
-                        </div>
-
-                        <div class="border border-zinc-100 p-6 rounded-2xl bg-zinc-50/30 space-y-2">
-                            <h4 class="font-bold text-base text-text-main flex items-center gap-2">
-                                <span class="material-symbols-outlined text-accent text-lg">verified</span> Structural Integrity
-                            </h4>
-                            <p class="text-xs text-text-muted font-light leading-relaxed">Display specialized digital catalogs clean and single-focused, entirely clear of alternative generic ad injections.</p>
+                    <div class="relative group">
+                        <div class="absolute -left-[35px] sm:-left-[51px] top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white text-[11px] font-bold flex items-center justify-center shadow-md">02</div>
+                        <div class="bg-white border border-zinc-200 p-5 rounded-xl shadow-2xs space-y-1">
+                            <h4 class="font-bold text-xs uppercase tracking-wider text-text-main">Step 2: Shop Verification</h4>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">We quickly double-check your business location, type of shop, and products so we can build the right type of online layout for your store brand.</p>
                         </div>
                     </div>
 
+                    <div class="relative group">
+                        <div class="absolute -left-[35px] sm:-left-[51px] top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white text-[11px] font-bold flex items-center justify-center shadow-md">03</div>
+                        <div class="bg-white border border-zinc-200 p-5 rounded-xl shadow-2xs space-y-1">
+                            <h4 class="font-bold text-xs uppercase tracking-wider text-text-main">Step 3: Connect Your Bank (UPI)</h4>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">We help you set up your standard bank UPI QR details. This ensures that every single customer payment goes right into your account instantly with zero middlemen.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[35px] sm:-left-[51px] top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white text-[11px] font-bold flex items-center justify-center shadow-md">04</div>
+                        <div class="bg-white border border-zinc-200 p-5 rounded-xl shadow-2xs space-y-1">
+                            <h4 class="font-bold text-xs uppercase tracking-wider text-text-main">Step 4: Upload Your Items</h4>
+                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Add your list of products, photos, prices, and available hours. We organize your digital catalog so it is very clean and easy for customers to browse.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[35px] sm:-left-[51px] top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-accent text-white text-[11px] font-bold flex items-center justify-center shadow-md animate-pulse">05</div>
+                        <div class="bg-primary text-white border border-primary p-5 rounded-xl shadow-md space-y-1">
+                            <h4 class="font-bold text-xs uppercase tracking-wider text-accent">Step 5: Open Your Store Live</h4>
+                            <p class="text-xs sm:text-sm text-emerald-100 font-light leading-relaxed">Your store link is ready! Share it on your Instagram Bio, your WhatsApp status, or print out QR codes for your storefront counter. You are now fully independent.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="console" class="py-24 bg-zinc-50 border-t border-zinc-100 overflow-hidden">
+        <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="max-w-xl mb-16 space-y-2">
-                    <span class="text-accent font-bold text-xs tracking-widest uppercase block">System Viewport</span>
-                    <h2 class="text-3xl font-bold text-text-main tracking-tight">The Merchant Administration Console</h2>
-                    <p class="text-sm text-text-muted font-light">High-performance diagnostic terminal panel structure optimized for precise administrative task handling.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="text-primary font-bold text-xs tracking-widest uppercase block">Real Profit Growth</span>
+                        <h2 class="text-3xl font-bold text-text-main tracking-tight leading-tight">Better Sales Performance for Your Shop</h2>
+                        <p class="text-sm text-text-muted font-light leading-relaxed">By cutting out intermediate third-party application fees, you instantly bring more cash flow straight back into your shop ledger.</p>
+                        <div class="p-6 bg-accent-light/50 border border-accent/20 rounded-xl space-y-1">
+                            <p class="text-4xl font-bold text-primary tracking-tight">+25% to 35%</p>
+                            <p class="text-[10px] uppercase font-bold text-text-main tracking-wider">Increase In Take-Home Profits Per Order</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-5 border border-zinc-100 rounded-xl bg-card-bg space-y-2">
+                            <h4 class="font-bold text-sm uppercase tracking-wider text-text-main flex items-center gap-2">
+                                <span class="material-symbols-outlined text-accent text-lg">verified</span> Full Profit Margins
+                            </h4>
+                            <p class="text-xs text-text-muted font-light leading-relaxed">Save money that used to go down the drain in hidden platform charges. Keep your hard-earned local sales revenue entirely.</p>
+                        </div>
+
+                        <div class="p-5 border border-zinc-100 rounded-xl bg-card-bg space-y-2">
+                            <h4 class="font-bold text-sm uppercase tracking-wider text-text-main flex items-center gap-2">
+                                <span class="material-symbols-outlined text-accent text-lg">verified</span> Local Area Focus
+                            </h4>
+                            <p class="text-xs text-text-muted font-light leading-relaxed">Target your exact neighborhood streets, housing complexes, and nearby supply corridors effectively.</p>
+                        </div>
+
+                        <div class="p-5 border border-zinc-100 rounded-xl bg-card-bg space-y-2">
+                            <h4 class="font-bold text-sm uppercase tracking-wider text-text-main flex items-center gap-2">
+                                <span class="material-symbols-outlined text-accent text-lg">verified</span> Safe From Algorithms
+                            </h4>
+                            <p class="text-xs text-text-muted font-light leading-relaxed">Your store won't get buried under competitor paid ads. Your customers only see your products on your direct page.</p>
+                        </div>
+
+                        <div class="p-5 border border-zinc-100 rounded-xl bg-card-bg space-y-2">
+                            <h4 class="font-bold text-sm uppercase tracking-wider text-text-main flex items-center gap-2">
+                                <span class="material-symbols-outlined text-accent text-lg">verified</span> Clean Layout Design
+                            </h4>
+                            <p class="text-xs text-text-muted font-light leading-relaxed">Display your menu single-focused. No distracting advertisements or nearby alternative store banners showing on your page.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="console" class="py-20 bg-card-bg border-t border-zinc-100 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-xl mb-12 space-y-2">
+                    <span class="text-accent font-bold text-xs tracking-widest uppercase block">Live Demo Interface</span>
+                    <h2 class="text-3xl font-bold text-text-main tracking-tight">Your Simple Store Dashboard</h2>
+                    <p class="text-sm text-text-muted font-light">A clean, easy-to-use control board optimized to manage your orders on any mobile phone or desktop.</p>
                 </div>
 
-                <div class="bg-zinc-900 rounded-3xl shadow-2xl border border-zinc-800 overflow-hidden grid grid-cols-12 min-h-[600px] text-zinc-300">
-                    
+                <div class="bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-800 overflow-hidden grid grid-cols-12 min-h-[580px] text-zinc-300">
                     <div class="col-span-12 lg:col-span-3 border-b lg:border-b-0 lg:border-r border-zinc-800 bg-zinc-950/40 p-6 flex flex-col justify-between">
-                        <div class="space-y-8">
+                        <div class="space-y-6">
                             <div class="flex items-center gap-2.5 text-white font-bold text-sm tracking-tight">
                                 <div class="w-6 h-6 rounded-md bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-xs">store</span></div>
-                                <span>Merchant Console</span>
+                                <span>Manager App</span>
                             </div>
                             <div class="space-y-1 font-medium text-xs text-zinc-400">
                                 <div class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-zinc-800 text-white font-semibold"><span class="material-symbols-outlined text-base text-accent">dashboard</span> Live Terminal</div>
-                                <div class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-zinc-800/50 hover:text-white transition-colors cursor-pointer"><span class="material-symbols-outlined text-base">receipt_long</span> Orders Queue <span class="ml-auto bg-primary text-white text-[9px] px-2 py-0.5 rounded-full font-bold">4</span></div>
-                                <div class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-zinc-800/50 hover:text-white transition-colors cursor-pointer"><span class="material-symbols-outlined text-base">inventory</span> Inventory Matrix</div>
-                                <div class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-zinc-800/50 hover:text-white transition-colors cursor-pointer"><span class="material-symbols-outlined text-base">group</span> Customer Records</div>
-                                <div class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-zinc-800/50 hover:text-white transition-colors cursor-pointer"><span class="material-symbols-outlined text-base">monitoring</span> Sales Performance</div>
+                                <div class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-zinc-800/50 hover:text-white transition-colors cursor-pointer"><span class="material-symbols-outlined text-base">receipt_long</span> New Orders <span class="ml-auto bg-primary text-white text-[9px] px-2 py-0.5 rounded-full font-bold">4</span></div>
+                                <div class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-zinc-800/50 hover:text-white transition-colors cursor-pointer"><span class="material-symbols-outlined text-base">inventory</span> Edit Items & Prices</div>
+                                <div class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-zinc-800/50 hover:text-white transition-colors cursor-pointer"><span class="material-symbols-outlined text-base">group</span> Customer Book</div>
+                                <div class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-zinc-800/50 hover:text-white transition-colors cursor-pointer"><span class="material-symbols-outlined text-base">monitoring</span> Sales Tracking</div>
                             </div>
                         </div>
                         <div class="pt-6 border-t border-zinc-800/60 hidden lg:block">
@@ -421,104 +379,102 @@
                                 <div class="w-8 h-8 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center">HS</div>
                                 <div class="truncate">
                                     <h6 class="text-xs font-bold text-white truncate">Hot Spice Cuisine</h6>
-                                    <p class="text-[10px] text-zinc-500 truncate">Terminal #4021</p>
+                                    <p class="text-[10px] text-zinc-500 truncate">Store Terminal #4021</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-span-12 lg:col-span-9 p-6 sm:p-8 space-y-8">
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                            <div class="p-5 rounded-2xl border border-zinc-800 bg-zinc-950/20 space-y-2">
-                                <span class="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">Gross Volume</span>
-                                <div class="text-2xl font-bold text-white tracking-tight">₹1,84,390</div>
-                                <span class="text-[9px] text-accent bg-accent/10 px-2 py-0.5 rounded font-medium inline-block">+14.2% Growth</span>
+                    <div class="col-span-12 lg:col-span-9 p-6 sm:p-8 space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="p-4 rounded-xl border border-zinc-800 bg-zinc-950/20 space-y-1">
+                                <span class="text-[9px] uppercase font-bold text-zinc-500 tracking-wider">Today's Total Sales</span>
+                                <div class="text-xl font-bold text-white tracking-tight">₹1,84,390</div>
+                                <span class="text-[9px] text-accent bg-accent/10 px-1.5 py-0.5 rounded font-medium inline-block">+14.2% Growth</span>
                             </div>
-                            <div class="p-5 rounded-2xl border border-zinc-800 bg-zinc-950/20 space-y-2">
-                                <span class="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">Fulfillment Queue</span>
-                                <div class="text-2xl font-bold text-white tracking-tight">12 Staged</div>
-                                <span class="text-[9px] text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded font-medium inline-block">8 Counter Collection</span>
+                            <div class="p-4 rounded-xl border border-zinc-800 bg-zinc-950/20 space-y-1">
+                                <span class="text-[9px] uppercase font-bold text-zinc-500 tracking-wider">Kitchen Preparation</span>
+                                <div class="text-xl font-bold text-white tracking-tight">12 Preparing</div>
+                                <span class="text-[9px] text-amber-400 bg-amber-400/10 px-1.5 py-0.5 rounded font-medium inline-block">8 Ready for Pickup</span>
                             </div>
-                            <div class="p-5 rounded-2xl border border-zinc-800 bg-zinc-950/20 space-y-2">
-                                <span class="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">Retained Capital</span>
-                                <div class="text-2xl font-bold text-accent tracking-tight">100% Intact</div>
-                                <span class="text-[9px] text-accent bg-accent/10 px-2 py-0.5 rounded font-medium inline-block">₹0 Fee Extraction</span>
+                            <div class="p-4 rounded-xl border border-zinc-800 bg-zinc-950/20 space-y-1">
+                                <span class="text-[9px] uppercase font-bold text-zinc-500 tracking-wider">Platform Commissions</span>
+                                <div class="text-xl font-bold text-accent tracking-tight">₹0 Charged</div>
+                                <span class="text-[9px] text-accent bg-accent/10 px-1.5 py-0.5 rounded font-medium inline-block">100% Free Store</span>
                             </div>
                         </div>
 
-                        <div class="space-y-4">
+                        <div class="space-y-3">
                             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-white">Live Operations Logs</h4>
-                                <span class="text-[10px] text-zinc-500 font-mono bg-zinc-950 px-2 py-1 rounded w-max">Real-time connection active</span>
+                                <h4 class="text-[10px] font-bold uppercase tracking-wider text-white">Live Orders Stream</h4>
+                                <span class="text-[9px] text-zinc-500 font-mono bg-zinc-950 px-2 py-0.5 rounded w-max">System connected live</span>
                             </div>
                             
-                            <div class="border border-zinc-800 rounded-2xl overflow-hidden bg-zinc-950/30 overflow-x-auto">
-                                <table class="w-full text-left border-collapse text-xs min-w-[600px]">
+                            <div class="border border-zinc-800 rounded-xl overflow-hidden bg-zinc-950/30 overflow-x-auto">
+                                <table class="w-full text-left border-collapse text-xs min-w-[580px]">
                                     <thead>
                                         <tr class="bg-zinc-900 text-zinc-400 font-medium border-b border-zinc-800">
-                                            <th class="p-4">Order ID</th>
-                                            <th class="p-4">Customer Reference</th>
-                                            <th class="p-4">Batch Details</th>
-                                            <th class="p-4">Value</th>
-                                            <th class="p-4 text-right">Status</th>
+                                            <th class="p-3">Order ID</th>
+                                            <th class="p-3">Customer Name</th>
+                                            <th class="p-3">Items Ordered</th>
+                                            <th class="p-3">Amount</th>
+                                            <th class="p-3 text-right">Status</th>
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-zinc-800 font-light text-zinc-300">
                                         <tr class="hover:bg-zinc-900/40 transition-colors">
-                                            <td class="p-4 font-mono font-bold text-accent">#MD-9831</td>
-                                            <td class="p-4">
+                                            <td class="p-3 font-mono font-bold text-accent">#MD-9831</td>
+                                            <td class="p-3">
                                                 <div class="font-medium text-white">Nethaji Chapala</div>
-                                                <div class="text-[10px] text-zinc-500">Verified Client Identity</div>
+                                                <div class="text-[10px] text-zinc-500">Regular Neighborhood Customer</div>
                                             </td>
-                                            <td class="p-4 max-w-[200px] truncate">Premium Combo Variant × 2, Herbal Infusion Batch A</td>
-                                            <td class="p-4 font-semibold text-white">₹1,240</td>
-                                            <td class="p-4 text-right"><span class="bg-emerald-500/10 text-accent text-[10px] px-2.5 py-1 rounded-full font-bold">Staging Arena</span></td>
+                                            <td class="p-3 max-w-[180px] truncate">Premium Combo Variant × 2, Herbal Tea Box</td>
+                                            <td class="p-3 font-semibold text-white">₹1,240</td>
+                                            <td class="p-3 text-right"><span class="bg-emerald-500/10 text-accent text-[10px] px-2.5 py-0.5 rounded-full font-bold">In Kitchen</span></td>
                                         </tr>
                                         <tr class="hover:bg-zinc-900/40 transition-colors">
-                                            <td class="p-4 font-mono font-bold text-accent">#MD-9830</td>
-                                            <td class="p-4">
+                                            <td class="p-3 font-mono font-bold text-accent">#MD-9830</td>
+                                            <td class="p-3">
                                                 <div class="font-medium text-white">Chella Venkat</div>
-                                                <div class="text-[10px] text-zinc-500">Loyalty Core Tier 1</div>
+                                                <div class="text-[10px] text-zinc-500">Loyalty Member</div>
                                             </td>
-                                            <td class="p-4 max-w-[200px] truncate">Specialty Confectionery Box, Crisp Wafers Extractor</td>
-                                            <td class="p-4 font-semibold text-white">₹680</td>
-                                            <td class="p-4 text-right"><span class="bg-blue-500/10 text-blue-400 text-[10px] px-2.5 py-1 rounded-full font-bold">Ready Bay</span></td>
+                                            <td class="p-3 max-w-[180px] truncate">Specialty Sweet Box, Crispy Wafers Package</td>
+                                            <td class="p-3 font-semibold text-white">₹680</td>
+                                            <td class="p-3 text-right"><span class="bg-blue-500/10 text-blue-400 text-[10px] px-2.5 py-0.5 rounded-full font-bold">Ready for Delivery</span></td>
                                         </tr>
                                         <tr class="hover:bg-zinc-900/40 transition-colors">
-                                            <td class="p-4 font-mono font-bold text-accent">#MD-9829</td>
-                                            <td class="p-4">
+                                            <td class="p-3 font-mono font-bold text-accent">#MD-9829</td>
+                                            <td class="p-3">
                                                 <div class="font-medium text-white">Rakesh the Barista</div>
                                                 <div class="text-[10px] text-zinc-500">Green Bean Coffee Co.</div>
                                             </td>
-                                            <td class="p-4 max-w-[200px] truncate">Dark Roast House Blend (Whole Bean) × 3</td>
-                                            <td class="p-4 font-semibold text-white">₹2,450</td>
-                                            <td class="p-4 text-right"><span class="bg-zinc-800 text-zinc-400 text-[10px] px-2.5 py-1 rounded-full font-bold">Dispatched Link</span></td>
+                                            <td class="p-3 max-w-[180px] truncate">Dark Roast House Blend Coffee Beans × 3</td>
+                                            <td class="p-3 font-semibold text-white">₹2,450</td>
+                                            <td class="p-3 text-right"><span class="bg-zinc-800 text-zinc-400 text-[10px] px-2.5 py-0.5 rounded-full font-bold">Delivered</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-24 px-6 bg-white border-t border-zinc-100">
-            <div class="max-w-5xl mx-auto bg-gradient-to-tr from-zinc-900 to-zinc-800 text-white rounded-3xl p-10 md:p-16 text-center relative overflow-hidden shadow-xl">
-                <div class="absolute -top-32 -left-32 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
-                <div class="max-w-2xl mx-auto space-y-6 relative z-10">
-                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Deploy Your Sovereign Infrastructure Now.</h2>
-                    <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light max-w-xl mx-auto">
-                        Connect with Mitra Direct system infrastructure groups to transition your local storefront pipeline out from legacy aggregator platforms today.
+        <section class="py-20 px-6 bg-white border-t border-zinc-100">
+            <div class="max-w-4xl mx-auto bg-card-bg border border-zinc-200 rounded-2xl p-10 md:p-16 text-center shadow-sm relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-accent/5 rounded-full blur-3xl"></div>
+                <div class="max-w-xl mx-auto space-y-6 relative">
+                    <h2 class="text-3xl font-bold tracking-tight text-text-main">Ready to Start Your Direct Store?</h2>
+                    <p class="text-xs sm:text-sm text-text-muted leading-relaxed font-light">
+                        Join MithraDirect now and change how your business reaches customers. Take direct control over your local orders today.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                        <a href="Contact.html" class="bg-primary hover:bg-emerald-800 text-white font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all shadow-md">
-                            Submit Ingestion Parameters
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+                        <a href="Contact.html" class="bg-primary hover:bg-emerald-800 text-white font-semibold text-xs uppercase tracking-wider px-6 py-4 rounded-lg shadow-sm transition-colors">
+                            Launch Your Online Shop
                         </a>
-                        <a href="mailto:support@mitradirect.com" class="bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all">
-                            Inquire Architecture
+                        <a href="mailto:support@mithradirect.com" class="bg-white hover:bg-zinc-50 border border-zinc-200 text-text-main font-semibold text-xs uppercase tracking-wider px-6 py-4 rounded-lg transition-colors">
+                            Talk To An Expert
                         </a>
                     </div>
                 </div>
@@ -534,10 +490,10 @@
                     <div class="w-6 h-6 rounded bg-primary flex items-center justify-center">
                         <span class="material-symbols-outlined text-white text-xs font-light">layers</span>
                     </div>
-                    <span class="text-sm font-bold tracking-tight">Mitra<span class="text-accent font-medium">Direct</span></span>
+                    <span class="text-sm font-bold tracking-tight">Mithra<span class="text-accent font-medium">Direct</span></span>
                 </div>
                 <p class="text-xs leading-relaxed text-text-muted font-light max-w-sm">
-                    A streamlined local business digital framework. Engineered to build absolute transactional independence, entirely free of market platform friction.
+                    A streamlined local business digital framework. Engineered to build absolute transactional independence across Telangana, entirely free of market platform friction.
                 </p>
             </div>
             
@@ -553,9 +509,9 @@
             <div class="md:col-span-3 space-y-4">
                 <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Inquiries</h5>
                 <ul class="space-y-2.5 text-xs font-light">
-                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">mail</span> support@mitradirect.com</li>
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">mail</span> support@mithradirect.com</li>
                     <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">phone</span> +91 98765 43210</li>
-                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">location_on</span> Bangalore, India</li>
+                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">location_on</span> Hyderabad, Telangana, India</li>
                 </ul>
             </div>
 
@@ -570,7 +526,7 @@
         </div>
 
         <div class="max-w-7xl mx-auto px-6 py-8 border-t border-zinc-100 text-left text-[11px] font-light text-text-muted/60 flex flex-col sm:flex-row justify-between gap-4">
-            <div>&copy; 2026 Mitra Direct. Open infrastructure guidelines apply.</div>
+            <div>&copy; 2026 MithraDirect. Grow Local. Go Digital. Stay Direct.</div>
             <div class="space-x-4"><a href="#" class="hover:text-text-main">Terms</a><a href="#" class="hover:text-text-main">Privacy</a></div>
         </div>
     </footer>
@@ -582,7 +538,6 @@
 
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('hidden');
-            
             if (navMenu.classList.contains('hidden')) {
                 menuIcon.textContent = 'menu';
             } else {
@@ -590,6 +545,5 @@
             }
         });
     </script>
-
 </body>
 </html>
