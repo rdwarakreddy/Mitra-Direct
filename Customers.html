@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Mitra Direct | Customer Portal - Order From Local Shops</title>
+    <title>MithraDirect | Customer Portal - Order From Local Shops</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -20,7 +20,9 @@
               "card-bg": "#fafafa",    // Light Gray Surface
               "text-main": "#0f172a",
               "text-muted": "#475569",
-              "danger": "#ef4444"
+              "danger": "#ef4444",
+              "warning-light": "#fffbeb",
+              "warning-text": "#b45309"
             },
             fontFamily: {
               sans: ["'Plus Jakarta Sans'", "sans-serif"]
@@ -43,10 +45,7 @@
     <nav class="fixed top-0 w-full z-50 glass-nav border-b border-zinc-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center relative">
             <a href="Home.html" class="flex items-center gap-2.5 group cursor-pointer">
-                <div class="w-8 h-8 rounded-md bg-primary flex items-center justify-center transition-transform group-hover:scale-105">
-                    <span class="material-symbols-outlined text-white text-lg font-light">storefront</span>
-                </div>
-                <span class="text-lg font-bold tracking-tight text-text-main">Mitra<span class="text-accent font-medium">Direct</span></span>
+                <img src="Images/Logo.png" alt="MithraDirect Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-102" />
             </a>
             
             <div id="nav-menu" class="hidden absolute top-20 left-0 w-full bg-white border-b border-zinc-200 p-6 flex flex-col space-y-4 font-medium text-[13px] tracking-tight shadow-xl z-50 lg:shadow-none lg:p-0 lg:border-none lg:bg-transparent lg:static lg:w-auto lg:flex lg:flex-row lg:space-y-0 lg:space-x-10">
@@ -75,68 +74,52 @@
             <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6 text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-light border border-accent/20 text-primary text-[11px] font-semibold uppercase tracking-wider">
-                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span> Easy Online Ordering
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span> For Conscious Local Customers
                     </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-main tracking-tight leading-[1.1]">
-                        Your Favorite Food. <br />
-                        <span class="text-primary">Straight From Local Shops.</span>
+                        Support Real Owners. <br />
+                        <span class="text-primary">Order Direct Natively.</span>
                     </h1>
                     <p class="text-base sm:text-lg text-text-muted max-w-2xl leading-relaxed font-light">
-                        Order online just like any other food app, but without the high platform fees and hidden markups. Browse local menus, customize your food choices, add items to your cart, and check out instantly.
+                        Every time you order through middleman apps, your favorite neighborhood shops lose up to a third of their money to platform commissions. MithraDirect lets you bypass the system, buy at real catalog prices, and pay store owners directly.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="#shops" class="bg-primary hover:bg-emerald-800 text-white text-xs font-semibold uppercase tracking-wider px-7 py-4 rounded-lg transition-all shadow-sm">
-                            Browse Restaurants
+                        <a href="#marketplace-simulator" class="bg-primary hover:bg-emerald-800 text-white text-xs font-semibold uppercase tracking-wider px-7 py-4 rounded-lg transition-all shadow-sm">
+                            Browse Local Stores
                         </a>
                         <a href="#how-it-works" class="bg-white hover:bg-zinc-50 text-text-main border border-zinc-200 text-xs font-semibold uppercase tracking-wider px-7 py-4 rounded-lg transition-all">
-                            See How To Order
+                            How Direct Checkout Works
                         </a>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5 relative">
-                    <div class="bg-white rounded-2xl p-6 border border-zinc-200 shadow-xl space-y-4">
+                    <div class="bg-white rounded-2xl p-6 border border-zinc-200 shadow-xl space-y-6">
                         <div class="flex items-center justify-between border-b border-zinc-100 pb-3">
                             <span class="text-[11px] font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
-                                <span class="material-symbols-outlined text-sm">shopping_cart</span> Your Active Cart
+                                <span class="material-symbols-outlined text-sm">shopping_bag</span> Fair Price Calculator
                             </span>
-                            <span class="text-[10px] bg-emerald-50 text-primary px-2 py-0.5 rounded font-medium">Standard App Flow</span>
+                            <span class="text-[10px] bg-accent-light text-primary px-2 py-0.5 rounded font-medium">Customer Savings</span>
                         </div>
-
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-card-bg border border-zinc-100">
-                            <div class="space-y-0.5">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-red-600"></span>
-                                    <h4 class="text-xs font-bold text-text-main">Hot Spice Thai Curry x 1</h4>
-                                </div>
-                                <p class="text-[11px] text-text-muted">Extra Spicy, Steamed Rice Included</p>
+                        
+                        <div class="space-y-3 font-light text-xs">
+                            <div class="flex justify-between p-2.5 bg-zinc-50 rounded-lg border border-zinc-100">
+                                <span class="text-text-muted">Standard Item Price at Counter</span>
+                                <span class="font-bold text-text-main">₹350</span>
                             </div>
-                            <span class="text-xs font-bold text-text-main">₹280</span>
-                        </div>
-
-                        <div class="flex items-center justify-between p-3 rounded-xl bg-card-bg border border-zinc-100">
-                            <div class="space-y-0.5">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-green-600"></span>
-                                    <h4 class="text-xs font-bold text-text-main">Fresh Mango Falooda x 1</h4>
-                                </div>
-                                <p class="text-[11px] text-text-muted">With Vanilla Ice Cream Scoop</p>
+                            <div class="flex justify-between p-2.5 bg-red-50/40 rounded-lg border border-red-100 text-danger">
+                                <span>Aggregator App Inflated Markup + Fees</span>
+                                <span class="font-bold">+ ₹120</span>
                             </div>
-                            <span class="text-xs font-bold text-text-main">₹140</span>
-                        </div>
-
-                        <div class="border-t border-zinc-100 pt-3 space-y-1.5 text-xs text-text-muted">
-                            <div class="flex justify-between"><span>Item Total</span><span class="font-medium text-text-main">₹420</span></div>
-                            <div class="flex justify-between text-accent font-medium"><span>Platform Convenience Fee</span><span>₹0 (Free)</span></div>
-                            <div class="flex justify-between border-t border-zinc-100 pt-2 text-sm font-bold text-text-main">
-                                <span>Grand Total</span>
-                                <span>₹420</span>
+                            <div class="flex justify-between p-3 bg-accent-light text-primary rounded-lg border border-emerald-200 font-medium text-sm">
+                                <span>MithraDirect Direct Cost</span>
+                                <span class="font-bold">₹350 (No Platform Tax)</span>
                             </div>
                         </div>
 
-                        <button class="w-full py-3 bg-primary hover:bg-accent text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2">
-                            <span class="material-symbols-outlined text-sm">lock</span> Place Your Order Now
-                        </button>
+                        <div class="p-4 rounded-xl bg-card-bg border border-zinc-200 text-xs text-text-muted font-light leading-relaxed">
+                            <strong>No inflated menu items or hidden platform taxes.</strong> You view exact store rates, text parameters directly with the shop staff over WhatsApp, and handle transaction balances directly.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -145,189 +128,168 @@
         <section id="how-it-works" class="py-20 bg-white border-t border-zinc-100">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                    <span class="text-accent font-semibold text-xs tracking-widest uppercase block">Familiar App Experience</span>
-                    <h2 class="text-3xl font-bold text-text-main tracking-tight">The Features You Expect From A Delivery App</h2>
-                    <p class="text-sm text-text-muted font-light">Everything you like about modern online food ordering, optimized with transparent menu pricing.</p>
+                    <span class="text-accent font-semibold text-xs tracking-widest uppercase block">The Frictionless Pipeline</span>
+                    <h2 class="text-3xl font-bold text-text-main tracking-tight">How Ordering Directly Works</h2>
+                    <p class="text-sm text-text-muted font-light">Three simple structural stages to complete your hyperlocal neighborhood purchases without middlemen processing friction.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-card-bg border border-zinc-200/60 rounded-xl p-6 space-y-4 hover:border-accent/40 transition-all duration-300">
-                        <div class="w-12 h-12 rounded-lg bg-accent-light flex items-center justify-center text-primary">
-                            <span class="material-symbols-outlined text-2xl">restaurant_menu</span>
-                        </div>
-                        <div class="space-y-1.5">
-                            <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">Easy Digital Menus</h3>
-                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Browse clean, updated visual item lists. Seamlessly pick your food categories, choose portion sizes, select your add-ons, and track custom changes easily.</p>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                    <div class="p-8 bg-card-bg border border-zinc-200/60 rounded-2xl relative space-y-4 hover:border-accent/30 transition-all">
+                        <span class="w-10 h-10 rounded-full bg-accent-light text-primary font-bold text-xs flex items-center justify-center border border-accent/20 shadow-xs">1</span>
+                        <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">1. Open the Store Link</h3>
+                        <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Click a brand's custom catalog URL from an Instagram Bio, WhatsApp Status, or physical scan coordinate to explore real-time inventory listings safely.</p>
                     </div>
 
-                    <div class="bg-card-bg border border-zinc-200/60 rounded-xl p-6 space-y-4 hover:border-accent/40 transition-all duration-300">
-                        <div class="w-12 h-12 rounded-lg bg-accent-light flex items-center justify-center text-primary">
-                            <span class="material-symbols-outlined text-2xl">shopping_cart_checkout</span>
-                        </div>
-                        <div class="space-y-1.5">
-                            <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">One-Click Cart Checkout</h3>
-                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Review your selected list inside your persistent cart view. Modify counts, check special cooking notes, and confirm your drop-off address fields in one click.</p>
-                        </div>
+                    <div class="p-8 bg-card-bg border border-zinc-200/60 rounded-2xl relative space-y-4 hover:border-accent/30 transition-all">
+                        <span class="w-10 h-10 rounded-full bg-accent-light text-primary font-bold text-xs flex items-center justify-center border border-accent/20 shadow-xs">2</span>
+                        <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">2. Add to Cart & Checkout</h3>
+                        <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Select items, custom sizing variables, and delivery setup requirements. The system structures your order manifest beautifully into a single block.</p>
                     </div>
 
-                    <div class="bg-card-bg border border-zinc-200/60 rounded-xl p-6 space-y-4 hover:border-accent/40 transition-all duration-300">
-                        <div class="w-12 h-12 rounded-lg bg-accent-light flex items-center justify-center text-primary">
-                            <span class="material-symbols-outlined text-2xl">moped</span>
-                        </div>
-                        <div class="space-y-1.5">
-                            <h3 class="font-bold text-sm uppercase tracking-wider text-text-main">Flexible Delivery Options</h3>
-                            <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">Choose standard delivery straight to your front gate or select self-pickup to avoid queues entirely if you are walking past the kitchen location.</p>
-                        </div>
+                    <div class="p-8 bg-primary text-white border border-primary rounded-2xl relative space-y-4 shadow-md">
+                        <span class="w-10 h-10 rounded-full bg-emerald-800 text-accent font-bold text-xs flex items-center justify-center border border-emerald-700">3</span>
+                        <h3 class="font-bold text-sm uppercase tracking-wider text-accent">3. Direct UPI Settlement</h3>
+                        <p class="text-xs sm:text-sm text-emerald-100 font-light leading-relaxed">The checkout terminal opens a direct path to the seller's merchant account via standard UPI apps. Pay instantly at zero tax overhead and receive confirmation alerts.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="shops" class="py-20 bg-card-bg border-t border-zinc-100">
+        <section id="marketplace-simulator" class="py-20 bg-card-bg border-y border-zinc-100">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                    <span class="text-primary font-semibold text-xs tracking-widest uppercase block">Store Directory</span>
-                    <h2 class="text-3xl font-bold text-text-main tracking-tight">Browse Open Stores Near You</h2>
-                    <p class="text-sm text-text-muted font-light">Select from verified neighborhood outlets processing direct customer fulfillment orders right now.</p>
+                <div class="max-w-xl mb-12 space-y-2">
+                    <span class="text-primary font-bold text-xs tracking-widest uppercase block">Live Merchant Roster</span>
+                    <h2 class="text-3xl font-bold text-text-main tracking-tight">Explore Local Neighborhood Stores</h2>
+                    <p class="text-sm text-text-muted font-light">Support independent businesses running on our direct framework. Click to open live store layouts.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="group bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm hover:border-primary/40 transition-all duration-300 flex flex-col justify-between">
-                        <div class="aspect-video w-full p-6 flex items-center justify-center bg-emerald-50/40 border-b border-zinc-100">
-                            <svg class="w-20 h-20 text-primary group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M25 80V35C25 35 35 20 50 20C65 20 75 35 75 35V80" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-                                <rect x="35" y="50" width="30" height="30" rx="2" stroke="currentColor" stroke-width="3" fill="#ffffff"/>
-                                <line x1="15" y1="80" x2="85" y2="80" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-                                <circle cx="50" cy="65" r="4" fill="#10b981"/>
-                            </svg>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="bg-white border border-zinc-200 p-6 rounded-2xl hover:shadow-md transition-all flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-amber-50 text-amber-700 text-[10px] px-2 py-0.5 rounded font-medium border border-amber-100">Thai & Pan-Asian</span>
+                                <span class="text-[10px] text-text-muted flex items-center gap-1"><span class="material-symbols-outlined text-xs text-amber-400 fill-1">star</span> 4.9 (180+)</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base text-text-main group-hover:text-primary transition-colors">Hot Spice Thai Cuisine</h3>
+                                <p class="text-xs text-text-muted font-light mt-1">Authentic Papaya Salad, Vegan Dumplings, and aromatic Thai Curry dishes crafted natively.</p>
+                            </div>
+                            <div class="flex items-center gap-1.5 text-[11px] text-text-muted font-light">
+                                <span class="material-symbols-outlined text-sm">location_on</span> Irving, Texas Area Operations
+                            </div>
                         </div>
-                        <div class="p-6 space-y-4">
-                            <div class="space-y-1">
-                                <div class="flex justify-between items-start">
-                                    <h3 class="font-bold text-base text-text-main">Hot Spice Thai Cuisine</h3>
-                                    <span class="text-[10px] bg-accent-light text-primary font-bold px-2 py-0.5 rounded">Madhapur</span>
-                                </div>
-                                <p class="text-xs text-text-muted font-light">Authentic Thai dishes, aromatic green curries, and traditional spicy specialties.</p>
-                            </div>
-                            <div class="flex justify-between items-center pt-2 border-t border-zinc-100">
-                                <span class="text-xs font-semibold text-primary flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 11:00 AM - 11:00 PM</span>
-                                <a href="Contact.html" class="text-xs font-bold text-accent group-hover:text-primary transition-colors flex items-center gap-1">Browse Menu &rarr;</a>
-                            </div>
+                        <div class="pt-6 border-t border-zinc-100 mt-6 flex justify-between items-center">
+                            <span class="text-xs font-bold text-primary">₹0 Middleman Fees</span>
+                            <a href="#" class="text-xs font-semibold text-primary group-hover:text-accent transition-colors flex items-center gap-1">Open Store Menu &rarr;</a>
                         </div>
                     </div>
 
-                    <div class="group bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm hover:border-primary/40 transition-all duration-300 flex flex-col justify-between">
-                        <div class="aspect-video w-full p-6 flex items-center justify-center bg-emerald-50/40 border-b border-zinc-100">
-                            <svg class="w-20 h-20 text-primary group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M30 40H65C73 40 73 52 65 52H30V40Z" stroke="currentColor" stroke-width="4" fill="#ffffff"/>
-                                <path d="M24 32H70V70C70 75 62 80 47 80C32 80 24 75 24 70V32Z" stroke="currentColor" stroke-width="4" fill="#ffffff"/>
-                                <line x1="15" y1="88" x2="85" y2="88" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-                                <path d="M40 18C42 22 38 24 40 28" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
-                                <path d="M54 18C56 22 52 24 54 28" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
-                            </svg>
+                    <div class="bg-white border border-zinc-200 p-6 rounded-2xl hover:shadow-md transition-all flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-pink-50 text-pink-700 text-[10px] px-2 py-0.5 rounded font-medium border border-pink-100">Desserts & Shakes</span>
+                                <span class="text-[10px] text-text-muted flex items-center gap-1"><span class="material-symbols-outlined text-xs text-amber-400 fill-1">star</span> 4.8 (310+)</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base text-text-main group-hover:text-primary transition-colors">CrémeVerse</h3>
+                                <p class="text-xs text-text-muted font-light mt-1">Specializing in premium rolled ice cream, thick Oreo milkshakes, and traditional Rabadi Gulab Jamun.</p>
+                            </div>
+                            <div class="flex items-center gap-1.5 text-[11px] text-text-muted font-light">
+                                <span class="material-symbols-outlined text-sm">location_on</span> Hyperlocal Direct Delivery Tracks
+                            </div>
                         </div>
-                        <div class="p-6 space-y-4">
-                            <div class="space-y-1">
-                                <div class="flex justify-between items-start">
-                                    <h3 class="font-bold text-base text-text-main">Green Bean Coffee Co.</h3>
-                                    <span class="text-[10px] bg-accent-light text-primary font-bold px-2 py-0.5 rounded">Gachibowli</span>
-                                </div>
-                                <p class="text-xs text-text-muted font-light">Freshly roasted coffee blends, quick breakfast bites, and artisan cold brews.</p>
-                            </div>
-                            <div class="flex justify-between items-center pt-2 border-t border-zinc-100">
-                                <span class="text-xs font-semibold text-primary flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 7:00 AM - 9:00 PM</span>
-                                <a href="Contact.html" class="text-xs font-bold text-accent group-hover:text-primary transition-colors flex items-center gap-1">Browse Menu &rarr;</a>
-                            </div>
+                        <div class="pt-6 border-t border-zinc-100 mt-6 flex justify-between items-center">
+                            <span class="text-xs font-bold text-primary">UPI Payments Accepted</span>
+                            <a href="#" class="text-xs font-semibold text-primary group-hover:text-accent transition-colors flex items-center gap-1">Open Store Menu &rarr;</a>
                         </div>
                     </div>
 
-                    <div class="group bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm hover:border-primary/40 transition-all duration-300 flex flex-col justify-between">
-                        <div class="aspect-video w-full p-6 flex items-center justify-center bg-emerald-50/40 border-b border-zinc-100">
-                            <svg class="w-20 h-20 text-primary group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="28" stroke="currentColor" stroke-width="4" fill="#ffffff"/>
-                                <path d="M32 50C32 40 40 32 50 32" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
-                                <circle cx="50" cy="50" r="12" stroke="currentColor" stroke-width="3"/>
-                                <line x1="50" y1="12" x2="50" y2="22" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-                                <line x1="50" y1="78" x2="50" y2="88" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-                            </svg>
+                    <div class="bg-white border border-zinc-200 p-6 rounded-2xl hover:shadow-md transition-all flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-emerald-50 text-emerald-700 text-[10px] px-2 py-0.5 rounded font-medium border border-emerald-100">Artisanal Coffee</span>
+                                <span class="text-[10px] text-text-muted flex items-center gap-1"><span class="material-symbols-outlined text-xs text-amber-400 fill-1">star</span> 4.7 (95+)</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-base text-text-main group-hover:text-primary transition-colors">Green Bean Coffee Co.</h3>
+                                <p class="text-xs text-text-muted font-light mt-1">Crafted espresso selections and specialty house-blends managed by your favorite local baristas.</p>
+                            </div>
+                            <div class="flex items-center gap-1.5 text-[11px] text-text-muted font-light">
+                                <span class="material-symbols-outlined text-sm">location_on</span> Live Counter Click & Collect
+                            </div>
                         </div>
-                        <div class="p-6 space-y-4">
-                            <div class="space-y-1">
-                                <div class="flex justify-between items-start">
-                                    <h3 class="font-bold text-base text-text-main">CrémeVerse Desserts</h3>
-                                    <span class="text-[10px] bg-accent-light text-primary font-bold px-2 py-0.5 rounded">Kukatpally</span>
-                                </div>
-                                <p class="text-xs text-text-muted font-light">Thick milkshakes, loaded ice cream waffles, and traditional Indian fusion sweets.</p>
-                            </div>
-                            <div class="flex justify-between items-center pt-2 border-t border-zinc-100">
-                                <span class="text-xs font-semibold text-primary flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 12:00 PM - 11:30 PM</span>
-                                <a href="Contact.html" class="text-xs font-bold text-accent group-hover:text-primary transition-colors flex items-center gap-1">Browse Menu &rarr;</a>
-                            </div>
+                        <div class="pt-6 border-t border-zinc-100 mt-6 flex justify-between items-center">
+                            <span class="text-xs font-bold text-primary">Direct WhatsApp Alerting</span>
+                            <a href="#" class="text-xs font-semibold text-primary group-hover:text-accent transition-colors flex items-center gap-1">Open Store Menu &rarr;</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 bg-white border-t border-zinc-100">
+        <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
-                    <span class="text-accent font-semibold text-xs tracking-widest uppercase block">How It Works</span>
-                    <h2 class="text-3xl font-bold text-text-main tracking-tight">4 Simple Ordering Steps</h2>
-                    <p class="text-sm text-text-muted font-light">Enjoy a fast and highly familiar food delivery app checkout experience.</p>
+                    <span class="text-primary font-bold text-xs tracking-widest uppercase block">The Core Difference</span>
+                    <h2 class="text-3xl font-bold text-text-main tracking-tight">Why Smart Consumers Buy Direct</h2>
+                    <p class="text-sm text-text-muted font-light">Bypassing structural aggregators benefits the local commercial fabric directly.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-                    <div class="space-y-3 relative">
-                        <div class="w-10 h-10 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shadow-sm">1</div>
-                        <h4 class="font-bold text-sm uppercase tracking-wider text-text-main">Browse Outlets</h4>
-                        <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                            Open the catalog loop to search by category, distance, or neighborhood and choose your preferred shop menu instantly.
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="p-6 border border-zinc-100 bg-card-bg rounded-xl space-y-3">
+                        <h4 class="font-bold text-sm uppercase tracking-wider text-text-main flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent">price_check</span> Real Menu Economics
+                        </h4>
+                        <p class="text-xs text-text-muted font-light leading-relaxed">
+                            App marketplaces force shops to artificially raise prices up to 30% to survive heavy platform fees. Ordering direct lets you buy at genuine counter rates.
                         </p>
                     </div>
 
-                    <div class="space-y-3 relative">
-                        <div class="w-10 h-10 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shadow-sm">2</div>
-                        <h4 class="font-bold text-sm uppercase tracking-wider text-text-main">Add to Digital Cart</h4>
-                        <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                            Pick your meal variants, customize toppings, configure sizing adjustments, and pool them seamlessly inside your active checkout cart.
+                    <div class="p-6 border border-zinc-100 bg-card-bg rounded-xl space-y-3">
+                        <h4 class="font-bold text-sm uppercase tracking-wider text-text-main flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent">support_agent</span> Unfiltered Staff Support
+                        </h4>
+                        <p class="text-xs text-text-muted font-light leading-relaxed">
+                            No automated bots or artificial help desks. When you click checkout, you speak directly with the storefront manager over a native WhatsApp thread for immediate adjustments.
                         </p>
                     </div>
 
-                    <div class="space-y-3 relative">
-                        <div class="w-10 h-10 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shadow-sm">3</div>
-                        <h4 class="font-bold text-sm uppercase tracking-wider text-text-main">Choose Handover</h4>
-                        <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                            Select standard local runner delivery straight to your doorstep or set a quick self-pickup timeline at the merchant counter.
+                    <div class="p-6 border border-zinc-100 bg-card-bg rounded-xl space-y-3">
+                        <h4 class="font-bold text-sm uppercase tracking-wider text-text-main flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent">storefront</span> Direct Community Growth
+                        </h4>
+                        <p class="text-xs text-text-muted font-light leading-relaxed">
+                            Every rupee you pay goes 100% straight to the merchant's local bank account on the spot. Keep capital working directly inside your regional neighborhood circle.
                         </p>
                     </div>
 
-                    <div class="space-y-3 relative">
-                        <div class="w-10 h-10 rounded-full bg-accent text-white font-bold text-xs flex items-center justify-center shadow-sm">4</div>
-                        <h4 class="font-bold text-sm uppercase tracking-wider text-accent">Instant Confirmation</h4>
-                        <p class="text-xs sm:text-sm text-text-muted font-light leading-relaxed">
-                            Submit your order request details securely. The restaurant kitchen automatically receives the printout log and accepts your order into preparation.
+                    <div class="p-6 border border-zinc-100 bg-card-bg rounded-xl space-y-3">
+                        <h4 class="font-bold text-sm uppercase tracking-wider text-text-main flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent">security</span> Absolute Data Privacy
+                        </h4>
+                        <p class="text-xs text-text-muted font-light leading-relaxed">
+                            Your buying preferences and profile parameters aren't packaged, monitored, or cross-analyzed to feed complex optimization algorithms. Keep your transaction data entirely safe.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 px-6 bg-white border-t border-zinc-100">
-            <div class="max-w-4xl mx-auto bg-card-bg border border-zinc-200 rounded-2xl p-10 md:p-16 text-center shadow-sm relative overflow-hidden">
+        <section class="py-20 px-6 bg-card-bg border-t border-zinc-100">
+            <div class="max-w-4xl mx-auto bg-white border border-zinc-200 rounded-2xl p-10 md:p-16 text-center shadow-sm relative overflow-hidden">
                 <div class="absolute -top-24 -right-24 w-48 h-48 bg-accent/5 rounded-full blur-3xl"></div>
                 <div class="max-w-xl mx-auto space-y-6 relative">
-                    <h2 class="text-3xl font-bold tracking-tight text-text-main">Ready to Order Honestly and Affordably?</h2>
+                    <h2 class="text-3xl font-bold tracking-tight text-text-main">Want Your Favorite Shop on MithraDirect?</h2>
                     <p class="text-xs sm:text-sm text-text-muted leading-relaxed font-light">
-                        Support your local community sellers by avoiding corporate aggregator apps. Find your regular favorite store page now.
+                        Help your local merchants secure full control over their sales volume metrics. Introduce them to our zero-commission framework today.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-                        <a href="#shops" class="bg-primary hover:bg-emerald-800 text-white font-semibold text-xs uppercase tracking-wider px-6 py-4 rounded-lg shadow-sm transition-colors">
-                            Explore Active Shops
+                        <a href="Contact.html" class="bg-primary hover:bg-emerald-800 text-white font-semibold text-xs uppercase tracking-wider px-6 py-4 rounded-lg shadow-sm transition-colors">
+                            Recommend a Local Store
                         </a>
-                        <a href="Contact.html" class="bg-white hover:bg-zinc-50 border border-zinc-200 text-text-main font-semibold text-xs uppercase tracking-wider px-6 py-4 rounded-lg transition-colors">
-                            Recommend a Restaurant
+                        <a href="mailto:mithradirect@gmail.com" class="bg-white hover:bg-zinc-50 border border-zinc-200 text-text-main font-semibold text-xs uppercase tracking-wider px-6 py-4 rounded-lg transition-colors">
+                            Contact Infrastructure Team
                         </a>
                     </div>
                 </div>
@@ -339,11 +301,8 @@
     <footer class="bg-white text-text-muted border-t border-zinc-100">
         <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-5 space-y-4">
-                <div class="flex items-center gap-2.5 text-text-main">
-                    <div class="w-6 h-6 rounded bg-primary flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-xs font-light">layers</span>
-                    </div>
-                    <span class="text-sm font-bold tracking-tight">Mitra<span class="text-accent font-medium">Direct</span></span>
+                <div class="flex items-center text-text-main">
+                    <img src="Images/Logo.png" alt="MithraDirect Logo" class="h-10 w-auto object-contain" />
                 </div>
                 <p class="text-xs leading-relaxed text-text-muted font-light max-w-sm">
                     A streamlined local business digital framework. Engineered to build absolute transactional independence across Telangana, entirely free of market platform friction.
@@ -362,9 +321,18 @@
             <div class="md:col-span-3 space-y-4">
                 <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Inquiries</h5>
                 <ul class="space-y-2.5 text-xs font-light">
-                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">mail</span> support@mithradirect.com</li>
-                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">phone</span> +91 98765 43210</li>
-                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">location_on</span> Hyderabad, Telangana, India</li>
+                    <li class="flex items-start gap-2 text-zinc-500">
+                        <span class="material-symbols-outlined text-sm font-light mt-0.5">location_on</span> 
+                        <span>MIG 3-973/L, Mayurinagar, Miyapur<br/>Telangana, India, 500049</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-zinc-500">
+                        <span class="material-symbols-outlined text-sm font-light">mail</span> 
+                        <a href="mailto:mithradirect@gmail.com" class="hover:text-accent transition-colors">mithradirect@gmail.com</a>
+                    </li>
+                    <li class="flex items-center gap-2 text-zinc-500">
+                        <span class="material-symbols-outlined text-sm font-light">phone</span> 
+                        <a href="tel:+919912149049" class="hover:text-accent transition-colors">+91 99121 49049</a>
+                    </li>
                 </ul>
             </div>
 
@@ -379,7 +347,7 @@
         </div>
 
         <div class="max-w-7xl mx-auto px-6 py-8 border-t border-zinc-100 text-left text-[11px] font-light text-text-muted/60 flex flex-col sm:flex-row justify-between gap-4">
-            <div>&copy; 2026 Mitra Direct. Open infrastructure guidelines apply.</div>
+            <div>&copy; 2026 MithraDirect. Grow Local. Go Digital. Stay Direct.</div>
             <div class="space-x-4"><a href="#" class="hover:text-text-main">Terms</a><a href="#" class="hover:text-text-main">Privacy</a></div>
         </div>
     </footer>

@@ -26,6 +26,15 @@
             },
             fontFamily: {
               sans: ["'Plus Jakarta Sans'", "sans-serif"]
+            },
+            animation: {
+              marquee: "marquee 30s linear infinite",
+            },
+            keyframes: {
+              marquee: {
+                "0%": { transform: "translateX(0%)" },
+                "100%": { transform: "translateX(-50%)" },
+              }
             }
           }
         }
@@ -38,6 +47,9 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
+        /* Hide scrollbars for the marquee container */
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-surface-bg text-text-main antialiased selection:bg-accent/10 selection:text-primary">
@@ -45,10 +57,7 @@
     <nav class="fixed top-0 w-full z-50 glass-nav border-b border-zinc-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center relative">
             <a href="Home.html" class="flex items-center gap-2.5 group cursor-pointer">
-                <div class="w-8 h-8 rounded-md bg-primary flex items-center justify-center transition-transform group-hover:scale-105">
-                    <span class="material-symbols-outlined text-white text-lg font-light">storefront</span>
-                </div>
-                <span class="text-lg font-bold tracking-tight text-text-main">Mithra<span class="text-accent font-medium">Direct</span></span>
+                <img src="Images/Logo.png" alt="MithraDirect Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-102" />
             </a>
             
             <div id="nav-menu" class="hidden absolute top-20 left-0 w-full bg-white border-b border-zinc-200 p-6 flex flex-col space-y-4 font-medium text-[13px] tracking-tight shadow-xl z-50 lg:shadow-none lg:p-0 lg:border-none lg:bg-transparent lg:static lg:w-auto lg:flex lg:flex-row lg:space-y-0 lg:space-x-10">
@@ -216,6 +225,105 @@
             </div>
         </section>
 
+        <section class="py-20 bg-white overflow-hidden border-b border-zinc-100">
+            <div class="max-w-7xl mx-auto px-6 mb-12 text-center">
+                <span class="text-accent font-semibold text-xs tracking-widest uppercase block mb-2">Success Stories</span>
+                <h2 class="text-3xl font-bold text-text-main tracking-tight">Trusted by Local Entrepreneurs</h2>
+                <p class="text-sm text-text-muted font-light mt-1">See how independent businesses across Telangana are scaling their operations.</p>
+            </div>
+
+            <div class="relative w-full flex overflow-x-hidden group">
+                <div class="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+                <div class="animate-marquee flex gap-6 whitespace-nowrap py-4 group-hover:[animation-play-state:paused]">
+                    <div class="w-[350px] flex-shrink-0 bg-card-bg border border-zinc-100 p-6 rounded-2xl shadow-sm whitespace-normal flex flex-col justify-between">
+                        <p class="text-xs text-text-muted font-light leading-relaxed italic">"Moving our homemade pickle business away from standard delivery apps to MithraDirect saved us 25% in commission expenses. Our Instagram followers now click our bio link and complete checkout seamlessly via UPI."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-100 mt-4">
+                            <div class="w-10 h-10 rounded-full bg-accent-light text-primary flex items-center justify-center font-bold text-xs uppercase">AP</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-text-main">Anitha P.</h4>
+                                <p class="text-[10px] text-accent font-medium uppercase tracking-wider">Priya Homemade Foods, Hyderabad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[350px] flex-shrink-0 bg-card-bg border border-zinc-100 p-6 rounded-2xl shadow-sm whitespace-normal flex flex-col justify-between">
+                        <p class="text-xs text-text-muted font-light leading-relaxed italic">"Managing morning milk and organic juice subscriptions used to be a logistical nightmare of tracking scattered WhatsApp messages. This platform automated our entire routine billing and daily route planning."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-100 mt-4">
+                            <div class="w-10 h-10 rounded-full bg-accent-light text-primary flex items-center justify-center font-bold text-xs uppercase">KR</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-text-main">Kishore Reddy</h4>
+                                <p class="text-[10px] text-accent font-medium uppercase tracking-wider">Sattva Organics, Secunderabad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[350px] flex-shrink-0 bg-card-bg border border-zinc-100 p-6 rounded-2xl shadow-sm whitespace-normal flex flex-col justify-between">
+                        <p class="text-xs text-text-muted font-light leading-relaxed italic">"The real-time WhatsApp order notification system means my kitchen team misses zero details. Customers love the click-and-collect store pickup option during peak evening hours."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-100 mt-4">
+                            <div class="w-10 h-10 rounded-full bg-accent-light text-primary flex items-center justify-center font-bold text-xs uppercase">MD</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-text-main">Mohammed Ali</h4>
+                                <p class="text-[10px] text-accent font-medium uppercase tracking-wider">Cafe De Paris, Warangal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[350px] flex-shrink-0 bg-card-bg border border-zinc-100 p-6 rounded-2xl shadow-sm whitespace-normal flex flex-col justify-between">
+                        <p class="text-xs text-text-muted font-light leading-relaxed italic">"Our farm-to-table mango pre-orders are entirely volume-locked before we even harvest. Zero inventory loss and total control over customer data analytics properties."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-100 mt-4">
+                            <div class="w-10 h-10 rounded-full bg-accent-light text-primary flex items-center justify-center font-bold text-xs uppercase">VK</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-text-main">Venkatesh K.</h4>
+                                <p class="text-[10px] text-accent font-medium uppercase tracking-wider">Kisan Direct Farms, Nizamabad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-marquee flex gap-6 whitespace-nowrap py-4 group-hover:[animation-play-state:paused]" aria-hidden="true">
+                    <div class="w-[350px] flex-shrink-0 bg-card-bg border border-zinc-100 p-6 rounded-2xl shadow-sm whitespace-normal flex flex-col justify-between">
+                        <p class="text-xs text-text-muted font-light leading-relaxed italic">"Moving our homemade pickle business away from standard delivery apps to MithraDirect saved us 25% in commission expenses. Our Instagram followers now click our bio link and complete checkout seamlessly via UPI."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-100 mt-4">
+                            <div class="w-10 h-10 rounded-full bg-accent-light text-primary flex items-center justify-center font-bold text-xs uppercase">AP</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-text-main">Anitha P.</h4>
+                                <p class="text-[10px] text-accent font-medium uppercase tracking-wider">Priya Homemade Foods, Hyderabad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[350px] flex-shrink-0 bg-card-bg border border-zinc-100 p-6 rounded-2xl shadow-sm whitespace-normal flex flex-col justify-between">
+                        <p class="text-xs text-text-muted font-light leading-relaxed italic">"Managing morning milk and organic juice subscriptions used to be a logistical nightmare of tracking scattered WhatsApp messages. This platform automated our entire routine billing and daily route planning."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-100 mt-4">
+                            <div class="w-10 h-10 rounded-full bg-accent-light text-primary flex items-center justify-center font-bold text-xs uppercase">KR</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-text-main">Kishore Reddy</h4>
+                                <p class="text-[10px] text-accent font-medium uppercase tracking-wider">Sattva Organics, Secunderabad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[350px] flex-shrink-0 bg-card-bg border border-zinc-100 p-6 rounded-2xl shadow-sm whitespace-normal flex flex-col justify-between">
+                        <p class="text-xs text-text-muted font-light leading-relaxed italic">"The real-time WhatsApp order notification system means my kitchen team misses zero details. Customers love the click-and-collect store pickup option during peak evening hours."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-100 mt-4">
+                            <div class="w-10 h-10 rounded-full bg-accent-light text-primary flex items-center justify-center font-bold text-xs uppercase">MD</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-text-main">Mohammed Ali</h4>
+                                <p class="text-[10px] text-accent font-medium uppercase tracking-wider">Cafe De Paris, Warangal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[350px] flex-shrink-0 bg-card-bg border border-zinc-100 p-6 rounded-2xl shadow-sm whitespace-normal flex flex-col justify-between">
+                        <p class="text-xs text-text-muted font-light leading-relaxed italic">"Our farm-to-table mango pre-orders are entirely volume-locked before we even harvest. Zero inventory loss and total control over customer data analytics properties."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-100 mt-4">
+                            <div class="w-10 h-10 rounded-full bg-accent-light text-primary flex items-center justify-center font-bold text-xs uppercase">VK</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-text-main">Venkatesh K.</h4>
+                                <p class="text-[10px] text-accent font-medium uppercase tracking-wider">Kisan Direct Farms, Nizamabad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
@@ -317,10 +425,10 @@
                         Join MithraDirect now and take your localized commercial business operations metrics to the next absolute scale tier today.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-                        <a href="mailto:support@mithradirect.com" class="bg-primary hover:bg-emerald-800 text-white font-semibold text-xs uppercase tracking-wider px-6 py-4 rounded-lg shadow-sm transition-colors">
+                        <a href="mailto:mithradirect@gmail.com" class="bg-primary hover:bg-emerald-800 text-white font-semibold text-xs uppercase tracking-wider px-6 py-4 rounded-lg shadow-sm transition-colors">
                             Get Started Today
                         </a>
-                        <a href="tel:+919876543210" class="bg-white hover:bg-zinc-50 border border-zinc-200 text-text-main font-semibold text-xs uppercase tracking-wider px-6 py-4 rounded-lg transition-colors">
+                        <a href="tel:+919912149049" class="bg-white hover:bg-zinc-50 border border-zinc-200 text-text-main font-semibold text-xs uppercase tracking-wider px-6 py-4 rounded-lg transition-colors">
                             Speak with Local Expert
                         </a>
                     </div>
@@ -333,11 +441,8 @@
     <footer class="bg-white text-text-muted border-t border-zinc-100">
         <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-5 space-y-4">
-                <div class="flex items-center gap-2.5 text-text-main">
-                    <div class="w-6 h-6 rounded bg-primary flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-xs font-light">layers</span>
-                    </div>
-                    <span class="text-sm font-bold tracking-tight">Mithra<span class="text-accent font-medium">Direct</span></span>
+                <div class="flex items-center text-text-main">
+                    <img src="Images/Logo.png" alt="MithraDirect Logo" class="h-10 w-auto object-contain" />
                 </div>
                 <p class="text-xs leading-relaxed text-text-muted font-light max-w-sm">
                     A streamlined local business digital framework. Engineered to build absolute transactional independence across Telangana, entirely free of market platform friction.
@@ -356,9 +461,18 @@
             <div class="md:col-span-3 space-y-4">
                 <h5 class="text-text-main font-semibold text-[11px] uppercase tracking-wider">Inquiries</h5>
                 <ul class="space-y-2.5 text-xs font-light">
-                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">mail</span> support@mithradirect.com</li>
-                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">phone</span> +91 98765 43210</li>
-                    <li class="flex items-center gap-2 text-zinc-500"><span class="material-symbols-outlined text-sm font-light">location_on</span> Hyderabad, Telangana, India</li>
+                    <li class="flex items-start gap-2 text-zinc-500">
+                        <span class="material-symbols-outlined text-sm font-light mt-0.5">location_on</span> 
+                        <span>MIG 3-973/L, Mayurinagar, Miyapur<br/>Telangana, India, 500049</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-zinc-500">
+                        <span class="material-symbols-outlined text-sm font-light">mail</span> 
+                        <a href="mailto:mithradirect@gmail.com" class="hover:text-accent transition-colors">mithradirect@gmail.com</a>
+                    </li>
+                    <li class="flex items-center gap-2 text-zinc-500">
+                        <span class="material-symbols-outlined text-sm font-light">phone</span> 
+                        <a href="tel:+919912149049" class="hover:text-accent transition-colors">+91 99121 49049</a>
+                    </li>
                 </ul>
             </div>
 
