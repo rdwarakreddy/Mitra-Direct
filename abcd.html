@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mithra Direct - Hyperlocal Small Business Digitization Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#064e3b',
+                        brandGreenHover: '#022c22',
+                        brandYellow: '#facc15',
+                        brandYellowHover: '#eab308',
+                        darkBg: '#0f172a',
+                        lightBg: '#fdfbf7',
+                        cardAccent: '#fef08a'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 40px -15px rgba(15, 23, 42, 0.05)',
+                        'cardHover': '0 30px 60px -15px rgba(6, 78, 59, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-[#fdfbf7] text-[#1e293b] font-sans antialiased selection:bg-emerald-100 selection:text-brandGreen">
+
+    <div class="bg-[#f4f1eb] border-b border-stone-200/60 py-2.5 px-4 text-center text-xs sm:text-sm font-medium text-stone-700 tracking-wide z-50 relative">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-700 mr-2 animate-pulse"></span>
+        Empowering Local Legends: <span class="font-bold underline text-emerald-800">Geeta's Kitchen</span> |
+        <span class="font-bold underline text-emerald-800">Golden Harvest</span> | <span class="font-bold underline text-emerald-800">V.N.R Farms</span> | <span class="font-bold underline text-emerald-800">Yavi</span>
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-[#fdfbf7]/80 backdrop-blur-md border-b border-stone-200/40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-brandGreen text-white p-2 rounded-xl flex items-center justify-center shadow-sm">
+                    <i class="fa-solid fa-store text-sm"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-tight text-stone-900">Mithra<span class="text-emerald-700 font-medium">.</span></span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
+                <a href="#problems" class="hover:text-brandGreen transition-colors">Problems We Solve</a>
+                <a href="#how-it-works" class="hover:text-brandGreen transition-colors">How Mitra Direct Works</a>
+                <a href="#vendors" class="hover:text-brandGreen transition-colors">Showcase Vendors</a>
+            </div>
+
+            <div class="flex items-center">
+                <a href="#download" class="bg-[#064e3b] hover:bg-brandGreenHover text-white transition-all text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm shadow-emerald-950/10">
+                    Join as Partner
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative max-w-5xl mx-auto text-center px-4 pt-20 pb-24 sm:pt-28 sm:pb-32">
+        <div class="inline-flex items-center bg-emerald-50 text-emerald-800 text-xs font-medium px-4 py-1.5 rounded-full mb-6 tracking-wide border border-emerald-200/50">
+            <span class="w-1 h-1 rounded-full bg-emerald-600 mr-2"></span>
+            HYPERLOCAL COMMERCE OPERATING SYSTEM
+        </div>
+
+        <h1 class="text-5xl sm:text-7xl font-bold text-stone-900 tracking-tight leading-[1.05] max-w-4xl mx-auto">
+            Your neighborhood <br>
+            <span class="text-[#b23b1e] italic font-serif font-semibold tracking-normal block mt-2">reimagined.</span>
+        </h1>
+
+        <p class="mt-8 text-base sm:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
+            Mithra Direct is a dedicated small business digitization platform. We help local businesses leave phone-order chaos, notebook logs, and manual tracking behind to step securely into the digital future.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-stone-200/40 max-w-3xl mx-auto">
+            <p class="text-xs font-bold text-emerald-800 uppercase tracking-widest mb-3">We help local businesses go digital and grow.</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight mb-3">Grow Your Local Business with MithraDirect</h2>
+            <p class="text-sm text-stone-500 max-w-xl mx-auto">Create your own online store, accept digital orders, manage customers, subscriptions, and payments — all in one hyper-focused platform built for local commerce.</p>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto px-4">
+            <a href="#download" class="w-full sm:w-auto inline-flex items-center justify-center bg-[#064e3b] hover:bg-brandGreenHover text-white font-medium px-7 py-3 rounded-full transition-all text-sm tracking-wide shadow-sm">
+                <i class="fa-solid fa-bag-shopping mr-2 text-xs opacity-80"></i> Explore Shops
+            </a>
+            <a href="#download" class="w-full sm:w-auto inline-flex items-center justify-center bg-white hover:bg-stone-50 text-stone-800 font-medium px-7 py-3 rounded-full transition-all text-sm tracking-wide border border-stone-200 shadow-sm">
+                <i class="fa-solid fa-mobile-screen mr-2 text-xs opacity-70"></i> For Business Owners
+            </a>
+        </div>
+
+        <div class="mt-28 border-t border-stone-200/60 pt-16">
+            <p class="text-[11px] uppercase font-bold text-emerald-800 tracking-widest text-center mb-12">Small Business Digitization Engine</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/60 shadow-premium hover:shadow-cardHover transition-all duration-300">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-800 mb-4 font-bold text-xs">01</div>
+                    <h4 class="font-bold text-stone-900 text-base tracking-tight mb-2">Digital Storefronts</h4>
+                    <p class="text-xs text-stone-500 leading-relaxed">Launch an instant storefront to cleanly show off your daily items without getting buried under messy text chains.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/60 shadow-premium hover:shadow-cardHover transition-all duration-300">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-800 mb-4 font-bold text-xs">02</div>
+                    <h4 class="font-bold text-stone-900 text-base tracking-tight mb-2">Subscription Commerce</h4>
+                    <p class="text-xs text-stone-500 leading-relaxed">Automate cyclic daily or monthly local delivery cycles cleanly without tedious manual calculations or notebook ledgers.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/60 shadow-premium hover:shadow-cardHover transition-all duration-300">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-800 mb-4 font-bold text-xs">03</div>
+                    <h4 class="font-bold text-stone-900 text-base tracking-tight mb-2">Hyperlocal Logistics</h4>
+                    <p class="text-xs text-stone-500 leading-relaxed">Connect straight with your neighborhood circle. Receive real-time local requests designed for instant store handoffs or drop-offs.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-stone-200/60 shadow-premium hover:shadow-cardHover transition-all duration-300">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-800 mb-4 font-bold text-xs">04</div>
+                    <h4 class="font-bold text-stone-900 text-base tracking-tight mb-2">Local Operating System</h4>
+                    <p class="text-xs text-stone-500 leading-relaxed">Take back command over your custom client relationships, records tracking, and financial ledgers inside a zero-chaos setup.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 bg-white border-t border-stone-200/40" id="how-it-works">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-[10px] uppercase font-bold text-emerald-800 tracking-widest block mb-2">Seamless Transition</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">How Mitra Direct Works</h2>
+                <p class="text-stone-500 text-sm mt-3">An structured digital framework that completely replaces traditional, error-prone manual workflows.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="relative group text-left p-6 bg-[#fdfbf7] rounded-2xl border border-stone-200/40">
+                    <div class="w-12 h-12 rounded-2xl bg-[#064e3b] text-white flex items-center justify-center text-base font-bold mb-6 shadow-md shadow-emerald-950/10">
+                        1
+                    </div>
+                    <h3 class="text-lg font-bold text-stone-900 mb-2">Go Digital Instantly</h3>
+                    <p class="text-xs text-stone-500 leading-relaxed">Merchants move away from paper books and phone lines by publishing their items, pricing tables, or subscription loops directly to the platform.</p>
+                </div>
+
+                <div class="relative group text-left p-6 bg-[#fdfbf7] rounded-2xl border border-stone-200/40">
+                    <div class="w-12 h-12 rounded-2xl bg-[#064e3b] text-white flex items-center justify-center text-base font-bold mb-6 shadow-md shadow-emerald-950/10">
+                        2
+                    </div>
+                    <h3 class="text-lg font-bold text-stone-900 mb-2">Direct Local Connections</h3>
+                    <p class="text-xs text-stone-500 leading-relaxed">Neighborhood buyers locate your exact hub natively online. They place orders systematically without sending messy chat app notes.</p>
+                </div>
+
+                <div class="relative group text-left p-6 bg-[#fdfbf7] rounded-2xl border border-stone-200/40">
+                    <div class="w-12 h-12 rounded-2xl bg-[#064e3b] text-white flex items-center justify-center text-base font-bold mb-6 shadow-md shadow-emerald-950/10">
+                        3
+                    </div>
+                    <h3 class="text-lg font-bold text-stone-900 mb-2">Automate Your Operations</h3>
+                    <p class="text-xs text-stone-500 leading-relaxed">Incoming requests align automatically on your dashboard. Subscriptions generate self-billing cycles, saving you hours of exhausting verification tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-[#fcfbfa] border-t border-b border-stone-200/60" id="vendors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div class="max-w-xl text-left">
+                    <span class="text-[11px] uppercase font-bold text-emerald-800 tracking-widest block mb-2.5">Hyperlocal Network Deployment</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">Active Partners Near You</h2>
+                    <p class="text-stone-500 text-sm mt-3">Thousands of independent merchants run on our platform to handle real-time digital fulfillment and structured recurring operations cleanly.</p>
+                </div>
+                <div class="flex items-center space-x-2 bg-white px-4 py-2 rounded-xl border border-stone-200 shadow-sm self-start md:self-auto">
+                    <span class="flex h-2.5 w-2.5 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-700"></span>
+                    </span>
+                    <span class="text-xs font-bold text-stone-700 tracking-tight">Live Network Matrix Connected</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-[4/3] bg-stone-100">
+                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=500&q=80" alt="Kitchen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-900 font-bold text-[10px] px-2.5 py-1 rounded-md tracking-wider shadow-sm uppercase">Curbside Ready</span>
+                        </div>
+                        <div class="p-6 text-left">
+                            <h3 class="font-extrabold text-lg text-stone-900 group-hover:text-emerald-800 transition-colors tracking-tight">Geeta's Kitchen</h3>
+                            <p class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider mt-1 mb-3">Gourmet & Homemade Meals</p>
+                            <p class="text-xs text-stone-500 leading-relaxed">Moved away from phone chaos to cleanly arrange and track home-cooked enterprise meal boxes.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-stone-50 text-left flex items-center justify-between">
+                        <span class="text-[11px] font-semibold text-stone-400"><i class="fa-solid fa-location-dot mr-1"></i> Within 1.2 km</span>
+                        <span class="text-xs font-bold text-stone-900 flex items-center">BOPIS Active <i class="fa-solid fa-chevron-right text-[10px] ml-1.5 text-emerald-700"></i></span>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-[4/3] bg-stone-100">
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=500&q=80" alt="Groceries" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-900 font-bold text-[10px] px-2.5 py-1 rounded-md tracking-wider shadow-sm uppercase">Subscribed</span>
+                        </div>
+                        <div class="p-6 text-left">
+                            <h3 class="font-extrabold text-lg text-stone-900 group-hover:text-emerald-800 transition-colors tracking-tight">Golden Harvest</h3>
+                            <p class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider mt-1 mb-3">Organic Groceries & Grains</p>
+                            <p class="text-xs text-stone-500 leading-relaxed">Delivering pure organic staples directly via clear, continuous neighborhood distribution logs.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-stone-50 text-left flex items-center justify-between">
+                        <span class="text-[11px] font-semibold text-stone-400"><i class="fa-solid fa-location-dot mr-1"></i> Within 0.8 km</span>
+                        <span class="text-xs font-bold text-stone-900 flex items-center">BOPIS Active <i class="fa-solid fa-chevron-right text-[10px] ml-1.5 text-emerald-700"></i></span>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-[4/3] bg-stone-100">
+                            <img src="https://images.unsplash.com/photo-1527018601619-a508a2be00cd?auto=format&fit=crop&w=500&q=80" alt="Dairy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-900 font-bold text-[10px] px-2.5 py-1 rounded-md tracking-wider shadow-sm uppercase">Direct Hub</span>
+                        </div>
+                        <div class="p-6 text-left">
+                            <h3 class="font-extrabold text-lg text-stone-900 group-hover:text-emerald-800 transition-colors tracking-tight">V.N.R Farms</h3>
+                            <p class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider mt-1 mb-3">Fresh Dairy & Produce</p>
+                            <p class="text-xs text-stone-500 leading-relaxed">Maintains recurring milk supply channels safely without tracking down loose sheets or notes.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-stone-50 text-left flex items-center justify-between">
+                        <span class="text-[11px] font-semibold text-stone-400"><i class="fa-solid fa-location-dot mr-1"></i> Within 2.5 km</span>
+                        <span class="text-xs font-bold text-stone-900 flex items-center">BOPIS Active <i class="fa-solid fa-chevron-right text-[10px] ml-1.5 text-emerald-700"></i></span>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-[4/3] bg-stone-100">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=500&q=80" alt="Apparel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-stone-900 font-bold text-[10px] px-2.5 py-1 rounded-md tracking-wider shadow-sm uppercase">Instant Fit</span>
+                        </div>
+                        <div class="p-6 text-left">
+                            <h3 class="font-extrabold text-lg text-stone-900 group-hover:text-emerald-800 transition-colors tracking-tight">Yavi</h3>
+                            <p class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider mt-1 mb-3">Bespoke Local Apparel</p>
+                            <p class="text-xs text-stone-500 leading-relaxed">Runs custom regional clothing catalogs with direct pickup setups cleanly across neighborhoods.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-stone-50 text-left flex items-center justify-between">
+                        <span class="text-[11px] font-semibold text-stone-400"><i class="fa-solid fa-location-dot mr-1"></i> Within 1.9 km</span>
+                        <span class="text-xs font-bold text-stone-900 flex items-center">BOPIS Active <i class="fa-solid fa-chevron-right text-[10px] ml-1.5 text-emerald-700"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-14 text-center">
+                <div class="text-xs font-bold text-stone-600 bg-white inline-flex items-center px-6 py-3.5 rounded-full border border-stone-200 shadow-sm gap-2">
+                    <span class="bg-emerald-50 text-emerald-800 px-2 py-0.5 rounded text-[10px] uppercase tracking-wide border border-emerald-200/50">Scale Footprint</span>
+                    Plus over <span class="text-emerald-800 font-extrabold">5,000+ Retail Hubs</span> spanning apparel, grocery, and local food verticals nationwide.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white" id="download">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-stone-900 text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between shadow-premium gap-8">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.08),transparent_50%)]"></div>
+
+                <div class="relative z-10 max-w-sm text-center md:text-left">
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-400 block mb-2">For Consumers & Merchants</span>
+                    <h3 class="text-2xl sm:text-3xl font-black mb-3 tracking-tight">Download the Mithra Direct App</h3>
+                    <p class="text-stone-400 text-xs leading-relaxed">
+                        Access neighborhood store items instantly, set up routine family delivery runs, or securely handle your merchant dashboards.
+                    </p>
+                </div>
+
+                <div class="relative z-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                    <div class="bg-white text-stone-900 px-6 py-2.5 rounded-xl font-bold flex items-center space-x-3 w-full sm:w-auto justify-center cursor-pointer hover:bg-stone-50 transition-all border border-stone-100">
+                        <i class="fa-brands fa-google-play text-xl text-emerald-800"></i>
+                        <div class="text-left">
+                            <span class="block text-[8px] uppercase font-bold text-stone-400 -mb-0.5">Get it on</span>
+                            <span class="text-xs font-bold tracking-tight">Google Play</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white border-t border-stone-200/40" id="problems">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="bg-stone-950 rounded-3xl overflow-hidden shadow-premium text-white mb-20 relative">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.1),transparent_40%)]"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 sm:p-16 relative z-10 items-center">
+                    <div class="lg:col-span-7 text-left">
+                        <div class="inline-flex items-center bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-3 py-1 rounded-md mb-4 tracking-wider uppercase border border-emerald-500/20">
+                            The Cost of Status Quo
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-none text-white">
+                            Still running your business on notebooks?
+                        </h2>
+                    </div>
+                    <div class="lg:col-span-5 text-left lg:border-l lg:border-stone-800 lg:pl-8">
+                        <p class="text-stone-400 text-sm sm:text-base leading-relaxed">
+                            Relying on loose registers, unorganized chat text chains, and heavy service platforms limits your growth and drains margins. Mithra Direct returns control back to local shop owners.
+                        </p>
+                        <p class="text-emerald-400 font-bold text-sm mt-3 flex items-center gap-2">
+                            Mithra Direct shifts control back to you. <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-stone-200/60 pt-16">
+                <div class="text-center max-w-xl mx-auto mb-12">
+                    <span class="text-[10px] uppercase font-extrabold text-emerald-800 tracking-widest block mb-1">Still Taking Orders Through Phone Calls?</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight">How We Make Your Work Easier</h3>
+                    <p class="text-xs text-stone-500 mt-2">See how our structured digital dashboard replaces archaic, frustrating manual operational workflows.</p>
+                </div>
+
+                <div class="bg-white border border-stone-200 rounded-2xl shadow-premium overflow-hidden max-w-4xl mx-auto">
+                    <div class="hidden md:grid grid-cols-12 bg-stone-50 border-b border-stone-200 px-8 py-4 text-left text-xs font-bold uppercase tracking-wider text-stone-500">
+                        <div class="col-span-5">Problem</div>
+                        <div class="col-span-7 pl-6 border-l border-stone-200/60">MithraDirect Solution</div>
+                    </div>
+
+                    <div class="divide-y divide-stone-200 text-left">
+                        <div class="grid grid-cols-1 md:grid-cols-12 items-center p-6 gap-3 md:gap-4 hover:bg-stone-50/40 transition-colors">
+                            <div class="col-span-1 md:col-span-5">
+                                <span class="md:hidden text-[9px] font-extrabold uppercase text-red-500 block mb-1">Problem</span>
+                                <p class="text-sm font-semibold text-stone-800 flex items-center gap-2.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> Still taking orders through phone calls?
+                                </p>
+                            </div>
+                            <div class="col-span-1 md:col-span-7 md:pl-6 md:border-l border-stone-100">
+                                <span class="md:hidden text-[9px] font-extrabold uppercase text-emerald-700 block mb-1">MithraDirect Solution</span>
+                                <div class="text-sm font-bold text-emerald-900 bg-emerald-50/60 border border-emerald-100 rounded-xl px-4 py-2.5 flex items-center justify-between">
+                                    <span>Automated Digital Ordering System</span>
+                                    <i class="fa-solid fa-circle-check text-emerald-700"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-12 items-center p-6 gap-3 md:gap-4 hover:bg-stone-50/40 transition-colors">
+                            <div class="col-span-1 md:col-span-5">
+                                <span class="md:hidden text-[9px] font-extrabold uppercase text-red-500 block mb-1">Problem</span>
+                                <p class="text-sm font-semibold text-stone-800 flex items-center gap-2.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> Still managing customers manually?
+                                </p>
+                            </div>
+                            <div class="col-span-1 md:col-span-7 md:pl-6 md:border-l border-stone-100">
+                                <span class="md:hidden text-[9px] font-extrabold uppercase text-emerald-700 block mb-1">MithraDirect Solution</span>
+                                <div class="text-sm font-bold text-emerald-900 bg-emerald-50/60 border border-emerald-100 rounded-xl px-4 py-2.5 flex items-center justify-between">
+                                    <span>Integrated Digital Customer Database</span>
+                                    <i class="fa-solid fa-circle-check text-emerald-700"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-12 items-center p-6 gap-3 md:gap-4 hover:bg-stone-50/40 transition-colors">
+                            <div class="col-span-1 md:col-span-5">
+                                <span class="md:hidden text-[9px] font-extrabold uppercase text-red-500 block mb-1">Problem</span>
+                                <p class="text-sm font-semibold text-stone-800 flex items-center gap-2.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> Still don't have your own online store?
+                                </p>
+                            </div>
+                            <div class="col-span-1 md:col-span-7 md:pl-6 md:border-l border-stone-100">
+                                <span class="md:hidden text-[9px] font-extrabold uppercase text-emerald-700 block mb-1">MithraDirect Solution</span>
+                                <div class="text-sm font-bold text-emerald-900 bg-emerald-50/60 border border-emerald-100 rounded-xl px-4 py-2.5 flex items-center justify-between">
+                                    <span>Your Own Dedicated Digital Storefront</span>
+                                    <i class="fa-solid fa-circle-check text-emerald-700"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-12 items-center p-6 gap-3 md:gap-4 hover:bg-stone-50/40 transition-colors">
+                            <div class="col-span-1 md:col-span-5">
+                                <span class="md:hidden text-[9px] font-extrabold uppercase text-red-500 block mb-1">Problem</span>
+                                <p class="text-sm font-semibold text-stone-800 flex items-center gap-2.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> Still paying high marketplace commissions?
+                                </p>
+                            </div>
+                            <div class="col-span-1 md:col-span-7 md:pl-6 md:border-l border-stone-100">
+                                <span class="md:hidden text-[9px] font-extrabold uppercase text-emerald-700 block mb-1">MithraDirect Solution</span>
+                                <div class="text-sm font-bold text-emerald-900 bg-emerald-50/60 border border-emerald-100 rounded-xl px-4 py-2.5 flex items-center justify-between">
+                                    <span>Direct Local Commerce with 100% Margin Retention</span>
+                                    <i class="fa-solid fa-circle-check text-emerald-700"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-[#0c0a09] text-stone-400 pt-16 pb-12 border-t border-stone-900 text-xs sm:text-sm relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-stone-900 pb-12 mb-12">
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center space-x-2.5">
+                        <div class="bg-brandGreen text-white p-2 rounded-lg">
+                            <i class="fa-solid fa-store text-xs"></i>
+                        </div>
+                        <span class="text-base font-black tracking-tight text-white">Mithra Direct</span>
+                    </div>
+                    <p class="text-xs text-stone-500 leading-relaxed">
+                        Pioneering unified hyperlocal retail systems via complete small business digitization platforms natively.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-xs uppercase font-bold text-stone-200 tracking-widest">Platform</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#problems" class="hover:text-white transition-colors">Problems Solved</a></li>
+                        <li><a href="#how-it-works" class="hover:text-white transition-colors">Operational Core</a></li>
+                        <li><a href="#vendors" class="hover:text-white transition-colors">Partner Directory</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-xs uppercase font-bold text-stone-200 tracking-widest">Contact Support</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="mailto:mithradirect@gmail.com" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-envelope text-stone-500 text-[10px]"></i> mithradirect@gmail.com</a></li>
+                        <li><a href="tel:+919912149049" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-phone text-stone-500 text-[10px]"></i> +91-9912149049</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-xs uppercase font-bold text-stone-200 tracking-widest">Global Headquarters</h4>
+                    <p class="text-xs text-stone-500 leading-relaxed">
+                        MIG 3-973/L, Mayurinagar, Miyapur,<br>
+                        Telangana, India, 500049.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-stone-500 text-xs">
+                <p>&copy; 2025 MithraDirect. Copyright and rights reserved.</p>
+                <div class="flex space-x-6 text-base">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
