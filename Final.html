@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MithraDirect — Local Roots. Digital Wings.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        grove: '#1a6b3c',
+                        groveLight: '#22c55e',
+                        groveDark: '#0f4023',
+                        groveGlow: '#bbf7d0',
+                        saffron: '#f59e0b',
+                        saffronLight: '#fde68a',
+                        ink: '#0c1a0e',
+                        parchment: '#f7faf7',
+                        mist: '#e8f5e9',
+                    },
+                    fontFamily: {
+                        display: ['"DM Serif Display"', 'Georgia', 'serif'],
+                        body: ['"Inter"', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        leaf: '0 4px 24px -4px rgba(26,107,60,0.18)',
+                        deep: '0 20px 60px -10px rgba(12,26,14,0.18)',
+                        card: '0 2px 12px rgba(12,26,14,0.07)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #f7faf7;
+            color: #0c1a0e;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Announcement bar */
+        .announce-bar {
+            background: linear-gradient(90deg, #0f4023 0%, #1a6b3c 50%, #0f4023 100%);
+        }
+
+        /* Nav blur */
+        .nav-glass {
+            background: rgba(247, 250, 247, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* Hero gradient */
+        .hero-bg {
+            background: radial-gradient(ellipse 80% 60% at 50% -10%, #bbf7d0 0%, transparent 70%), #f7faf7;
+        }
+
+        /* Section alternation */
+        .section-white {
+            background: #ffffff;
+        }
+
+        .section-parch {
+            background: #f7faf7;
+        }
+
+        .section-ink {
+            background: #0c1a0e;
+        }
+
+        /* Card hover lift */
+        .card-lift {
+            transition: transform 0.22s cubic-bezier(.4, 0, .2, 1), box-shadow 0.22s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .card-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px -8px rgba(26, 107, 60, 0.18);
+        }
+
+        /* Pill badge */
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 100px;
+        }
+
+        .pill-green {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .pill-red {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .pill-amber {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .pill-slate {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        /* Timeline line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #22c55e, #bbf7d0);
+        }
+
+        /* Gradient border card (comparison winner) */
+        .grad-border {
+            position: relative;
+        }
+
+        .grad-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #1a6b3c, #22c55e, #86efac);
+            z-index: 0;
+        }
+
+        .grad-border>.inner {
+            position: relative;
+            z-index: 1;
+            background: #fff;
+            border-radius: 18px;
+            height: 100%;
+        }
+
+        /* Marquee */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 24s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        .marquee-wrap {
+            overflow: hidden;
+        }
+
+        /* Mobile menu */
+        #mobile-menu {
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+
+        /* Pulse dot */
+        @keyframes pulse-ring {
+
+            0%,
+            100% {
+                opacity: .7;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .3;
+                transform: scale(1.6)
+            }
+        }
+
+        .pulse-ring {
+            animation: pulse-ring 2s ease-in-out infinite;
+        }
+
+        /* Number stat */
+        .stat-num {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: #1a6b3c;
+            line-height: 1;
+        }
+
+        /* Section title */
+        .section-eyebrow {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        /* Responsive grid helpers */
+        @media (max-width: 639px) {
+            .hide-mobile {
+                display: none !important;
+            }
+
+            .hero-title {
+                font-size: clamp(2rem, 10vw, 3.5rem);
+            }
+        }
+
+        @media (min-width: 640px) {
+            .hero-title {
+                font-size: clamp(2.5rem, 5vw, 4.5rem);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+        /* Comparison check/x icons styled */
+        .check-icon {
+            color: #16a34a;
+            font-size: .8rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .xmark-icon {
+            color: #e11d48;
+            font-size: .8rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Download dark card */
+        .dl-card {
+            background: linear-gradient(135deg, #0c1a0e 0%, #0f3d20 50%, #0c1a0e 100%);
+        }
+
+        /* WhatsApp green */
+        .wa-green {
+            color: #25d366;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════════════════
+     ANNOUNCEMENT BAR
+══════════════════════════════════════════ -->
+    <div class="announce-bar py-2 px-4 text-center text-white text-xs font-semibold tracking-wide">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-groveLight mr-2 animate-pulse align-middle"></span>
+        <span
+            class="bg-white/10 border border-white/20 px-2 py-0.5 rounded text-[10px] font-bold tracking-widest uppercase mr-2">Local
+            se Direct!</span>
+        Local Roots. Stronger Together. Your Community. Your Economy. Your MithraDirect.
+    </div>
+
+    <!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+    <nav class="nav-glass sticky top-0 z-50 border-b border-green-100/60" id="mainNav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-3.5">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 flex-shrink-0">
+                    <div
+                        class="bg-grove text-white w-9 h-9 rounded-xl flex items-center justify-center shadow-leaf flex-shrink-0">
+                        <i class="fa-solid fa-store text-sm"></i>
+                    </div>
+                    <div>
+                        <span class="text-base font-black tracking-tight text-ink">Mithra<span
+                                class="text-grove">Direct</span></span>
+                        <span
+                            class="block text-[8px] font-bold tracking-widest text-slate-400 uppercase -mt-0.5">Hyperlocal
+                            OS</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#merchant-benefits"
+                        class="text-xs font-semibold text-slate-500 hover:text-grove transition-colors uppercase tracking-wider">For
+                        Merchants</a>
+                    <a href="#comparison"
+                        class="text-xs font-semibold text-slate-500 hover:text-grove transition-colors uppercase tracking-wider">Why
+                        Us</a>
+                    <a href="#workflow"
+                        class="text-xs font-semibold text-slate-500 hover:text-grove transition-colors uppercase tracking-wider">How
+                        It Works</a>
+                    <a href="#vendors"
+                        class="text-xs font-semibold text-slate-500 hover:text-grove transition-colors uppercase tracking-wider">Partners</a>
+                </div>
+
+                <!-- CTA + Hamburger -->
+                <div class="flex items-center gap-3">
+                    <a href="#download"
+                        class="bg-grove hover:bg-groveDark text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all shadow-leaf flex items-center gap-2">
+                        <i class="fa-solid fa-download text-[10px]"></i>
+                        <span class="hidden sm:inline">Get App</span>
+                        <span class="sm:hidden">App</span>
+                    </a>
+                    <button id="hamburger" aria-label="Open menu"
+                        class="lg:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white">
+                        <span class="w-4 h-0.5 bg-ink rounded-full transition-all" id="h1"></span>
+                        <span class="w-4 h-0.5 bg-ink rounded-full transition-all" id="h2"></span>
+                        <span class="w-4 h-0.5 bg-ink rounded-full transition-all" id="h3"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu">
+                <div class="py-4 border-t border-slate-100 space-y-1 pb-6">
+                    <a href="#merchant-benefits"
+                        class="mobile-link block py-3 px-4 rounded-xl text-sm font-semibold text-slate-700 hover:bg-mist hover:text-grove transition-colors">For
+                        Merchants</a>
+                    <a href="#comparison"
+                        class="mobile-link block py-3 px-4 rounded-xl text-sm font-semibold text-slate-700 hover:bg-mist hover:text-grove transition-colors">Why
+                        Us</a>
+                    <a href="#workflow"
+                        class="mobile-link block py-3 px-4 rounded-xl text-sm font-semibold text-slate-700 hover:bg-mist hover:text-grove transition-colors">How
+                        It Works</a>
+                    <a href="#vendors"
+                        class="mobile-link block py-3 px-4 rounded-xl text-sm font-semibold text-slate-700 hover:bg-mist hover:text-grove transition-colors">Partners</a>
+                    <a href="#download"
+                        class="block mt-3 bg-grove text-white text-sm font-bold px-4 py-3 rounded-xl text-center">Download
+                        Free App</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+    <header class="hero-bg relative overflow-hidden">
+        <!-- Subtle grid texture -->
+        <div class="absolute inset-0 opacity-[0.025]"
+            style="background-image: repeating-linear-gradient(0deg, #1a6b3c 0, #1a6b3c 1px, transparent 1px, transparent 48px), repeating-linear-gradient(90deg, #1a6b3c 0, #1a6b3c 1px, transparent 1px, transparent 48px);">
+        </div>
+
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-12 text-center">
+            <span class="pill pill-green mb-6"><i class="fa-solid fa-leaf"></i> Grow Local. Go Digital. Stay
+                Direct.</span>
+
+            <h1 class="hero-title font-display font-normal text-ink leading-[1.08] tracking-tight mb-6">
+                Your Neighborhood Shop,<br>
+                <em class="text-grove not-italic">Now Online.</em>
+            </h1>
+
+            <p class="text-slate-500 text-base sm:text-lg max-w-lg mx-auto leading-relaxed mb-10">
+                Direct ordering for local vendors. Zero commissions. Real customers. Built for India's streets, homes,
+                and markets.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-3 max-w-sm sm:max-w-none mx-auto px-4 sm:px-0">
+                <a href="#download"
+                    class="inline-flex items-center justify-center bg-grove hover:bg-groveDark text-white font-bold px-8 py-3.5 rounded-full transition-all text-sm shadow-leaf gap-2 group">
+                    Download Free
+                    <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="http://www.mithradirect.com" target="_blank" rel="noopener"
+                    class="inline-flex items-center justify-center bg-white border border-slate-200 hover:border-grove text-ink font-bold px-8 py-3.5 rounded-full transition-all text-sm gap-2">
+                    Visit Website
+                    <i class="fa-solid fa-external-link text-xs opacity-50"></i>
+                </a>
+            </div>
+
+            <!-- Stats strip -->
+            <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                <div class="bg-white rounded-2xl p-5 shadow-card border border-green-50">
+                    <div class="stat-num">0%</div>
+                    <p class="text-xs text-slate-500 font-semibold mt-1">Commission</p>
+                </div>
+                <div class="bg-white rounded-2xl p-5 shadow-card border border-green-50">
+                    <div class="stat-num">5K+</div>
+                    <p class="text-xs text-slate-500 font-semibold mt-1">Retail Hubs</p>
+                </div>
+                <div class="bg-white rounded-2xl p-5 shadow-card border border-green-50">
+                    <div class="stat-num">
+                        <i class="fa-brands fa-whatsapp wa-green" style="font-size:2.2rem;"></i>
+                    </div>
+                    <p class="text-xs text-slate-500 font-semibold mt-1">Instant Alerts</p>
+                </div>
+                <div class="bg-white rounded-2xl p-5 shadow-card border border-green-50">
+                    <div class="stat-num">₹</div>
+                    <p class="text-xs text-slate-500 font-semibold mt-1">Direct UPI Pay</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category icons strip -->
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+            <p class="section-eyebrow text-slate-400 text-center mb-6">Empowering every neighborhood category</p>
+            <div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
+                <div
+                    class="bg-white border border-slate-100 rounded-2xl p-4 flex flex-col items-center gap-2 shadow-card card-lift">
+                    <div
+                        class="w-10 h-10 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-utensils"></i></div>
+                    <span class="text-[11px] font-bold text-ink">Home Chef</span>
+                </div>
+                <div
+                    class="bg-white border border-slate-100 rounded-2xl p-4 flex flex-col items-center gap-2 shadow-card card-lift">
+                    <div
+                        class="w-10 h-10 bg-green-50 text-green-600 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-carrot"></i></div>
+                    <span class="text-[11px] font-bold text-ink">Vegetables</span>
+                </div>
+                <div
+                    class="bg-white border border-slate-100 rounded-2xl p-4 flex flex-col items-center gap-2 shadow-card card-lift">
+                    <div class="w-10 h-10 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-cow"></i></div>
+                    <span class="text-[11px] font-bold text-ink">Milk Vendor</span>
+                </div>
+                <div
+                    class="bg-white border border-slate-100 rounded-2xl p-4 flex flex-col items-center gap-2 shadow-card card-lift">
+                    <div
+                        class="w-10 h-10 bg-yellow-50 text-yellow-500 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-cookie-bite"></i></div>
+                    <span class="text-[11px] font-bold text-ink">Snacks</span>
+                </div>
+                <div
+                    class="bg-white border border-slate-100 rounded-2xl p-4 flex flex-col items-center gap-2 shadow-card card-lift col-span-3 sm:col-span-1">
+                    <div
+                        class="w-10 h-10 bg-purple-50 text-purple-500 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-shop"></i></div>
+                    <span class="text-[11px] font-bold text-ink">Shop Owner</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ══════════════════════════════════════════
+     MARQUEE STRIP
+══════════════════════════════════════════ -->
+    <div class="section-ink py-4 overflow-hidden select-none">
+        <div class="marquee-wrap">
+            <div class="marquee-track gap-8" style="gap:2rem;">
+                <!-- Two copies for seamless loop -->
+                <template id="marquee-items">
+                    <span
+                        class="flex items-center gap-2 text-xs font-bold text-white/70 tracking-widest uppercase whitespace-nowrap"><i
+                            class="fa-solid fa-percent text-groveLight"></i> 0% Commission</span>
+                    <span class="text-white/20 text-xs">✦</span>
+                    <span
+                        class="flex items-center gap-2 text-xs font-bold text-white/70 tracking-widest uppercase whitespace-nowrap"><i
+                            class="fa-solid fa-bolt text-saffron"></i> Direct UPI Payments</span>
+                    <span class="text-white/20 text-xs">✦</span>
+                    <span
+                        class="flex items-center gap-2 text-xs font-bold text-white/70 tracking-widest uppercase whitespace-nowrap"><i
+                            class="fa-brands fa-whatsapp wa-green"></i> WhatsApp Order Alerts</span>
+                    <span class="text-white/20 text-xs">✦</span>
+                    <span
+                        class="flex items-center gap-2 text-xs font-bold text-white/70 tracking-widest uppercase whitespace-nowrap"><i
+                            class="fa-solid fa-mobile-screen text-groveLight"></i> Easy to Use</span>
+                    <span class="text-white/20 text-xs">✦</span>
+                    <span
+                        class="flex items-center gap-2 text-xs font-bold text-white/70 tracking-widest uppercase whitespace-nowrap"><i
+                            class="fa-solid fa-headset text-saffron"></i> Local Support</span>
+                    <span class="text-white/20 text-xs">✦</span>
+                    <span
+                        class="flex items-center gap-2 text-xs font-bold text-white/70 tracking-widest uppercase whitespace-nowrap"><i
+                            class="fa-solid fa-chart-line text-groveLight"></i> Grow Digitally</span>
+                    <span class="text-white/20 text-xs">✦</span>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+     MERCHANT BENEFITS
+══════════════════════════════════════════ -->
+    <section class="section-white py-20 sm:py-28" id="merchant-benefits">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Left text -->
+                <div class="lg:col-span-6">
+                    <span class="pill pill-green mb-4">Merchant Solution</span>
+                    <h2 class="font-display text-3xl sm:text-4xl text-ink leading-tight mb-4">
+                        Run Your Shop.<br>Keep Your <em class="text-grove not-italic">Profits.</em>
+                    </h2>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8 max-w-md">
+                        MithraDirect puts every tool you need into a single dashboard — without the commission drain,
+                        the middlemen, or the tech headaches.
+                    </p>
+
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-4 bg-parchment p-4 rounded-2xl border border-green-50">
+                            <div
+                                class="w-9 h-9 bg-mist text-grove rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-paper-plane text-sm"></i></div>
+                            <div>
+                                <h4 class="text-sm font-bold text-ink">Get Direct Orders</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Customer demand routed instantly to your
+                                    dashboard and WhatsApp.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 bg-parchment p-4 rounded-2xl border border-green-50">
+                            <div
+                                class="w-9 h-9 bg-mist text-grove rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-percent text-sm"></i></div>
+                            <div>
+                                <h4 class="text-sm font-bold text-ink">0% Commission — Always</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Every rupee your customer pays stays entirely
+                                    with you.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 bg-parchment p-4 rounded-2xl border border-green-50">
+                            <div
+                                class="w-9 h-9 bg-mist text-grove rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-users text-sm"></i></div>
+                            <div>
+                                <h4 class="text-sm font-bold text-ink">Own Your Customer Data</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">See names, profiles, and repeat order history —
+                                    your buyers, your relationships.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right widget card -->
+                <div class="lg:col-span-6">
+                    <div
+                        class="bg-white rounded-3xl border border-slate-100 shadow-deep overflow-hidden max-w-sm mx-auto">
+                        <!-- Top notification -->
+                        <div class="bg-grove px-5 py-4 flex items-center gap-3">
+                            <div class="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center"><i
+                                    class="fa-solid fa-check text-white text-sm"></i></div>
+                            <div>
+                                <span class="block text-xs font-extrabold text-white tracking-wide uppercase">New Order
+                                    Received!</span>
+                                <span class="block text-[10px] text-green-200 font-medium">Sent to your WhatsApp
+                                    now</span>
+                            </div>
+                            <div class="ml-auto">
+                                <i class="fa-brands fa-whatsapp text-white text-2xl wa-green"
+                                    style="color:#25d366;"></i>
+                            </div>
+                        </div>
+
+                        <!-- Quote card -->
+                        <div class="bg-ink m-5 p-5 rounded-2xl border-2 border-saffron/40 text-center">
+                            <p class="font-display text-saffronLight text-lg italic">"Good Food,</p>
+                            <p class="text-white text-sm font-bold tracking-tight my-1">Happy People,</p>
+                            <p class="text-groveLight text-xs font-bold uppercase tracking-widest">Stronger Community."
+                            </p>
+                        </div>
+
+                        <!-- Platform pillars -->
+                        <div class="p-5 pt-0 grid grid-cols-2 gap-3">
+                            <div class="bg-parchment rounded-xl p-3 border border-green-50">
+                                <span class="text-[9px] font-bold text-grove uppercase tracking-wider block mb-1">01 /
+                                    Capability</span>
+                                <p class="text-xs font-bold text-ink">Hyperlocal Commerce</p>
+                            </div>
+                            <div class="bg-parchment rounded-xl p-3 border border-green-50">
+                                <span class="text-[9px] font-bold text-grove uppercase tracking-wider block mb-1">02 /
+                                    Infrastructure</span>
+                                <p class="text-xs font-bold text-ink">SMB Digitalization</p>
+                            </div>
+                            <div class="bg-parchment rounded-xl p-3 border border-green-50">
+                                <span class="text-[9px] font-bold text-grove uppercase tracking-wider block mb-1">03 /
+                                    Continuity</span>
+                                <p class="text-xs font-bold text-ink">Subscription Orders</p>
+                            </div>
+                            <div class="bg-parchment rounded-xl p-3 border border-green-50">
+                                <span class="text-[9px] font-bold text-grove uppercase tracking-wider block mb-1">04 /
+                                    Ecosystem</span>
+                                <p class="text-xs font-bold text-ink">Local Business OS</p>
+                            </div>
+                        </div>
+                        <div class="px-5 pb-5 text-center">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"><i
+                                    class="fa-solid fa-quote-left mr-1.5 text-grove"></i>Support Local. Grow Together.<i
+                                    class="fa-solid fa-quote-right ml-1.5 text-grove"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     COMPARISON  — Stop Losing Money
+══════════════════════════════════════════ -->
+    <section class="section-parch py-20 sm:py-28 border-t border-green-50" id="comparison">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-14">
+                <span class="pill pill-red mb-4">Stop Losing Money</span>
+                <h2 class="font-display text-3xl sm:text-4xl text-ink leading-tight">
+                    Are Big Apps Taking<br>All Your Profits?
+                </h2>
+                <p class="text-slate-500 text-sm mt-3 max-w-xl mx-auto">
+                    Traditional delivery apps cut 15–30% from every sale. MithraDirect is built to keep money in your
+                    neighborhood.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto items-start">
+
+                <!-- Bad: Big Apps -->
+                <div class="bg-white rounded-3xl border-2 border-red-100 overflow-hidden shadow-card flex flex-col">
+                    <div class="bg-red-50 px-6 py-5 border-b border-red-100 flex items-center justify-between">
+                        <div>
+                            <h3 class="font-bold text-base text-ink">Traditional Big Apps</h3>
+                            <p class="text-xs text-red-600 font-semibold mt-0.5">High Cuts & Commissions</p>
+                        </div>
+                        <div
+                            class="w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center text-lg shadow-sm flex-shrink-0">
+                            <i class="fa-solid fa-face-frown"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4 flex-1">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark xmark-icon mt-0.5"></i>
+                            <p class="text-xs text-slate-600"><strong class="text-ink font-bold block">15–30%
+                                    Commissions</strong>You give away a massive chunk of every sale to corporate
+                                middlemen.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark xmark-icon mt-0.5"></i>
+                            <p class="text-xs text-slate-600"><strong class="text-ink font-bold block">Delayed
+                                    Payouts</strong>Money stuck with the platform for days, affecting your daily cash
+                                flow.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark xmark-icon mt-0.5"></i>
+                            <p class="text-xs text-slate-600"><strong class="text-ink font-bold block">Hidden
+                                    Customers</strong>Phone numbers and buyer names belong to the app, not to you.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark xmark-icon mt-0.5"></i>
+                            <p class="text-xs text-slate-600"><strong class="text-ink font-bold block">Zero Brand
+                                    Value</strong>Your shop gets lost in a sea of city restaurants and grocery chains.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="px-6 py-4 bg-red-50 border-t border-red-100 text-center text-xs font-bold text-red-600 uppercase tracking-widest">
+                        <i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Harder to make profits
+                    </div>
+                </div>
+
+                <!-- Good: MithraDirect (gradient border) -->
+                <div class="grad-border rounded-3xl shadow-leaf flex flex-col md:-translate-y-2 relative">
+                    <div class="absolute -top-3 right-4 z-10">
+                        <span
+                            class="bg-saffron text-ink text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-sm tracking-wider">Best
+                            Choice ★</span>
+                    </div>
+                    <div class="inner overflow-hidden flex flex-col h-full rounded-[18px]">
+                        <div class="bg-green-50 px-6 py-5 border-b border-green-100 flex items-center justify-between">
+                            <div>
+                                <h3 class="font-bold text-base text-ink">The MithraDirect Way</h3>
+                                <p class="text-xs text-grove font-bold mt-0.5">0% Commission Model</p>
+                            </div>
+                            <div
+                                class="w-10 h-10 bg-grove text-white rounded-full flex items-center justify-center text-lg shadow-leaf flex-shrink-0">
+                                <i class="fa-solid fa-face-smile"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex-1">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check check-icon mt-0.5"></i>
+                                <p class="text-xs text-slate-700"><strong class="text-grove font-bold block">0%
+                                        Commission — Always</strong>Keep 100% of your earnings. Every rupee stays
+                                    completely with you.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check check-icon mt-0.5"></i>
+                                <p class="text-xs text-slate-700"><strong class="text-grove font-bold block">Instant
+                                        Cash Handover</strong>Customers pay via UPI, cash, or phone transfer directly.
+                                    Zero wait times.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check check-icon mt-0.5"></i>
+                                <p class="text-xs text-slate-700"><strong class="text-grove font-bold block">Real
+                                        Customer Ties</strong>See profiles, build loyalty with repeat buyers from your
+                                    own neighborhood.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check check-icon mt-0.5"></i>
+                                <p class="text-xs text-slate-700"><strong class="text-grove font-bold block">Your Name,
+                                        Your Brand</strong>Your own profile, unique identity, and banner highlighted
+                                    locally.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="px-6 py-4 bg-green-50 border-t border-green-100 text-center text-xs font-bold text-grove uppercase tracking-widest">
+                            <i class="fa-solid fa-star mr-1.5 text-saffron"></i> 100% money remains in your pocket
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     HOW IT WORKS (Features Grid)
+══════════════════════════════════════════ -->
+    <section class="section-white py-20 sm:py-28 border-t border-slate-50" id="how-it-works">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="pill pill-green mb-4">Designed for Growth</span>
+                <h2 class="font-display text-3xl sm:text-4xl text-ink">How Mithra Direct Works</h2>
+                <p class="text-slate-500 text-sm mt-3 max-w-md mx-auto">Fluid coordination between buyers and
+                    micro-merchants.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Feature 0 — dark hero card -->
+                <div class="bg-ink rounded-3xl p-8 text-left flex flex-col justify-between shadow-deep lg:row-span-1">
+                    <div>
+                        <span
+                            class="text-[9px] font-bold tracking-widest text-groveLight uppercase block mb-2">Interactive
+                            Layer</span>
+                        <h3 class="font-display text-xl text-white leading-tight mb-3">Built for Customers & Merchants
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">MithraDirect unifies neighborhood demand with
+                            local supply on a single infrastructure — clean, simple, fast.</p>
+                    </div>
+                    <div class="mt-8">
+                        <span
+                            class="inline-flex items-center gap-2 text-groveLight text-xs font-bold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-groveLight animate-pulse"></span>
+                            Fulfillment Suite Active
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Feature 1 -->
+                <div
+                    class="bg-white rounded-3xl p-8 text-left flex flex-col justify-between border border-slate-100 shadow-card card-lift">
+                    <div>
+                        <div
+                            class="w-9 h-9 rounded-xl bg-mist text-grove flex items-center justify-center font-mono text-xs font-bold mb-5">
+                            01</div>
+                        <h4 class="text-sm font-bold text-ink mb-1.5">Smart Checkout</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Consolidate neighborhood orders into one fluid
+                            experience, seamlessly.</p>
+                    </div>
+                    <div
+                        class="mt-6 border-t border-slate-50 pt-4 text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+                        Step One</div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="bg-white rounded-3xl p-8 text-left flex flex-col justify-between border border-slate-100 shadow-card card-lift">
+                    <div>
+                        <div
+                            class="w-9 h-9 rounded-xl bg-mist text-grove flex items-center justify-center font-mono text-xs font-bold mb-5">
+                            02</div>
+                        <h4 class="text-sm font-bold text-ink mb-1.5">Live Tracking</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Real-time updates as your order is packed and
+                            ready for local pick-up.</p>
+                    </div>
+                    <div
+                        class="mt-6 border-t border-slate-50 pt-4 text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+                        Step Two</div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="bg-white rounded-3xl p-8 text-left flex flex-col justify-between border border-slate-100 shadow-card card-lift">
+                    <div>
+                        <div
+                            class="w-9 h-9 rounded-xl bg-mist text-grove flex items-center justify-center font-mono text-xs font-bold mb-5">
+                            03</div>
+                        <h4 class="text-sm font-bold text-ink mb-1.5">Skip the Queue</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Your order is ready when you step inside. No
+                            waiting, no confusion.</p>
+                    </div>
+                    <div
+                        class="mt-6 border-t border-slate-50 pt-4 text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+                        Step Three</div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="bg-white rounded-3xl p-8 text-left flex flex-col justify-between border border-slate-100 shadow-card card-lift">
+                    <div>
+                        <div
+                            class="w-9 h-9 rounded-xl bg-mist text-grove flex items-center justify-center font-mono text-xs font-bold mb-5">
+                            04</div>
+                        <h4 class="text-sm font-bold text-ink mb-1.5">Search Locally</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Find which nearby store has exactly what you
+                            need with live inventory.</p>
+                    </div>
+                    <div
+                        class="mt-6 border-t border-slate-50 pt-4 text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+                        Discovery</div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div
+                    class="bg-white rounded-3xl p-8 text-left flex flex-col justify-between border border-slate-100 shadow-card card-lift">
+                    <div>
+                        <div
+                            class="w-9 h-9 rounded-xl bg-mist text-grove flex items-center justify-center font-mono text-xs font-bold mb-5">
+                            05</div>
+                        <h4 class="text-sm font-bold text-ink mb-1.5">Pickup at Store</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Fast, streamlined curbside service — order
+                            ahead, arrive, collect, done.</p>
+                    </div>
+                    <div
+                        class="mt-6 border-t border-slate-50 pt-4 text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+                        Fulfillment</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     WORKFLOW  — Day 1 Features
+══════════════════════════════════════════ -->
+    <section class="section-parch py-20 sm:py-28 border-t border-green-50" id="workflow">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="pill pill-green mb-4">Simple & Digital</span>
+            <h2 class="font-display text-3xl sm:text-4xl text-ink mb-3">Day 1: Grow Your Shop Locally</h2>
+            <p class="text-slate-500 text-sm max-w-xl mx-auto mb-14">No coding needed. If you can send a WhatsApp, you
+                can run your shop on MithraDirect.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-left max-w-5xl mx-auto">
+
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-card card-lift">
+                    <div class="w-12 h-12 bg-mist rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-grove" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-sm text-ink mb-1.5">Take Orders Online</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">No more missed calls or paper notebooks. Every
+                        order appears safely on your screen.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-card card-lift">
+                    <div class="w-12 h-12 bg-mist rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-grove" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-sm text-ink mb-1.5">WhatsApp Alerts</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Get instant, clean order details sent directly to
+                        your WhatsApp the moment a customer orders.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-card card-lift">
+                    <div class="w-12 h-12 bg-mist rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-grove" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-sm text-ink mb-1.5">Know Your Customers</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Build a simple digital directory of your
+                        neighborhood buyers without any complex setup.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-card card-lift">
+                    <div class="w-12 h-12 bg-mist rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-grove" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-sm text-ink mb-1.5">Pre-Orders & Subscriptions</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Perfect for milk deliveries, morning tiffins, or
+                        daily grocery basket routines.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-card card-lift">
+                    <div class="w-12 h-12 bg-mist rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-grove" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="3" width="15" height="13" rx="1"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-sm text-ink mb-1.5">Delivery or Pickup</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Your shop, your rules. Home delivery or counter
+                        pickup — you decide.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-card card-lift">
+                    <div class="w-12 h-12 bg-mist rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-grove" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-sm text-ink mb-1.5">Earn More Safely</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Save money on paper forms, phone recharges, and
+                        unnecessary third-party apps.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     ORDER FLOWCHART  — How an Order Travels
+══════════════════════════════════════════ -->
+    <section class="section-white py-20 sm:py-28 border-t border-slate-50" id="detailed-journey">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="pill pill-green mb-4">Step-by-Step Flowchart</span>
+                <h2 class="font-display text-3xl sm:text-4xl text-ink mb-3">How an Order Travels</h2>
+                <p class="text-slate-500 text-sm">From a customer's tap to your shop counter in minutes.</p>
+            </div>
+
+            <div class="relative max-w-2xl mx-auto timeline-line pl-10 sm:pl-14 space-y-8">
+
+                <div class="relative">
+                    <div
+                        class="absolute -left-10 sm:-left-14 top-0 w-8 h-8 sm:w-10 sm:h-10 bg-grove text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm border-4 border-parchment shadow-leaf">
+                        1</div>
+                    <div class="bg-parchment border border-green-100 rounded-2xl p-5">
+                        <span class="pill pill-green mb-2">Customer Action</span>
+                        <h3 class="font-bold text-sm text-ink mt-2">Customer Browses Your Digital Menu</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Buyers open the app to browse available
+                            stock from your shop, right from their phone at home.</p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="absolute -left-10 sm:-left-14 top-0 w-8 h-8 sm:w-10 sm:h-10 bg-grove text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm border-4 border-parchment shadow-leaf">
+                        2</div>
+                    <div class="bg-parchment border border-green-100 rounded-2xl p-5">
+                        <span class="pill pill-green mb-2">Order Creation</span>
+                        <h3 class="font-bold text-sm text-ink mt-2">Items Picked & Payment Done</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">The buyer picks groceries, milk, or
+                            tiffins and pays directly to your mobile balance — instantly.</p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="absolute -left-10 sm:-left-14 top-0 w-8 h-8 sm:w-10 sm:h-10 bg-saffron text-ink rounded-full flex items-center justify-center font-bold text-xs sm:text-sm border-4 border-parchment shadow-sm animate-pulse">
+                        3</div>
+                    <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5">
+                        <span class="pill pill-amber mb-2"><i class="fa-brands fa-whatsapp"></i> WhatsApp Routing</span>
+                        <h3 class="font-bold text-sm text-ink mt-2">You Get a Message Instantly</h3>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">Our system sends a beautifully formatted
+                            receipt summary straight to your personal WhatsApp number.</p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="absolute -left-10 sm:-left-14 top-0 w-8 h-8 sm:w-10 sm:h-10 bg-grove text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm border-4 border-parchment shadow-leaf">
+                        4</div>
+                    <div class="bg-parchment border border-green-100 rounded-2xl p-5">
+                        <span class="pill pill-green mb-2">Shop Fulfillment</span>
+                        <h3 class="font-bold text-sm text-ink mt-2">You Pack the Goods</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Verify items on your phone, pack neatly,
+                            and mark ready for home delivery or counter pickup.</p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="absolute -left-10 sm:-left-14 top-0 w-8 h-8 sm:w-10 sm:h-10 bg-grove text-white rounded-full flex items-center justify-center text-xs border-4 border-parchment shadow-leaf">
+                        <i class="fa-solid fa-check text-[10px]"></i>
+                    </div>
+                    <div class="bg-green-50 border border-green-200 rounded-2xl p-5">
+                        <span class="pill pill-green mb-2">Happy Business</span>
+                        <h3 class="font-bold text-sm text-grove mt-2">Delivery Complete & Customer Returns!</h3>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">Customer gets their order cleanly. The
+                            experience was easy — they'll order again tomorrow.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     CONSUMER EXPERIENCE  — Life Comparison
+══════════════════════════════════════════ -->
+    <section class="section-parch py-20 sm:py-28 border-t border-green-50" id="consumer-experience">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="pill pill-slate mb-4">Life Comparison</span>
+            <h2 class="font-display text-3xl sm:text-4xl text-ink mb-3">One Simple App Changes Everything</h2>
+            <p class="text-slate-500 text-sm max-w-xl mx-auto mb-14">See how MithraDirect removes daily headaches from
+                local shopping.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-left max-w-5xl mx-auto">
+
+                <!-- Old way -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-card">
+                    <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-5">
+                        <div
+                            class="w-8 h-8 bg-red-50 text-red-500 rounded-xl flex items-center justify-center text-sm flex-shrink-0">
+                            <i class="fa-solid fa-circle-xmark"></i></div>
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-700">The Old Way — Messy & Slow
+                        </h4>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
+                            <strong class="text-ink font-bold text-xs block mb-0.5"><i
+                                    class="fa-solid fa-phone-slash text-red-400 mr-1.5"></i>Endless Phone Calls</strong>
+                            <span class="text-xs text-slate-500">Calling shops one by one, guessing if milk or
+                                vegetables are still in stock.</span>
+                        </li>
+                        <li class="p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
+                            <strong class="text-ink font-bold text-xs block mb-0.5"><i
+                                    class="fa-solid fa-note-sticky text-red-400 mr-1.5"></i>Messy Scribbled
+                                Lists</strong>
+                            <span class="text-xs text-slate-500">Writing items on paper scraps that get lost around the
+                                counter.</span>
+                        </li>
+                        <li class="p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
+                            <strong class="text-ink font-bold text-xs block mb-0.5"><i
+                                    class="fa-solid fa-circle-question text-red-400 mr-1.5"></i>Confused
+                                Pricing</strong>
+                            <span class="text-xs text-slate-500">Not knowing the total until you physically carry your
+                                wallet to the shop.</span>
+                        </li>
+                        <li class="p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
+                            <strong class="text-ink font-bold text-xs block mb-0.5"><i
+                                    class="fa-brands fa-whatsapp text-red-400 mr-1.5"></i>Typing Orders
+                                Manually</strong>
+                            <span class="text-xs text-slate-500">Texting item names one by one and waiting hours for
+                                vendor replies.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- New way -->
+                <div class="bg-ink rounded-3xl p-6 shadow-deep text-left">
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-5">
+                        <div
+                            class="w-8 h-8 bg-grove/60 text-groveLight rounded-xl flex items-center justify-center text-sm flex-shrink-0">
+                            <i class="fa-solid fa-circle-check"></i></div>
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-white">The MithraDirect Way — Easy &
+                            Quick</h4>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="p-3.5 bg-white/5 rounded-2xl border border-white/10">
+                            <strong class="text-white font-bold text-xs block mb-0.5"><i
+                                    class="fa-solid fa-magnifying-glass text-groveLight mr-1.5"></i>1-Click Browse
+                                Menu</strong>
+                            <span class="text-xs text-slate-400">See real items from local shops sorted by distance, in
+                                seconds.</span>
+                        </li>
+                        <li class="p-3.5 bg-white/5 rounded-2xl border border-white/10">
+                            <strong class="text-white font-bold text-xs block mb-0.5"><i
+                                    class="fa-solid fa-shield-halved text-groveLight mr-1.5"></i>Buy from Trusted
+                                Neighbors</strong>
+                            <span class="text-xs text-slate-400">Deal with shops you've known for generations — complete
+                                trust and ease.</span>
+                        </li>
+                        <li class="p-3.5 bg-white/5 rounded-2xl border border-white/10">
+                            <strong class="text-white font-bold text-xs block mb-0.5"><i
+                                    class="fa-solid fa-tags text-groveLight mr-1.5"></i>Direct & Clear Rates</strong>
+                            <span class="text-xs text-slate-400">Retail pricing. Zero added app charges or hidden
+                                transaction fees.</span>
+                        </li>
+                        <li class="p-3.5 bg-white/5 rounded-2xl border border-white/10">
+                            <strong class="text-white font-bold text-xs block mb-0.5"><i
+                                    class="fa-solid fa-bolt text-groveLight mr-1.5"></i>Automated Tracking</strong>
+                            <span class="text-xs text-slate-400">Instant confirmation when your order bag leaves the
+                                store counter.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="mt-12">
+                <span
+                    class="inline-block bg-white border border-green-100 px-6 py-3 rounded-full font-bold text-ink text-xs shadow-card uppercase tracking-wider">
+                    MithraDirect: Local. Trusted. Delivered.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     ACTIVE PARTNERS / VENDORS
+══════════════════════════════════════════ -->
+    <section class="section-white py-20 sm:py-28 border-t border-slate-50" id="vendors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+                <div class="max-w-xl">
+                    <span class="pill pill-green mb-3">Hyperlocal Network</span>
+                    <h2 class="font-display text-3xl sm:text-4xl text-ink mt-2">Active Partners Near You</h2>
+                    <p class="text-slate-500 text-sm mt-3">Verified independent merchants running automated workflows
+                        and on-demand storefronts.</p>
+                </div>
+                <div
+                    class="flex items-center gap-2 bg-white px-4 py-2.5 rounded-2xl border border-slate-200 shadow-card self-start">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span
+                            class="pulse-ring absolute inline-flex h-full w-full rounded-full bg-groveLight opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-grove"></span>
+                    </span>
+                    <span class="text-xs font-bold text-ink">Live Network Connected</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                <div
+                    class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-card card-lift flex flex-col">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=500&q=80"
+                            alt="Geeta's Kitchen"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent"></div>
+                        <span
+                            class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-ink text-[10px] font-bold px-2.5 py-1 rounded-lg shadow-sm uppercase tracking-wide">Curbside
+                            Ready</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-bold text-sm text-ink group-hover:text-grove transition-colors">Geeta's Kitchen
+                        </h3>
+                        <p class="text-[10px] font-bold text-grove uppercase tracking-wider mt-1 mb-2">Gourmet &
+                            Homemade Meals</p>
+                        <p class="text-xs text-slate-500 leading-relaxed flex-1">Fresh, neighborhood-scaled custom
+                            dining packages — delivered daily.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-50 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-400 font-semibold"><i
+                                    class="fa-solid fa-location-dot mr-1 text-grove"></i>1.2 km away</span>
+                            <span class="text-xs font-bold text-ink">BOPIS <i
+                                    class="fa-solid fa-chevron-right text-[9px] ml-1 text-grove"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-card card-lift flex flex-col">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=500&q=80"
+                            alt="Golden Harvest"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent"></div>
+                        <span
+                            class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-ink text-[10px] font-bold px-2.5 py-1 rounded-lg shadow-sm uppercase tracking-wide">Subscribed</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-bold text-sm text-ink group-hover:text-grove transition-colors">Golden Harvest
+                        </h3>
+                        <p class="text-[10px] font-bold text-grove uppercase tracking-wider mt-1 mb-2">Organic Groceries
+                            & Grains</p>
+                        <p class="text-xs text-slate-500 leading-relaxed flex-1">Pure neighborhood staples and organic
+                            essentials via daily logistics loops.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-50 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-400 font-semibold"><i
+                                    class="fa-solid fa-location-dot mr-1 text-grove"></i>0.8 km away</span>
+                            <span class="text-xs font-bold text-ink">BOPIS <i
+                                    class="fa-solid fa-chevron-right text-[9px] ml-1 text-grove"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-card card-lift flex flex-col">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1527018601619-a508a2be00cd?auto=format&fit=crop&w=500&q=80"
+                            alt="V.N.R Farms"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent"></div>
+                        <span
+                            class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-ink text-[10px] font-bold px-2.5 py-1 rounded-lg shadow-sm uppercase tracking-wide">Direct
+                            Hub</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-bold text-sm text-ink group-hover:text-grove transition-colors">V.N.R Farms</h3>
+                        <p class="text-[10px] font-bold text-grove uppercase tracking-wider mt-1 mb-2">Fresh Dairy &
+                            Produce</p>
+                        <p class="text-xs text-slate-500 leading-relaxed flex-1">Direct-from-farm daily milk and harvest
+                            allocations, automated and reliable.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-50 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-400 font-semibold"><i
+                                    class="fa-solid fa-location-dot mr-1 text-grove"></i>2.5 km away</span>
+                            <span class="text-xs font-bold text-ink">BOPIS <i
+                                    class="fa-solid fa-chevron-right text-[9px] ml-1 text-grove"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-card card-lift flex flex-col">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=500&q=80"
+                            alt="Yavi"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent"></div>
+                        <span
+                            class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-ink text-[10px] font-bold px-2.5 py-1 rounded-lg shadow-sm uppercase tracking-wide">Instant
+                            Fit</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-bold text-sm text-ink group-hover:text-grove transition-colors">Yavi</h3>
+                        <p class="text-[10px] font-bold text-grove uppercase tracking-wider mt-1 mb-2">Bespoke Local
+                            Apparel</p>
+                        <p class="text-xs text-slate-500 leading-relaxed flex-1">Boutique custom design with instant
+                            local pick-up access across the network.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-50 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-400 font-semibold"><i
+                                    class="fa-solid fa-location-dot mr-1 text-grove"></i>1.9 km away</span>
+                            <span class="text-xs font-bold text-ink">BOPIS <i
+                                    class="fa-solid fa-chevron-right text-[9px] ml-1 text-grove"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <div
+                    class="inline-flex items-center gap-3 bg-parchment border border-green-100 px-6 py-3.5 rounded-full shadow-card text-xs font-bold text-ink">
+                    <span
+                        class="bg-mist text-grove px-2 py-0.5 rounded-lg text-[10px] font-bold uppercase tracking-wide border border-green-100">Scale
+                        Footprint</span>
+                    Plus over <span class="text-grove font-extrabold">5,000+ Retail Hubs</span> spanning food, apparel,
+                    and hardware nationwide.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     DOWNLOAD CTA
+══════════════════════════════════════════ -->
+    <section class="section-parch py-16 sm:py-24 border-t border-green-50" id="download">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="dl-card rounded-3xl p-8 sm:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between shadow-deep gap-8">
+                <!-- glow -->
+                <div
+                    class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,197,94,0.12),transparent_55%)] pointer-events-none">
+                </div>
+
+                <div class="relative z-10 text-center md:text-left max-w-xs">
+                    <span class="section-eyebrow text-groveLight mb-2 block">Omnichannel Access</span>
+                    <h3 class="font-display text-2xl sm:text-3xl text-white mb-3">Download the MithraDirect App</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Browse neighborhood shops, secure your orders via
+                        BOPIS, and manage daily subscriptions — all in one place.</p>
+                </div>
+
+                <div class="relative z-10 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                    <a href="https://play.google.com/store/apps/details?id=com.mithrauserapp.customer" target="_blank"
+                        rel="noopener noreferrer">
+                        <button
+                            class="bg-white text-ink px-5 py-2.5 rounded-2xl font-bold flex items-center gap-3 w-full sm:w-auto justify-center hover:bg-slate-50 transition-all border border-slate-100 shadow-card">
+                            <i class="fa-brands fa-google-play text-lg text-grove"></i>
+                            <div class="text-left">
+                                <span class="block text-[7px] uppercase font-bold text-slate-400 -mb-0.5">Get it
+                                    on</span>
+                                <span class="text-xs font-bold">Google Play</span>
+                            </div>
+                        </button>
+                    </a>
+
+
+                    <div
+                        class="flex items-center gap-3 bg-white/5 border border-white/10 p-2.5 rounded-2xl w-full sm:w-auto justify-center">
+                        <div class="w-9 h-9 bg-white rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-qrcode text-ink text-lg"></i>
+                        </div>
+                        <span class="text-[9px] text-slate-400 font-medium leading-tight">Scan QR to<br><span
+                                class="text-white font-bold text-xs">Download</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+    <footer class="bg-ink text-slate-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+
+                <div class="space-y-4 sm:col-span-2 md:col-span-1">
+                    <div class="flex items-center gap-3 text-white">
+                        <div
+                            class="bg-grove text-white w-9 h-9 rounded-xl flex items-center justify-center shadow-leaf">
+                            <i class="fa-solid fa-store text-sm"></i>
+                        </div>
+                        <span class="text-base font-extrabold tracking-tight">Mithra<span
+                                class="text-groveLight">Direct</span></span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed max-w-xs">
+                        Re-engineering the local economy — connecting neighborhood shops to digital customers,
+                        commission-free.
+                    </p>
+                    <div class="flex gap-3 text-base pt-1">
+                        <a href="#"
+                            class="w-8 h-8 bg-white/5 hover:bg-grove rounded-xl flex items-center justify-center transition-colors text-slate-400 hover:text-white"><i
+                                class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 bg-white/5 hover:bg-grove rounded-xl flex items-center justify-center transition-colors text-slate-400 hover:text-white"><i
+                                class="fa-brands fa-instagram text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- <div class="space-y-3">
+                <h4 class="text-[10px] uppercase font-bold text-slate-200 tracking-widest">Core Product</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" class="hover:text-white transition-colors">Merchant Dashboard OS</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Subscription Framework</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Consumer Fulfillment Hub</a></li>
+                </ul>
+            </div> -->
+
+                <div class="space-y-3">
+                    <h4 class="text-[10px] uppercase font-bold text-slate-200 tracking-widest">Legal & Support</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-[10px] uppercase font-bold text-slate-200 tracking-widest">Headquarters</h4>
+                    <address class="not-italic text-xs text-slate-500 leading-relaxed">
+                        Mithra Direct Technologies Pvt Ltd.<br>
+                        MIG 3-973/L, Mayurinagar, Miyapur.<br>
+                        Telangana, India, 500049<br>
+                        mithradirect@gmail.com<br>
+                        +91-9912149049
+                    </address>
+                </div>
+
+            </div>
+
+            <div
+                class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 Mithra Direct Technologies Pvt Ltd. All rights reserved.</p>
+                <span
+                    class="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-groveLight animate-pulse"></span>
+                    Local. Trusted. Delivered.
+                </span>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        // ── Hamburger toggle ──
+        const ham = document.getElementById('hamburger');
+        const menu = document.getElementById('mobile-menu');
+        const h1 = document.getElementById('h1');
+        const h2 = document.getElementById('h2');
+        const h3 = document.getElementById('h3');
+        let menuOpen = false;
+
+        ham.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            menu.classList.toggle('open', menuOpen);
+            h1.style.transform = menuOpen ? 'translateY(5px) rotate(45deg)' : '';
+            h2.style.opacity = menuOpen ? '0' : '1';
+            h3.style.transform = menuOpen ? 'translateY(-5px) rotate(-45deg)' : '';
+        });
+
+        // Close on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                menu.classList.remove('open');
+                h1.style.transform = ''; h2.style.opacity = '1'; h3.style.transform = '';
+            });
+        });
+
+        // ── Build marquee ──
+        const tmpl = document.getElementById('marquee-items');
+        const track = document.querySelector('.marquee-track');
+        if (tmpl && track) {
+            const content = tmpl.innerHTML;
+            // Two copies for seamless loop
+            track.innerHTML = `<div class="flex items-center gap-8 pr-8">${content}</div><div class="flex items-center gap-8 pr-8">${content}</div>`;
+            tmpl.remove();
+        }
+
+        // ── Nav shadow on scroll ──
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('shadow-md', window.scrollY > 40);
+        }, { passive: true });
+    </script>
+
+</body>
+
+</html>
